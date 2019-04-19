@@ -77,6 +77,10 @@ MongoDB是基于分布式文件存储的数据库，介于关系数据库和非�
 https://yw-forgit.github.io/Note/Other/06_MongoDB.pdf
 
 
+MySQL的安装 <br>
+https://yw-forgit.github.io/Note/Other/07_CentOS7安装MySQL.pdf
+
+
 后续。。。 <br>
 https://yw-forgit.github.io/Note/Other/05_Nginx.pdf
 
