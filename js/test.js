@@ -132,3 +132,9 @@ function getChildrenTitle(children) {
 	return msg;
 }
 
+
+function getCount() {
+	$.post("https://52465e67.ngrok.io/acticle/viewCount",{},function(data){
+		console.log(data);
+	  });
+}
