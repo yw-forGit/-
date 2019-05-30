@@ -134,7 +134,7 @@ function getChildrenTitle(children) {
 
 
 function getCount() {
-	$.post("https://52465e67.ngrok.io/acticle/viewCount",{},function(data){
+	$.post("https://82a45fa2.ngrok.io/acticle/viewCount",{},function(data){
 		console.log(data);
 	  });
 }
