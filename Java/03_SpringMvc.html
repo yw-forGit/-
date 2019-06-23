@@ -1,0 +1,2862 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="03_SpringMvc.files/filelist.xml">
+<link rel=Edit-Time-Data href="03_SpringMvc.files/editdata.mso">
+
+<link rel=themeData href="03_SpringMvc.files/themedata.thmx">
+<link rel=colorSchemeMapping href="03_SpringMvc.files/colorschememapping.xml">
+</head>
+
+<body lang=ZH-CN link="#0563C1" vlink="#954F72" style='tab-interval:21.0pt;
+text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:11.0pt'>SpringMVC<o:p></o:p></span></b></p>
+
+<p class=MsoNormal align=right style='text-align:right'><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>参考：</span><span
+lang=EN-US>java1234<span style='mso-font-kerning:0pt'> - </span></span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin;mso-font-kerning:0pt'>一头扎进系列</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>制作日期：</span><span lang=EN-US>2018-6-20 - 2018-6-24</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>制作人：小桅</span><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;mso-fareast-font-family:宋体'>[yw_forgit@163.com]</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:11.0pt'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>第一章</span>
+<span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";mso-ascii-theme-font:
+major-latin;mso-fareast-theme-font:major-fareast;mso-hansi-font-family:"Calibri Light";
+mso-hansi-theme-font:major-latin'>问候</span><span lang=EN-US> SpringMVC </span><span
+style='font-family:宋体;mso-ascii-font-family:"Calibri Light";mso-ascii-theme-font:
+major-latin;mso-fareast-theme-font:major-fareast;mso-hansi-font-family:"Calibri Light";
+mso-hansi-theme-font:major-latin'>他大爷</span></h2>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'> </span></span></p>
+
+<h4><span lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>、</span><span
+lang=EN-US>SpringMVC </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>简介</span></h4>
+
+<h4><span lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>、</span><span
+lang=EN-US>SpringMVC </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>版</span><span
+lang=EN-US> HelloWorld </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>实现</span></h4>
+
+<p class=MsoNormal style='text-indent:42.0pt;mso-char-indent-count:4.0'><span
+lang=EN-US style='color:red'>SpringMVC </span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;
+color:red'>是一套功能强大，性能强悍，使用方便的优秀的</span><span lang=EN-US style='color:red'> MVC </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin;color:red'>框架；</span><span lang=EN-US style='color:red'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>eclipse</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>新建动态</span><span
+lang=EN-US>web</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>项目</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><![if !vml]><img width=387 height=370
+src="03_SpringMvc.files/image001.png" v:shapes="图片_x0020_1"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>web</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>版本选择</span><span
+lang=EN-US>2.5</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>交互式就行了</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><![if !vml]><img width=356 height=524
+src="03_SpringMvc.files/image003.png" v:shapes="图片_x0020_2"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>目录结构如下：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_3" o:spid="_x0000_i1164" type="#_x0000_t75" style='width:237.75pt;
+ height:150pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image005.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=317 height=200
+src="03_SpringMvc.files/image005.png" v:shapes="图片_x0020_3"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US>JRE System Library</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>如果太旧，就换一下。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>去</span><span
+lang=EN-US>docs</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>下，打开</span><span
+lang=EN-US>mvc.html</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_5" o:spid="_x0000_i1163" type="#_x0000_t75" style='width:415.5pt;
+ height:123pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image007.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=164
+src="03_SpringMvc.files/image007.png" v:shapes="图片_x0020_5"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>复制</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_4" o:spid="_x0000_i1162" type="#_x0000_t75" style='width:415.5pt;
+ height:243.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image009.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=325
+src="03_SpringMvc.files/image009.png" v:shapes="图片_x0020_4"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>粘贴到</span><span
+lang=EN-US>WEB-INF</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>下的</span><span
+lang=EN-US>web.xml</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>中，并且修改一下，注释看不懂没关系，那是我后来加的：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_42" o:spid="_x0000_i1161" type="#_x0000_t75" style='width:561pt;
+ height:257.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image011.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=748 height=343
+src="03_SpringMvc.files/image011.png" v:shapes="图片_x0020_42"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>docs</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>复制</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_6" o:spid="_x0000_i1160" type="#_x0000_t75" style='width:415.5pt;
+ height:198.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image013.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=265
+src="03_SpringMvc.files/image013.png" v:shapes="图片_x0020_6"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>在</span><span
+lang=EN-US>src</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>源码目录下，新建一个文件，叫</span><span
+lang=EN-US>spring-context.xml</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，粘贴，并修改</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_8" o:spid="_x0000_i1159" type="#_x0000_t75" style='width:415.5pt;
+ height:197.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image015.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=263
+src="03_SpringMvc.files/image015.png" v:shapes="图片_x0020_8"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>目录如下：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_9" o:spid="_x0000_i1158" type="#_x0000_t75" style='width:252.75pt;
+ height:182.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image017.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=337 height=243
+src="03_SpringMvc.files/image017.png" v:shapes="图片_x0020_9"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>docs</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>复制，修改</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_12" o:spid="_x0000_i1157" type="#_x0000_t75" style='width:414.75pt;
+ height:81pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image019.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=108
+src="03_SpringMvc.files/image019.png" v:shapes="图片_x0020_12"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>粘贴到</span><span
+lang=EN-US>spring-content.xml</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，修改</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_19" o:spid="_x0000_i1156" type="#_x0000_t75" style='width:523.5pt;
+ height:235.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image021.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=698 height=314
+src="03_SpringMvc.files/image021.png" v:shapes="图片_x0020_19"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>此时</span><span
+lang=EN-US>spring-content.xml</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>可能会报错。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>添加</span><span
+lang=EN-US>jar</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>包，这是</span><span
+lang=EN-US>Spring</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的所有</span><span
+lang=EN-US>jar</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>包，请注意，</span><span
+lang=EN-US>MVC</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>只是</span><span
+lang=EN-US>Spring</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的一个部分，是不能脱离</span><span
+lang=EN-US>Spring</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>而单独存在的。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_10" o:spid="_x0000_i1155" type="#_x0000_t75" style='width:323.25pt;
+ height:252.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image023.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=431 height=337
+src="03_SpringMvc.files/image023.png" v:shapes="图片_x0020_10"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>然后</span><span
+lang=EN-US>clean</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>一下，</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_11" o:spid="_x0000_i1154" type="#_x0000_t75" style='width:304.5pt;
+ height:270pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image025.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=406 height=360
+src="03_SpringMvc.files/image025.png" v:shapes="图片_x0020_11"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>spring-content.xml</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>就没有报错了</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>通过</span><span
+lang=EN-US>eclipse</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的</span><span
+lang=EN-US>jsp</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>模板新建</span><span
+lang=EN-US>helloWorld.jsp</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_22" o:spid="_x0000_i1153" type="#_x0000_t75" style='width:558pt;
+ height:132.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image027.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=744 height=177
+src="03_SpringMvc.files/image027.png" v:shapes="图片_x0020_22"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>此</span><span
+lang=EN-US>jsp</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>可能会报错，因为需要</span><span
+lang=EN-US>java</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的</span><span
+lang=EN-US>server</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>包支持，故下面新建</span><span
+lang=EN-US>Server</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_13" o:spid="_x0000_i1152" type="#_x0000_t75" style='width:306.75pt;
+ height:80.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image029.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=409 height=107
+src="03_SpringMvc.files/image029.png" v:shapes="图片_x0020_13"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_14" o:spid="_x0000_i1151" type="#_x0000_t75" style='width:298.5pt;
+ height:337.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image030.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=398 height=450
+src="03_SpringMvc.files/image030.png" v:shapes="图片_x0020_14"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>添加目录</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_15" o:spid="_x0000_i1150" type="#_x0000_t75" style='width:312pt;
+ height:357.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image032.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=416 height=477
+src="03_SpringMvc.files/image032.png" v:shapes="图片_x0020_15"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_16" o:spid="_x0000_i1149" type="#_x0000_t75" style='width:287.25pt;
+ height:51.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image034.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=383 height=69
+src="03_SpringMvc.files/image034.png" v:shapes="图片_x0020_16"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>把</span><span
+lang=EN-US>Server Runtime</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>这个包引入进来，这个是</span><span
+lang=EN-US>Tomcat</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>依赖的包，</span><span
+lang=EN-US>Tomcat</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>自己会自带，只需要开发时引用即可。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_17" o:spid="_x0000_i1148" type="#_x0000_t75" style='width:415.5pt;
+ height:385.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image035.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=514
+src="03_SpringMvc.files/image035.png" v:shapes="图片_x0020_17"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_18" o:spid="_x0000_i1147" type="#_x0000_t75" style='width:312.75pt;
+ height:298.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image037.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=417 height=398
+src="03_SpringMvc.files/image037.png" v:shapes="图片_x0020_18"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>然后</span><span
+lang=EN-US>jsp</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>就不报错了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>在</span><span
+lang=EN-US>eclipse</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>发布部署项目</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_23" o:spid="_x0000_i1146" type="#_x0000_t75" style='width:302.25pt;
+ height:328.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image039.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=403 height=438
+src="03_SpringMvc.files/image039.png" v:shapes="图片_x0020_23"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>启动会发现报错，因为缺少</span><span
+lang=EN-US>jar</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>包</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>commons-logging</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>。日志打印使用</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_24" o:spid="_x0000_i1145" type="#_x0000_t75" style='width:452.25pt;
+ height:23.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image041.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=603 height=31
+src="03_SpringMvc.files/image041.png" v:shapes="图片_x0020_24"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>standard.jar</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>。</span><span
+lang=EN-US>standard.jar </span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>是</span><span
+lang=EN-US>JSP </span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>标准标签库，和</span><span
+lang=EN-US>jstl.jar </span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>一起使用，在</span><span
+lang=EN-US>1.0</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的版本中，但在</span><span
+lang=EN-US>jstl-1.2.jar </span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>就不在需要了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_25" o:spid="_x0000_i1144" type="#_x0000_t75" style='width:475.5pt;
+ height:17.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image043.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=634 height=23
+src="03_SpringMvc.files/image043.png" v:shapes="图片_x0020_25"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>再重启，然后访问</span><span
+lang=EN-US><a href="http://localhost:8080/01_HelloWorld/helloWorld">http://localhost:8080/01_HelloWorld/helloWorld</a>
+</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>，后台报错，还是缺包</span></p>
+
+<p class=MsoNormal><span lang=EN-US>jstl</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>。</span><span
+lang=EN-US>jsp</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>用到的与</span><span
+lang=EN-US>standard.jar</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>结合使用</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_27" o:spid="_x0000_i1143" type="#_x0000_t75" style='width:444.75pt;
+ height:18.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image045.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=593 height=25
+src="03_SpringMvc.files/image045.png" v:shapes="图片_x0020_27"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_28" o:spid="_x0000_i1142" type="#_x0000_t75" style='width:250.5pt;
+ height:294pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image047.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=334 height=392
+src="03_SpringMvc.files/image047.png" v:shapes="图片_x0020_28"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>注意哈，</span><span
+lang=EN-US>WEB-INF</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>目录下的文件是不能直接通过浏览器访问的，即不能直接访问</span><span
+lang=EN-US><a href="http://localhost:8080/01_HelloWorld/helloWorld.jsp">http://localhost:8080/01_HelloWorld/helloWorld.jsp</a>
+</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>，只能通过服务器程序内部访问</span><span lang=EN-US>WEB-INF</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>。</span> </p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_29" o:spid="_x0000_i1141" type="#_x0000_t75" style='width:278.25pt;
+ height:126pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image049.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=371 height=168
+src="03_SpringMvc.files/image049.png" v:shapes="图片_x0020_29"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>故使用</span><span
+lang=EN-US>index.html</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>来转换，然</span><span
+lang=EN-US>SpringMvc</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>来跳转到对应的</span><span
+lang=EN-US>jsp</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>整理一下整个过程：</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>用户访问</span><span
+lang=EN-US><a href="http://localhost:8080/01_HelloWorld/">http://localhost:8080/01_HelloWorld/</a>
+</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>，其实就是去到了</span><span lang=EN-US>index.html</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>（默认的根目录就是访问</span><span lang=EN-US>index.html</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_34" o:spid="_x0000_i1140" type="#_x0000_t75" style='width:258.75pt;
+ height:100.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image050.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=345 height=134
+src="03_SpringMvc.files/image050.png" v:shapes="图片_x0020_34"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>index.html</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>代码</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_33" o:spid="_x0000_i1139" type="#_x0000_t75" style='width:512.25pt;
+ height:169.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image051.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=683 height=226
+src="03_SpringMvc.files/image051.png" v:shapes="图片_x0020_33"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>如图点击“问候”，</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_32" o:spid="_x0000_i1138" type="#_x0000_t75" style='width:261.75pt;
+ height:101.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image053.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=349 height=135
+src="03_SpringMvc.files/image053.png" v:shapes="图片_x0020_32"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>根据</span><span
+lang=EN-US>index.html</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，就会发起</span><span
+lang=EN-US>helloWorld.do</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的请求。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_35" o:spid="_x0000_i1137" type="#_x0000_t75" style='width:525.75pt;
+ height:174pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image051.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=701 height=232
+src="03_SpringMvc.files/image053.png" v:shapes="图片_x0020_35"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>相当于直接访问了</span><span
+lang=EN-US><a href="http://localhost:8080/01_HelloWorld/helloWorld.do">http://localhost:8080/01_HelloWorld/helloWorld.do</a>
+</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>由于</span><span
+lang=EN-US>web.xml</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>配置了</span><span
+lang=EN-US>SpringMvc</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的中央处理器</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#D9E8F7;background:black;mso-highlight:black;mso-font-kerning:
+0pt'>DispatcherServlet</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，故满足</span> <span
+lang=EN-US style='color:red'>*.do</span><span lang=EN-US> </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>的请求就会给</span><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:#D9E8F7;background:black;
+mso-highlight:black;mso-font-kerning:0pt'>DispatcherServlet</span><span
+lang=EN-US> </span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_30" o:spid="_x0000_i1136" type="#_x0000_t75" style='width:566.25pt;
+ height:194.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image055.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=755 height=259
+src="03_SpringMvc.files/image055.png" v:shapes="图片_x0020_30"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>然后</span><span
+lang=EN-US>Spring</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>根据</span><span
+lang=EN-US>spring-mvc.xml</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>配置文件，对</span><i><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#17C6A3;background:black;mso-highlight:black;mso-font-kerning:
+0pt'>com.jluzh.controller</span></i><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>包下的类的注解进行扫描</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_38" o:spid="_x0000_i1135" type="#_x0000_t75" style='width:558.75pt;
+ height:171.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image057.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=745 height=229
+src="03_SpringMvc.files/image057.png" v:shapes="图片_x0020_38"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>就扫描到了</span><b><span
+lang=EN-US>HelloWorldController</span></b><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，请求也就给了他，继续给到</span><b><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#1EB540;background:darkcyan;mso-highlight:darkcyan;mso-font-kerning:
+0pt'>helloWorld</span></b><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>方法进行处理请求，如下图。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_39" o:spid="_x0000_i1134" type="#_x0000_t75" style='width:558pt;
+ height:2in;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image059.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=744 height=192
+src="03_SpringMvc.files/image059.png" v:shapes="图片_x0020_39"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>上面处理完请求就会返回</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#17C6A3;background:black;mso-highlight:black;mso-font-kerning:
+0pt'>helloWorld</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，然后根据</span><span
+lang=EN-US>spring-mvc.xml</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的配置，如下，</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_40" o:spid="_x0000_i1133" type="#_x0000_t75" style='width:554.25pt;
+ height:174.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image061.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=739 height=233
+src="03_SpringMvc.files/image061.png" v:shapes="图片_x0020_40"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>其实最终返回给客户端是</span><span
+lang=EN-US> /WEB-INF/<u>jsp</u>/helloWorld.jsp </span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>动态页面的内容。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_41" o:spid="_x0000_i1132" type="#_x0000_t75" style='width:530.25pt;
+ height:150.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image063.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=707 height=201
+src="03_SpringMvc.files/image063.png" v:shapes="图片_x0020_41"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>然后通过</span><span
+lang=EN-US>jstl</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>标签语言获取到了后台返回</span><span
+lang=EN-US>msg</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的值，展示出来给前端，如下图</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_31" o:spid="_x0000_i1131" type="#_x0000_t75" style='width:321.75pt;
+ height:103.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image065.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=429 height=138
+src="03_SpringMvc.files/image065.png" v:shapes="图片_x0020_31"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt;mso-bidi-font-size:11.0pt;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>返回</span></b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:14.0pt;
+mso-bidi-font-size:11.0pt'>html</span></b><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt;mso-bidi-font-size:11.0pt;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>页面的例子：</span></b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:14.0pt;
+mso-bidi-font-size:11.0pt'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_7" o:spid="_x0000_i1130" type="#_x0000_t75" style='width:291.75pt;
+ height:99.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image066.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=389 height=133
+src="03_SpringMvc.files/image066.png" v:shapes="图片_x0020_7"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_20" o:spid="_x0000_i1129" type="#_x0000_t75" style='width:295.5pt;
+ height:89.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image067.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=394 height=119
+src="03_SpringMvc.files/image067.png" v:shapes="图片_x0020_20"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>web.xml</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>不变</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_21" o:spid="_x0000_i1128" type="#_x0000_t75" style='width:534pt;
+ height:249pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image068.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=712 height=332
+src="03_SpringMvc.files/image068.png" v:shapes="图片_x0020_21"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>返回页面改为</span><span
+lang=EN-US>html</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_26" o:spid="_x0000_i1127" type="#_x0000_t75" style='width:506.25pt;
+ height:246pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image070.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=675 height=328
+src="03_SpringMvc.files/image070.png" v:shapes="图片_x0020_26"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>Controller</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_36" o:spid="_x0000_i1126" type="#_x0000_t75" style='width:556.5pt;
+ height:183.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image072.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=742 height=245
+src="03_SpringMvc.files/image072.png" v:shapes="图片_x0020_36"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>返回到这里</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_37" o:spid="_x0000_i1125" type="#_x0000_t75" style='width:384pt;
+ height:195.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image074.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=512 height=261
+src="03_SpringMvc.files/image074.png" v:shapes="图片_x0020_37"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>最终的显示</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_43" o:spid="_x0000_i1124" type="#_x0000_t75" style='width:353.25pt;
+ height:96.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image075.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=471 height=129
+src="03_SpringMvc.files/image075.png" v:shapes="图片_x0020_43"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>第二章</span><span
+lang=EN-US> SpringMVC </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>控制器</span></h2>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h4><span lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>、</span><span
+lang=EN-US>@RequestMapping </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>请求映射</span>
+</h4>
+
+<h4><span lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>、</span><span
+lang=EN-US>@RequestParam </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>请求参数</span>
+</h4>
+
+<h4><span lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>、</span><span
+lang=EN-US>ModelAndView </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>返回模型和视图</span>
+</h4>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_44" o:spid="_x0000_i1123" type="#_x0000_t75" style='width:282.75pt;
+ height:84pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image076.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=377 height=112
+src="03_SpringMvc.files/image076.png" v:shapes="图片_x0020_44"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>访问项目根目录即访问</span><span
+lang=EN-US>index.html</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>（在</span><span
+lang=EN-US>web.xml</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>有配置）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_45" o:spid="_x0000_i1122" type="#_x0000_t75" style='width:320.25pt;
+ height:176.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image077.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=427 height=235
+src="03_SpringMvc.files/image077.png" v:shapes="图片_x0020_45"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h5><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>学生列表</span></h5>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击“学生列表”之后，会请求</span><span
+lang=EN-US> student/list.do </span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，根据</span><span
+lang=EN-US>web.xml</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>配置的，会把请求给</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#D9E8F7;background:black;mso-highlight:black;mso-font-kerning:
+0pt'>DispatcherServlet</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>分配</span><span
+lang=EN-US>spring-mvc.xml</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>注解扫描到的</span><span
+lang=EN-US>Controller</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，根据</span><span
+lang=EN-US>StudentController</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>类的</span><b><i><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#FF9393;background:black;mso-highlight:black;mso-font-kerning:
+0pt'>@RequestMapping</span></i></b><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:#F9FAF4;background:
+black;mso-highlight:black;mso-font-kerning:0pt'>(</span><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:#17C6A3;background:black;mso-highlight:black;mso-font-kerning:0pt'>&quot;/student&quot;</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#F9FAF4;background:black;mso-highlight:black;mso-font-kerning:
+0pt'>)</span><span lang=EN-US> </span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>可以</span><span
+lang=EN-US> /student… </span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的请求给</span><span
+lang=EN-US>StudentController</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>类，继续根据</span><b><i><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#FF9393;background:black;mso-highlight:black;mso-font-kerning:
+0pt'>@RequestMapping</span></i></b><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:#F9FAF4;background:
+black;mso-highlight:black;mso-font-kerning:0pt'>(</span><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:#17C6A3;background:black;mso-highlight:black;mso-font-kerning:0pt'>&quot;/list&quot;</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#F9FAF4;background:black;mso-highlight:black;mso-font-kerning:
+0pt'>)</span><span lang=EN-US> </span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>可以准确把</span><span
+lang=EN-US> /student/list.do </span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>请求给</span><span
+lang=EN-US>StudentController</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>类的</span><span
+lang=EN-US>list</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>方法去处理。</span><span
+lang=EN-US>StudentController</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>代码如下：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_48" o:spid="_x0000_i1121" type="#_x0000_t75" style='width:517.5pt;
+ height:328.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image078.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=690 height=438
+src="03_SpringMvc.files/image078.png" v:shapes="图片_x0020_48"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:10.5pt;text-indent:-10.5pt;mso-char-indent-count:
+-1.0'><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>然后根据</span><span lang=EN-US>spring-mvc.xml</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>的</span><i><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:#17C6A3;background:black;
+mso-highlight:black;mso-font-kerning:0pt'>viewResolver</span></i><span
+lang=EN-US> </span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>配置，</span><span
+lang=EN-US>list</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>请求就会返回</span> <span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>项目根目录</span><span lang=EN-US>+ student/list.jsp.</span></p>
+
+<p class=MsoNormal style='margin-left:10.5pt;text-indent:-10.5pt;mso-char-indent-count:
+-1.0'><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_53" o:spid="_x0000_i1120" type="#_x0000_t75" style='width:240.75pt;
+ height:264.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image080.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=321 height=353
+src="03_SpringMvc.files/image080.png" v:shapes="图片_x0020_53"><![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:10.5pt;text-indent:-10.5pt;mso-char-indent-count:
+-1.0'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:10.5pt;text-indent:-10.5pt;mso-char-indent-count:
+-1.0'><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_49" o:spid="_x0000_i1119" type="#_x0000_t75" style='width:521.25pt;
+ height:341.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image082.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=695 height=455
+src="03_SpringMvc.files/image082.png" v:shapes="图片_x0020_49"><![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:10.5pt;text-indent:-10.5pt;mso-char-indent-count:
+-1.0'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:10.5pt;text-indent:-10.5pt;mso-char-indent-count:
+-1.0'><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>就可以在浏览器看到如下图：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_46" o:spid="_x0000_i1118" type="#_x0000_t75" style='width:5in;
+ height:186pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image084.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=480 height=248
+src="03_SpringMvc.files/image084.png" v:shapes="图片_x0020_46"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h5><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>添加学生</span></h5>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击“添加学生”，就会请求</span><span
+lang=EN-US>preSave.do</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，前缀是与上一个页面是一样的，这里使用了相对链接，绝对链接是</span><span
+lang=EN-US><a href="http://localhost:8080/03_SpringMvc_2_1-3/student/preSave.do">http://localhost:8080/03_SpringMvc_2_1-3/student/preSave.do</a>
+</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>，然后请求就会进入</span><span lang=EN-US>StudentController</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>的</span><span lang=EN-US>preSave</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>方法，如下（注意这里没有携带</span><span
+lang=EN-US>id</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>这个参数）：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_52" o:spid="_x0000_i1117" type="#_x0000_t75" style='width:564.75pt;
+ height:372.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image085.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=753 height=497
+src="03_SpringMvc.files/image085.png" v:shapes="图片_x0020_52"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>返回</span><span
+lang=EN-US>student/add.jsp</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_54" o:spid="_x0000_i1116" type="#_x0000_t75" style='width:494.25pt;
+ height:181.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image087.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=659 height=242
+src="03_SpringMvc.files/image087.png" v:shapes="图片_x0020_54"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>就可以在浏览器看到这个效果了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_50" o:spid="_x0000_i1115" type="#_x0000_t75" style='width:387.75pt;
+ height:154.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image089.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=517 height=206
+src="03_SpringMvc.files/image089.png" v:shapes="图片_x0020_50"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h5><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>更新学生</span></h5>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>返回“学生列表”，如图</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_55" o:spid="_x0000_i1114" type="#_x0000_t75" style='width:355.5pt;
+ height:178.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image090.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=474 height=238
+src="03_SpringMvc.files/image090.png" v:shapes="图片_x0020_55"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击“更新”，下图是</span><span
+lang=EN-US>list.jsp</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>页面可以看到是携带</span><span
+lang=EN-US>id</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>参数的请求：</span><span
+lang=EN-US>preSave.do?id=xxxx</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_56" o:spid="_x0000_i1113" type="#_x0000_t75" style='width:552pt;
+ height:353.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image091.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=736 height=471
+src="03_SpringMvc.files/image091.png" v:shapes="图片_x0020_56"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>请求到了</span><span
+lang=EN-US>preSave</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>方法</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_57" o:spid="_x0000_i1112" type="#_x0000_t75" style='width:564pt;
+ height:376.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image093.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=752 height=502
+src="03_SpringMvc.files/image093.png" v:shapes="图片_x0020_57"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>update.jsp</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_58" o:spid="_x0000_i1111" type="#_x0000_t75" style='width:468.75pt;
+ height:186pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image095.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=625 height=248
+src="03_SpringMvc.files/image095.png" v:shapes="图片_x0020_58"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>浏览器可以看到</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_59" o:spid="_x0000_i1110" type="#_x0000_t75" style='width:402.75pt;
+ height:155.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image097.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=537 height=207
+src="03_SpringMvc.files/image097.png" v:shapes="图片_x0020_59"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h4><span lang=EN-US>4</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>、</span><span
+lang=EN-US>SpringMVC </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>对象属性自动封装</span>
+</h4>
+
+<h4><span lang=EN-US>5</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>、</span><span
+lang=EN-US>SpringMVC <span style='mso-spacerun:yes'> </span>POST </span><span
+style='font-family:宋体;mso-ascii-font-family:"Calibri Light";mso-ascii-theme-font:
+major-latin;mso-fareast-theme-font:major-fareast;mso-hansi-font-family:"Calibri Light";
+mso-hansi-theme-font:major-latin'>请求乱码解决</span> </h4>
+
+<h4><span lang=EN-US>6</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>、</span><span
+lang=EN-US>Controller </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>内部转发和重定向</span>
+</h4>
+
+<h5><span lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>）添加</span></h5>
+
+<h6><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>演示</span></h6>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>环境不变接着上面的</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_47" o:spid="_x0000_i1109" type="#_x0000_t75" style='width:280.5pt;
+ height:96pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image098.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=374 height=128
+src="03_SpringMvc.files/image098.png" v:shapes="图片_x0020_47"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_51" o:spid="_x0000_i1108" type="#_x0000_t75" style='width:354pt;
+ height:177.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image099.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=472 height=237
+src="03_SpringMvc.files/image099.png" v:shapes="图片_x0020_51"><![endif]></span></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:shape id="图片_x0020_60" o:spid="_x0000_s1026"
+ type="#_x0000_t75" style='position:absolute;left:0;text-align:left;
+ margin-left:0;margin-top:0;width:380.2pt;height:139.5pt;z-index:251658240;
+ visibility:visible;mso-wrap-style:square;mso-wrap-distance-left:9pt;
+ mso-wrap-distance-top:0;mso-wrap-distance-right:9pt;
+ mso-wrap-distance-bottom:0;mso-position-horizontal:left;
+ mso-position-horizontal-relative:text;mso-position-vertical:top;
+ mso-position-vertical-relative:text'>
+ <v:imagedata src="03_SpringMvc.files/image100.png" o:title=""/>
+ <w:wrap type="square"/>
+</v:shape><![endif]--><![if !vml]><img width=507 height=186
+src="03_SpringMvc.files/image100.png" align=left hspace=12 v:shapes="图片_x0020_60"><![endif]><span
+lang=EN-US><br clear=all style='mso-special-character:line-break'>
+</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>发现</span><span
+lang=EN-US>post</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>请求中文会乱码的，后面解决</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_61" o:spid="_x0000_i1107" type="#_x0000_t75" style='width:371.25pt;
+ height:201pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image101.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=495 height=268
+src="03_SpringMvc.files/image101.png" v:shapes="图片_x0020_61"><![endif]></span></p>
+
+<h6><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>代码实现</span></h6>
+
+<p class=MsoNormal><span lang=EN-US>add.jsp</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_74" o:spid="_x0000_i1106" type="#_x0000_t75" style='width:471pt;
+ height:169.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image102.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=628 height=226
+src="03_SpringMvc.files/image102.png" v:shapes="图片_x0020_74"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>StudentController.java </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>添加一个保存添加学生数据的请求接口</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_73" o:spid="_x0000_i1105" type="#_x0000_t75" style='width:504.75pt;
+ height:112.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image104.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=673 height=150
+src="03_SpringMvc.files/image104.png" v:shapes="图片_x0020_73"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h5><span lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>）解决</span><span
+lang=EN-US>post</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>请求中文乱码</span></h5>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>只能解决</span><span
+lang=EN-US>post</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>请求的乱码问题，</span><span
+lang=EN-US>get</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>请求的不行。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>在</span><span
+lang=EN-US>web.xml</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的</span><b><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#03A8D8;background:darkgray;mso-highlight:darkgray;mso-font-kerning:
+0pt'>web-app</span></b><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>标签内添加字符过滤器，即可（去网上找的，官网没找到）。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_65" o:spid="_x0000_i1104" type="#_x0000_t75" style='width:447.75pt;
+ height:143.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image106.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=597 height=191
+src="03_SpringMvc.files/image106.png" v:shapes="图片_x0020_65"><![endif]></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt;
+mso-char-indent-count:2.0;mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#626262;mso-font-kerning:0pt'>&lt;!-- </span><span
+style='font-size:12.0pt;font-family:宋体;mso-ascii-font-family:Consolas;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#626262;mso-font-kerning:0pt'>字符过滤器，提交中文参数就不会乱码了</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#626262;mso-font-kerning:0pt'> --&gt;</span><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:#D9E8F7;mso-font-kerning:0pt'><span
+style='mso-tab-count:1'>   </span></span><span lang=EN-US style='font-size:
+11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;</span><b><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>filter</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#D9E8F7;
+mso-font-kerning:0pt'><span style='mso-tab-count:2'>       </span></span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>filter-name</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:red;mso-font-kerning:0pt'>encodingFilter</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;/</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>filter-name</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#D9E8F7;
+mso-font-kerning:0pt'><span style='mso-tab-count:2'>       </span></span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>filter-class</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:red;mso-font-kerning:0pt'>org.springframework.web.filter.CharacterEncodingFilter</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;/</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>filter-class</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#D9E8F7;
+mso-font-kerning:0pt'><span style='mso-tab-count:2'>       </span></span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>init-param</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#D9E8F7;
+mso-font-kerning:0pt'><span style='mso-tab-count:3'>           </span></span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>param-name</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:red;mso-font-kerning:0pt'>encoding</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;/</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>param-name</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#D9E8F7;
+mso-font-kerning:0pt'><span style='mso-tab-count:3'>           </span></span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>param-value</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:red;mso-font-kerning:0pt'>UTF-8</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;/</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>param-value</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#D9E8F7;
+mso-font-kerning:0pt'><span style='mso-tab-count:2'>       </span></span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;/</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>init-param</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#D9E8F7;
+mso-font-kerning:0pt'><span style='mso-tab-count:1'>    </span></span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;/</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>filter</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#D9E8F7;
+mso-font-kerning:0pt'><span style='mso-tab-count:1'>    </span></span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>filter-mapping</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#D9E8F7;
+mso-font-kerning:0pt'><span style='mso-tab-count:2'>       </span></span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>filter-name</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:red;mso-font-kerning:0pt'>encodingFilter</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;/</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>filter-name</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#D9E8F7;
+mso-font-kerning:0pt'><span style='mso-tab-count:2'>       </span></span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>url-pattern</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:red;mso-font-kerning:0pt'>*.do</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;/</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>url-pattern</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:#D9E8F7;
+mso-font-kerning:0pt'><span style='mso-tab-count:1'>    </span></span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&lt;/</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#03A8D8;mso-font-kerning:0pt'>filter-mapping</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#0080FF;mso-font-kerning:0pt'>&gt;</span><span
+lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:11.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>演示</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_62" o:spid="_x0000_i1103" type="#_x0000_t75" style='width:348pt;
+ height:183.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image108.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=464 height=245
+src="03_SpringMvc.files/image108.png" v:shapes="图片_x0020_62"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_63" o:spid="_x0000_i1102" type="#_x0000_t75" style='width:388.5pt;
+ height:138pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image109.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=518 height=184
+src="03_SpringMvc.files/image109.png" v:shapes="图片_x0020_63"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>中文就不乱码了</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_64" o:spid="_x0000_i1101" type="#_x0000_t75" style='width:371.25pt;
+ height:192.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image110.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=495 height=257
+src="03_SpringMvc.files/image110.png" v:shapes="图片_x0020_64"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h5><span lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>）更改</span></h5>
+
+<h6><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>演示</span></h6>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_66" o:spid="_x0000_i1100" type="#_x0000_t75" style='width:349.5pt;
+ height:180pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image111.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=466 height=240
+src="03_SpringMvc.files/image111.png" v:shapes="图片_x0020_66"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_67" o:spid="_x0000_i1099" type="#_x0000_t75" style='width:415.5pt;
+ height:147.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image112.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=197
+src="03_SpringMvc.files/image112.png" v:shapes="图片_x0020_67"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_68" o:spid="_x0000_i1098" type="#_x0000_t75" style='width:388.5pt;
+ height:186.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image113.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=518 height=249
+src="03_SpringMvc.files/image113.png" v:shapes="图片_x0020_68"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h6><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>代码实现</span></h6>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>update.jsp</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_76" o:spid="_x0000_i1097" type="#_x0000_t75" style='width:461.25pt;
+ height:179.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image114.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=615 height=239
+src="03_SpringMvc.files/image114.png" v:shapes="图片_x0020_76"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>StudentController.java </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>修改之前的</span><span lang=EN-US>save</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>方法，与“添加”的保存公用。不传递的参数会被自动封装为默认值，</span><span
+lang=EN-US>int</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>默认为</span><span
+lang=EN-US>0</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_75" o:spid="_x0000_i1096" type="#_x0000_t75" style='width:468.75pt;
+ height:182.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image116.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=625 height=243
+src="03_SpringMvc.files/image116.png" v:shapes="图片_x0020_75"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h5><span lang=EN-US>4</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>）删除</span></h5>
+
+<h6><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>演示</span></h6>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_71" o:spid="_x0000_i1095" type="#_x0000_t75" style='width:373.5pt;
+ height:240.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image118.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=498 height=321
+src="03_SpringMvc.files/image118.png" v:shapes="图片_x0020_71"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_72" o:spid="_x0000_i1094" type="#_x0000_t75" style='width:409.5pt;
+ height:189pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image119.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=546 height=252
+src="03_SpringMvc.files/image119.png" v:shapes="图片_x0020_72"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h6><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>代码实现</span></h6>
+
+<p class=MsoNormal><span lang=EN-US>list.jsp</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>添加一个删除的链接</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_77" o:spid="_x0000_i1093" type="#_x0000_t75" style='width:564.75pt;
+ height:374.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image120.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=753 height=499
+src="03_SpringMvc.files/image120.png" v:shapes="图片_x0020_77"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>StudentController.java </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>删除成功之后，使用</span><span lang=EN-US>forward</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>转发到</span><span lang=EN-US>list.do</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_79" o:spid="_x0000_i1092" type="#_x0000_t75" style='width:539.25pt;
+ height:90.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image122.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=719 height=121
+src="03_SpringMvc.files/image122.png" v:shapes="图片_x0020_79"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h4><span lang=EN-US>7</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>、</span><span
+lang=EN-US>SpringMvc </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>对</span><span
+lang=EN-US> ServletAPI </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>（</span><span
+lang=EN-US style='color:red'>javax.servlet</span><span style='font-family:宋体;
+mso-ascii-font-family:"Calibri Light";mso-ascii-theme-font:major-latin;
+mso-fareast-theme-font:major-fareast;mso-hansi-font-family:"Calibri Light";
+mso-hansi-theme-font:major-latin'>）的支持</span> </h4>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>比如</span><u><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#80F2F6;background:black;mso-highlight:black;mso-font-kerning:
+0pt'>HttpServletRequest</span></u><u><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:#D9E8F7;background:
+black;mso-highlight:black;mso-font-kerning:0pt'> </span></u><u><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#79ABFF;background:black;mso-highlight:black;mso-font-kerning:
+0pt'>request</span></u><u><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:lavender;background:black;
+mso-highlight:black;mso-font-kerning:0pt'>,</span></u><u><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:#D9E8F7;background:black;mso-highlight:black;mso-font-kerning:0pt'> </span></u><u><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#80F2F6;background:black;mso-highlight:black;mso-font-kerning:
+0pt'>HttpServletResponse</span></u><u><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:#D9E8F7;background:
+black;mso-highlight:black;mso-font-kerning:0pt'> </span></u><u><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#79ABFF;background:black;mso-highlight:black;mso-font-kerning:
+0pt'>response</span></u><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>等</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h5><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>演示</span></h5>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_80" o:spid="_x0000_i1091" type="#_x0000_t75" style='width:321pt;
+ height:130.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image124.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=428 height=174
+src="03_SpringMvc.files/image124.png" v:shapes="图片_x0020_80"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_81" o:spid="_x0000_i1090" type="#_x0000_t75" style='width:328.5pt;
+ height:128.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image125.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=438 height=171
+src="03_SpringMvc.files/image125.png" v:shapes="图片_x0020_81"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_82" o:spid="_x0000_i1089" type="#_x0000_t75" style='width:323.25pt;
+ height:105.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image126.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=431 height=141
+src="03_SpringMvc.files/image126.png" v:shapes="图片_x0020_82"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h5><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>代码实现</span></h5>
+
+<p class=MsoNormal><span lang=EN-US>web.xml</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>只需要一个中央处理器</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_83" o:spid="_x0000_i1088" type="#_x0000_t75" style='width:563.25pt;
+ height:441pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image127.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=751 height=588
+src="03_SpringMvc.files/image127.png" v:shapes="图片_x0020_83"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>spring-mvc.xml </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>只需要设置包的扫描</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_84" o:spid="_x0000_i1087" type="#_x0000_t75" style='width:513.75pt;
+ height:224.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image129.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=685 height=299
+src="03_SpringMvc.files/image129.png" v:shapes="图片_x0020_84"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>login.jsp </span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>表单直接提交到</span><span
+lang=EN-US>user/login.do</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_85" o:spid="_x0000_i1086" type="#_x0000_t75" style='width:479.25pt;
+ height:179.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image131.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=639 height=239
+src="03_SpringMvc.files/image131.png" v:shapes="图片_x0020_85"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>UserController.java </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>简单使用</span><span lang=EN-US>request</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、</span><span
+lang=EN-US>response</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>获取或者设置一些东西</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_86" o:spid="_x0000_i1085" type="#_x0000_t75" style='width:486pt;
+ height:368.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image133.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=648 height=491
+src="03_SpringMvc.files/image133.png" v:shapes="图片_x0020_86"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>User.java</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>实体类</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_87" o:spid="_x0000_i1084" type="#_x0000_t75" style='width:365.25pt;
+ height:363pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image135.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=487 height=484
+src="03_SpringMvc.files/image135.png" v:shapes="图片_x0020_87"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>main.jsp </span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>获取</span><span
+lang=EN-US>session</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的数据</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_88" o:spid="_x0000_i1083" type="#_x0000_t75" style='width:470.25pt;
+ height:127.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image137.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=627 height=170
+src="03_SpringMvc.files/image137.png" v:shapes="图片_x0020_88"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>目录结构：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_70" o:spid="_x0000_i1082" type="#_x0000_t75" style='width:231.75pt;
+ height:280.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image139.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=309 height=374
+src="03_SpringMvc.files/image139.png" v:shapes="图片_x0020_70"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>额外提一下：</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>以下方式都是支持的</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_89" o:spid="_x0000_i1081" type="#_x0000_t75" style='width:469.5pt;
+ height:476.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image141.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=626 height=635
+src="03_SpringMvc.files/image141.png" v:shapes="图片_x0020_89"><![endif]></span></p>
+
+<h4><span lang=EN-US>8</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>、</span><span
+lang=EN-US>SpringMvc </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>对</span><span
+lang=EN-US> Json </span><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>的支持？</span></h4>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h5><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>不常用</span><span lang=EN-US>SpringMvc</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>的</span><span lang=EN-US>json</span></h5>
+
+<h6><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>演示</span></h6>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>接着上小节的环境</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_139" o:spid="_x0000_i1080" type="#_x0000_t75" style='width:369.75pt;
+ height:96pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image143.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=493 height=128
+src="03_SpringMvc.files/image143.png" v:shapes="图片_x0020_139"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_140" o:spid="_x0000_i1079" type="#_x0000_t75" style='width:389.25pt;
+ height:100.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image144.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=519 height=134
+src="03_SpringMvc.files/image144.png" v:shapes="图片_x0020_140"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h6><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>代码实现</span></h6>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_141" o:spid="_x0000_i1078" type="#_x0000_t75" style='width:246.75pt;
+ height:618.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image145.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=329 height=825
+src="03_SpringMvc.files/image145.png" v:shapes="图片_x0020_141"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>添加</span> <span
+lang=EN-US>mvc</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>标签支持、注解驱动</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>去</span><span
+lang=EN-US>docs</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>复制</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_90" o:spid="_x0000_i1077" type="#_x0000_t75" style='width:415.5pt;
+ height:357pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image147.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=476
+src="03_SpringMvc.files/image147.png" v:shapes="图片_x0020_90"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>粘贴如下</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_142" o:spid="_x0000_i1076" type="#_x0000_t75" style='width:492.75pt;
+ height:270pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image149.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=657 height=360
+src="03_SpringMvc.files/image149.png" v:shapes="图片_x0020_142"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_143" o:spid="_x0000_i1075" type="#_x0000_t75" style='width:415.5pt;
+ height:166.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image151.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=222
+src="03_SpringMvc.files/image151.png" v:shapes="图片_x0020_143"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_144" o:spid="_x0000_i1074" type="#_x0000_t75" style='width:415.5pt;
+ height:150pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image153.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=200
+src="03_SpringMvc.files/image153.png" v:shapes="图片_x0020_144"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h5><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>常用原始的</span><span lang=EN-US>json</span></h5>
+
+<h6><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>演示</span></h6>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_69" o:spid="_x0000_i1073" type="#_x0000_t75" style='width:348.75pt;
+ height:138pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image155.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=465 height=184
+src="03_SpringMvc.files/image155.png" v:shapes="图片_x0020_69"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h6><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>代码实现</span></h6>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_130" o:spid="_x0000_i1072" type="#_x0000_t75" style='width:268.5pt;
+ height:617.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image156.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=358 height=823
+src="03_SpringMvc.files/image156.png" v:shapes="图片_x0020_130"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_132" o:spid="_x0000_i1071" type="#_x0000_t75" style='width:531.75pt;
+ height:396pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image158.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=709 height=528
+src="03_SpringMvc.files/image158.png" v:shapes="图片_x0020_132"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_131" o:spid="_x0000_i1070" type="#_x0000_t75" style='width:482.25pt;
+ height:216.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image160.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=643 height=289
+src="03_SpringMvc.files/image160.png" v:shapes="图片_x0020_131"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_133" o:spid="_x0000_i1069" type="#_x0000_t75" style='width:447pt;
+ height:236.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image162.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=596 height=315
+src="03_SpringMvc.files/image162.png" v:shapes="图片_x0020_133"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_135" o:spid="_x0000_i1068" type="#_x0000_t75" style='width:450.75pt;
+ height:176.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image164.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=601 height=235
+src="03_SpringMvc.files/image164.png" v:shapes="图片_x0020_135"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_136" o:spid="_x0000_i1067" type="#_x0000_t75" style='width:448.5pt;
+ height:127.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image166.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=598 height=170
+src="03_SpringMvc.files/image166.png" v:shapes="图片_x0020_136"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_137" o:spid="_x0000_i1066" type="#_x0000_t75" style='width:457.5pt;
+ height:354.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image168.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=610 height=473
+src="03_SpringMvc.files/image168.png" v:shapes="图片_x0020_137"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_138" o:spid="_x0000_i1065" type="#_x0000_t75" style='width:464.25pt;
+ height:443.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image170.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=619 height=591
+src="03_SpringMvc.files/image170.png" v:shapes="图片_x0020_138"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>第三章</span><span
+lang=EN-US> Rest </span><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>风格的资源</span><span
+lang=EN-US> URL</span></h2>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h4><span lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>、</span><a
+name="OLE_LINK1"><span lang=EN-US>Restful </span></a><span style='mso-bookmark:
+OLE_LINK1'></span><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>风格的资源</span><span
+lang=EN-US> URL </span><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>简介</span>
+</h4>
+
+<p class=MsoNormal><span lang=EN-US>url</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>后面没有后缀的就是</span><span
+lang=EN-US>Restful</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>风格的，</span><span
+lang=EN-US>eg</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>：</span><span
+lang=EN-US><a href="http://localhost:8080/06_SpringMvc_3/article/list">http://localhost:8080/06_SpringMvc_3/article/list</a>
+</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>；而一般都是</span><span lang=EN-US><a
+href="http://localhost:8080/06_SpringMvc_3/article/list.do">http://localhost:8080/06_SpringMvc_3/article/list.do</a>
+</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>或者</span><span lang=EN-US>.html .jsp</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>等。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>但是使用</span><span
+lang=EN-US>Restful</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>风格虽然看起来比较优雅，但是是要付出代价的，需要对静态资源做额外的处理。</span></p>
+
+<h4><span lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>、</span><span
+lang=EN-US>SpringMvc </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>对</span><span
+lang=EN-US> Rest </span><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>风格的支持</span>
+</h4>
+
+<h4><span lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>、</span><span
+lang=EN-US>@PathVariable </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>获取</span><span
+lang=EN-US> Url </span><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>变量</span>
+</h4>
+
+<h5><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>演示</span></h5>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_78" o:spid="_x0000_i1064" type="#_x0000_t75" style='width:331.5pt;
+ height:125.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image172.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=442 height=167
+src="03_SpringMvc.files/image172.png" v:shapes="图片_x0020_78"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_91" o:spid="_x0000_i1063" type="#_x0000_t75" style='width:359.25pt;
+ height:203.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image173.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=479 height=271
+src="03_SpringMvc.files/image173.png" v:shapes="图片_x0020_91"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_92" o:spid="_x0000_i1062" type="#_x0000_t75" style='width:347.25pt;
+ height:105pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image174.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=463 height=140
+src="03_SpringMvc.files/image174.png" v:shapes="图片_x0020_92"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_93" o:spid="_x0000_i1061" type="#_x0000_t75" style='width:331.5pt;
+ height:205.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image175.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=442 height=274
+src="03_SpringMvc.files/image175.png" v:shapes="图片_x0020_93"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_94" o:spid="_x0000_i1060" type="#_x0000_t75" style='width:349.5pt;
+ height:97.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image176.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=466 height=130
+src="03_SpringMvc.files/image176.png" v:shapes="图片_x0020_94"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h5><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>代码实现</span></h5>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_95" o:spid="_x0000_i1059" type="#_x0000_t75" style='width:210pt;
+ height:254.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image177.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=280 height=339
+src="03_SpringMvc.files/image177.png" v:shapes="图片_x0020_95"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>拦截所有请求</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_96" o:spid="_x0000_i1058" type="#_x0000_t75" style='width:558.75pt;
+ height:306pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image179.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=745 height=408
+src="03_SpringMvc.files/image179.png" v:shapes="图片_x0020_96"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>正常配置</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_97" o:spid="_x0000_i1057" type="#_x0000_t75" style='width:526.5pt;
+ height:292.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image181.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=702 height=390
+src="03_SpringMvc.files/image181.png" v:shapes="图片_x0020_97"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_98" o:spid="_x0000_i1056" type="#_x0000_t75" style='width:501pt;
+ height:312pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image183.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=668 height=416
+src="03_SpringMvc.files/image183.png" v:shapes="图片_x0020_98"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_101" o:spid="_x0000_i1055" type="#_x0000_t75" style='width:486pt;
+ height:141.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image185.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=648 height=189
+src="03_SpringMvc.files/image185.png" v:shapes="图片_x0020_101"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_99" o:spid="_x0000_i1054" type="#_x0000_t75" style='width:530.25pt;
+ height:426pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image187.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=707 height=568
+src="03_SpringMvc.files/image187.png" v:shapes="图片_x0020_99"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_100" o:spid="_x0000_i1053" type="#_x0000_t75" style='width:415.5pt;
+ height:186pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image189.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=248
+src="03_SpringMvc.files/image189.png" v:shapes="图片_x0020_100"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>现在看起来没有什么代价，但是如果有静态资源（比如</span><span
+lang=EN-US>.jpg .js .css</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>等）的访问就有问题了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h4><span lang=EN-US>4</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>、</span><span
+lang=EN-US>Restful</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>风格下对静态资源的特殊处理</span></h4>
+
+<h5><span lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>）代价</span></h5>
+
+<h6><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>演示</span></h6>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>访问图片时，前端报错，后端提示没有</span><span
+lang=EN-US>.png</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>请求</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_102" o:spid="_x0000_i1052" type="#_x0000_t75" style='width:561pt;
+ height:285.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image191.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=748 height=381
+src="03_SpringMvc.files/image191.png" v:shapes="图片_x0020_102"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h6><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>代码实现</span></h6>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>与上面的环境一样，只是改了两个地方</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_103" o:spid="_x0000_i1051" type="#_x0000_t75" style='width:555.75pt;
+ height:245.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image193.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=741 height=327
+src="03_SpringMvc.files/image193.png" v:shapes="图片_x0020_103"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h6><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>问题分析</span></h6>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>如下图，在</span><span
+lang=EN-US>web.xml</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>配置的</span><span
+lang=EN-US>SpringMvc</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>中央处理是拦截所有的请求的，包括静态资源</span><span
+lang=EN-US>.png</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的请求，拦截到的请求直接转发给对应的</span><span
+lang=EN-US>Controller</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，我们的</span><span
+lang=EN-US>Controller</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>当然没有</span><span
+lang=EN-US>.png</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的请求啦，故就会</span><span
+style='font-size:12.0pt;font-family:宋体;mso-ascii-font-family:Consolas;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#E11E46;mso-font-kerning:0pt'>警告</span><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:#E11E46;mso-font-kerning:0pt'>: No mapping found for HTTP request with
+URI [<b style='mso-bidi-font-weight:normal'>/06_SpringMvc_3/images/nginx.png</b>]
+in DispatcherServlet with name 'spring-mvc'</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，而前端因为访问不到图片，就报错。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_104" o:spid="_x0000_i1050" type="#_x0000_t75" style='width:558.75pt;
+ height:309pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image195.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=745 height=412
+src="03_SpringMvc.files/image195.png" v:shapes="图片_x0020_104"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h5><span lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>）解决</span></h5>
+
+<h6><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>演示</span></h6>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_105" o:spid="_x0000_i1049" type="#_x0000_t75" style='width:363pt;
+ height:191.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image197.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=484 height=255
+src="03_SpringMvc.files/image197.png" v:shapes="图片_x0020_105"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h6><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>代码实现</span></h6>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>环境同上，稍作修改，注意</span><span
+lang=EN-US>mapping</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、</span><span
+lang=EN-US>location</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的关系别搞错了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_106" o:spid="_x0000_i1048" type="#_x0000_t75" style='width:564.75pt;
+ height:303pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image198.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=753 height=404
+src="03_SpringMvc.files/image198.png" v:shapes="图片_x0020_106"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>访问的静态资源变一下即可</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_107" o:spid="_x0000_i1047" type="#_x0000_t75" style='width:481.5pt;
+ height:292.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image200.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=642 height=390
+src="03_SpringMvc.files/image200.png" v:shapes="图片_x0020_107"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>css</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>等这些静态资源也一样，就不做演示了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>第四章</span><span
+lang=EN-US> SpringMvc </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>文件上传</span></h2>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h4><span lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>、</span><span
+lang=EN-US>SpringMvc </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>单文件上传</span>
+</h4>
+
+<h5><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>演示</span></h5>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_108" o:spid="_x0000_i1046" type="#_x0000_t75" style='width:282.75pt;
+ height:123pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image202.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=377 height=164
+src="03_SpringMvc.files/image202.png" v:shapes="图片_x0020_108"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_109" o:spid="_x0000_i1045" type="#_x0000_t75" style='width:300.75pt;
+ height:135.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image203.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=401 height=181
+src="03_SpringMvc.files/image203.png" v:shapes="图片_x0020_109"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_111" o:spid="_x0000_i1044" type="#_x0000_t75" style='width:334.5pt;
+ height:80.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image204.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=446 height=107
+src="03_SpringMvc.files/image204.png" v:shapes="图片_x0020_111"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h5><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>代码实现</span></h5>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_114" o:spid="_x0000_i1043" type="#_x0000_t75" style='width:249pt;
+ height:279pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image205.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=332 height=372
+src="03_SpringMvc.files/image205.png" v:shapes="图片_x0020_114"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_112" o:spid="_x0000_i1042" type="#_x0000_t75" style='width:559.5pt;
+ height:267.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image206.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=746 height=357
+src="03_SpringMvc.files/image206.png" v:shapes="图片_x0020_112"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_113" o:spid="_x0000_i1041" type="#_x0000_t75" style='width:445.5pt;
+ height:287.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image208.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=594 height=383
+src="03_SpringMvc.files/image208.png" v:shapes="图片_x0020_113"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_115" o:spid="_x0000_i1040" type="#_x0000_t75" style='width:439.5pt;
+ height:5in;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image210.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=586 height=480
+src="03_SpringMvc.files/image210.png" v:shapes="图片_x0020_115"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_116" o:spid="_x0000_i1039" type="#_x0000_t75" style='width:567pt;
+ height:211.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image212.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=282
+src="03_SpringMvc.files/image212.png" v:shapes="图片_x0020_116"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name="OLE_LINK2"><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>然后访问，添加文件，点击“上传文件”</span></a></p>
+
+<p class=MsoNormal><span style='mso-bookmark:OLE_LINK2'><span lang=EN-US
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_117" o:spid="_x0000_i1038"
+ type="#_x0000_t75" style='width:300.75pt;height:135.75pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image203.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=401 height=181
+src="03_SpringMvc.files/image203.png" v:shapes="图片_x0020_117"><![endif]></span></span></p>
+
+<span style='mso-bookmark:OLE_LINK2'></span>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>报错了：</span><span
+lang=EN-US style='color:red'>HTTP Status 400 - Required MultipartFile parameter
+'file' is not present<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>那是因为没有配置文件上传的</span><span
+lang=EN-US>bean</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，去文档找到配置复制</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_110" o:spid="_x0000_i1037" type="#_x0000_t75" style='width:507pt;
+ height:186pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image214.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=676 height=248
+src="03_SpringMvc.files/image214.png" v:shapes="图片_x0020_110"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>修改如下</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_118" o:spid="_x0000_i1036" type="#_x0000_t75" style='width:563.25pt;
+ height:387pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image216.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=751 height=516
+src="03_SpringMvc.files/image216.png" v:shapes="图片_x0020_118"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>再访问，添加文件，点击“上传文件”</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_119" o:spid="_x0000_i1035" type="#_x0000_t75" style='width:300.75pt;
+ height:135.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image203.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=401 height=181
+src="03_SpringMvc.files/image203.png" v:shapes="图片_x0020_119"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>报错：</span><span
+lang=EN-US>java.lang.NoClassDefFoundError:
+org/apache/commons/fileupload/FileItemFactory</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，</span><span
+lang=EN-US><span style='mso-tab-count:1'>   </span></span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>缺包</span><span lang=EN-US>commons-fileupload</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>，去网上下载</span><a name="OLE_LINK5"></a><a name="OLE_LINK4"></a><a
+name="OLE_LINK3"><span style='mso-bookmark:OLE_LINK4'><span style='mso-bookmark:
+OLE_LINK5'><span lang=EN-US>commons-fileuploa</span></span></span></a><span
+lang=EN-US>d-x.x.x.jar</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>回来添加进来。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>再访问，添加文件，点击“上传文件”</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_120" o:spid="_x0000_i1034" type="#_x0000_t75" style='width:300.75pt;
+ height:135.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image203.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=401 height=181
+src="03_SpringMvc.files/image203.png" v:shapes="图片_x0020_120"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>报错：</span><span
+lang=EN-US>java.lang.NoClassDefFoundError: org/apache/commons/io/IOUtils</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>，仍然缺包，下载</span><span lang=EN-US>commons-io-x.x.jar</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>然后再访问就好了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>查看文件</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>项目部署目录：</span></p>
+
+<p class=MsoNormal><span lang=EN-US>E:\Code\SpringMVC\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\07_SpringMvc_4\</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_123" o:spid="_x0000_i1033" type="#_x0000_t75" style='width:415.5pt;
+ height:126pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image218.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=168
+src="03_SpringMvc.files/image218.png" v:shapes="图片_x0020_123"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>但是源码目录是没有所上传的文件的：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_124" o:spid="_x0000_i1032" type="#_x0000_t75" style='width:415.5pt;
+ height:98.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image220.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=131
+src="03_SpringMvc.files/image220.png" v:shapes="图片_x0020_124"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>这现象在正式环境是不会出现的，只是开发环境中</span><span
+lang=EN-US>Tomcat</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>是以插件的形式安装在</span><span
+lang=EN-US>eclipse</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>上，故部署路径在</span><span
+lang=EN-US>Tomcat</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，则上传的路径也在</span><span
+lang=EN-US>Tomcat</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，故不会在源码项目内。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h4><span lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>、</span><span
+lang=EN-US>SpringMvc </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>多文件上传</span></h4>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h5><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>演示</span></h5>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_121" o:spid="_x0000_i1031" type="#_x0000_t75" style='width:328.5pt;
+ height:151.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image222.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=438 height=202
+src="03_SpringMvc.files/image222.png" v:shapes="图片_x0020_121"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_122" o:spid="_x0000_i1030" type="#_x0000_t75" style='width:330pt;
+ height:154.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image223.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=440 height=206
+src="03_SpringMvc.files/image223.png" v:shapes="图片_x0020_122"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_125" o:spid="_x0000_i1029" type="#_x0000_t75" style='width:339.75pt;
+ height:93pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image224.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=453 height=124
+src="03_SpringMvc.files/image224.png" v:shapes="图片_x0020_125"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>E:\Code\SpringMVC\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\07_SpringMvc_4\</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_126" o:spid="_x0000_i1028" type="#_x0000_t75" style='width:415.5pt;
+ height:121.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image225.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=162
+src="03_SpringMvc.files/image225.png" v:shapes="图片_x0020_126"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h5><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>代码实现</span></h5>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_127" o:spid="_x0000_i1027" type="#_x0000_t75" style='width:222.75pt;
+ height:252pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image227.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=297 height=336
+src="03_SpringMvc.files/image227.png" v:shapes="图片_x0020_127"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_128" o:spid="_x0000_i1026" type="#_x0000_t75" style='width:415.5pt;
+ height:374.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image229.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=499
+src="03_SpringMvc.files/image229.png" v:shapes="图片_x0020_128"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_129" o:spid="_x0000_i1025" type="#_x0000_t75" style='width:561pt;
+ height:330.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="03_SpringMvc.files/image231.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=748 height=441
+src="03_SpringMvc.files/image231.png" v:shapes="图片_x0020_129"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>第五章</span> <span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>整合</span><span
+lang=EN-US>Spring</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、</span><span
+lang=EN-US>Mybatis</span></h1>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>请转移到</span><span
+lang=EN-US>Mybatis</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>教程去</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
