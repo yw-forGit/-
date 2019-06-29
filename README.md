@@ -20,37 +20,30 @@ https://note.ywforwhat.com/Java/07_JavaOperateExcel.html
 
 
 后续。。。 <br>
-https://note.ywforwhat.com/Java/02_Java高并发编程.html
-
-https://note.ywforwhat.com/Java/08_微信公众号开发.html
-
-
-https://note.ywforwhat.com/Java/09_微信授权登录.html
-
-
-https://note.ywforwhat.com/Java/10_JMS之ActiveMQ.html
-
-
+Java高并发编程 https://note.ywforwhat.com/Java/02_JavaHighConcurrencyProgramming.html
+<br><br>
+微信公众号开发 https://note.ywforwhat.com/Java/08_WechatOfficialAccountsDevelop.html
+<br><br>
+微信授权登录 https://note.ywforwhat.com/Java/09_WechatAuthorizeLogin.html
+<br><br>
+https://note.ywforwhat.com/Java/10_JMStoActiveMQ.html
+<br><br>
 https://note.ywforwhat.com/Java/11_RabbitMq.html
-
-
+<br><br>
 https://note.ywforwhat.com/Java/12_SpringBoot.html
-
-
-https://note.ywforwhat.com/Java/13_SpringBoot微信点餐系统.html
-
-
+<br><br>
+SpringBoot微信点餐系统 https://note.ywforwhat.com/Java/13_SpringBootWechatOrderSystem.html
+<br><br>
 https://note.ywforwhat.com/Java/14_Docker.html
-
-
-https://note.ywforwhat.com/Java/15_SpringCloud微服务实战.html
-
-https://note.ywforwhat.com/Java/16_JVM调优.html
-
+<br><br>
+SpringCloud微服务实战 https://note.ywforwhat.com/Java/15_SpringCloudMicroservicePractice.html
+<br><br>
+JVM调优 https://note.ywforwhat.com/Java/16_JVMOptimization.html
 
 # Python <br>
-Flask是用Python写web。 <br>
-https://note.ywforwhat.com/Python/02_Python_for_Flask.html
+<a style="font-size:24px;" href="https://note.ywforwhat.com/Python/02_PythonforFlask.html">Flask </a>
+是用Python写web。 
+<br><br>
 
 
 
@@ -58,30 +51,44 @@ https://note.ywforwhat.com/Python/02_Python_for_Flask.html
 
 
 # BigData <br>
+https://note.ywforwhat.com/BigData/01_Hadoop.html
+<br><br>
+
+https://note.ywforwhat.com/BigData/02_Hive.html
+<br><br>
+
+https://note.ywforwhat.com/BigData/03_Spark.html
+<br><br>
+
+https://note.ywforwhat.com/BigData/04_Zookeeper.html
+<br><br>
+
+https://note.ywforwhat.com/BigData/05_HBase.html
+<br><br>
+
+https://note.ywforwhat.com/BigData/06_Kafka.html
+<br><br>
 
 
 # Other <br>
-svn版本管理 <br>
-https://note.ywforwhat.com/Other/01_SVN版本管理搭建.html
+<a style="font-size:24px;" href="https://note.ywforwhat.com/Other/01_SVN.html">SVN版本管理搭建 </a>
+<br><br>
 
+<a style="font-size:24px;" href="https://note.ywforwhat.com/Other/02_Git.html">Git版本管理 </a>
+<br><br>
 
-Git版本管理 <br>
-https://note.ywforwhat.com/Other/02_Git版本管理.html
+<a style="font-size:24px;" href="https://note.ywforwhat.com/Other/03_GitLab.html">GitLab私有远程仓库搭建 </a>
+GitLab私有仓库，通过Git管理代码 
+<br><br>
 
+<a style="font-size:24px;" href="https://note.ywforwhat.com/Other/06_MongoDB.html">MongoDB </a>
+是基于分布式文件存储的数据库，介于关系数据库和非关系数据库之间。 
+<br><br>
 
-GitLab私有仓库，通过Git管理代码 <br>
-https://note.ywforwhat.com/Other/03_GitLab私有远程仓库搭建.html
+<a style="font-size:24px;" href="https://note.ywforwhat.com/Other/07_CentOS7InstallMySQL.html">CentOS7安装MySQL </a> 
+<br><br>
 
-
-MongoDB是基于分布式文件存储的数据库，介于关系数据库和非关系数据库之间。 <br>
-https://note.ywforwhat.com/Other/06_MongoDB.html
-
-
-CentOS7安装MySQL <br>
-https://note.ywforwhat.com/Other/07_CentOS7安装MySQL.html
-
-
-后续。。。 <br>
+后续。。。 <br><br>
 https://note.ywforwhat.com/Other/05_Nginx.html
 
 
