@@ -1,0 +1,2889 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="08_WechatOfficialAccountsDevelop.files/filelist.xml">
+<link rel=Edit-Time-Data
+href="08_WechatOfficialAccountsDevelop.files/editdata.mso">
+<link rel=themeData href="08_WechatOfficialAccountsDevelop.files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="08_WechatOfficialAccountsDevelop.files/colorschememapping.xml">
+
+<link href="./css/treemenu.css" rel="stylesheet" type="text/css">
+<!-- GitHub Pages只认./js/xxx这种相对定位，不认js/xxx这种 -->
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script src="./js/test.js"></script>
+<script src="./js/treemenu.js"></script>
+
+</head>
+
+<body lang=ZH-CN link="#0563C1" vlink="#954F72" style='tab-interval:21.0pt;
+text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<div id="noScroll" class="divcss5-right">
+	<ul id="menuId" class="tree">
+	</ul>
+	<div style="font-size: 10px; color: #161FB0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ （Ctrl+滚动鼠标可缩放页面）</div>
+</div> 
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:14.0pt;mso-bidi-font-size:11.0pt;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>微信公众号开发</span></b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:14.0pt;
+mso-bidi-font-size:11.0pt'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>参考：慕课网</span><span lang=EN-US> - </span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>初识</span><span
+lang=EN-US>Java</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>微信公众号开发</span></p>
+
+<p class=MsoNormal align=right style='text-align:right'><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>参考：慕课网</span><span
+lang=EN-US> - Java</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>微信公众号开发进阶</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>制作日期：</span><span lang=EN-US>2018-7-13 - 2018-7-18</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>制作人：小桅</span><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;mso-fareast-font-family:宋体'>[yw_forgit@163.com]</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、开启开发者模式</span></h1>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>新建</span><span
+lang=EN-US>web</span><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>项目</span></h2>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="图片_x0020_1" o:spid="_x0000_i1194" type="#_x0000_t75"
+ style='width:415.5pt;height:486pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image001.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=648
+src="08_WechatOfficialAccountsDevelop.files/image001.png" v:shapes="图片_x0020_1"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>改一下发布到根目录，改不改都没事，如果改这个之前发布过，就要重新</span><span
+lang=EN-US>Clean</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>一下</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_4" o:spid="_x0000_i1193" type="#_x0000_t75" style='width:415.5pt;
+ height:308.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image003.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=411
+src="08_WechatOfficialAccountsDevelop.files/image003.png" v:shapes="图片_x0020_4"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><a name="_大概流程"></a><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>大概流程</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>看看微信神经的公众平台技术文档（注意：微信公众平台是公众号开发，微信开放平台是</span><span
+lang=EN-US>APP</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>等非微信的第三方应用开发），点击进入</span>
+<span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>接入指南</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_3" o:spid="_x0000_i1192" type="#_x0000_t75" style='width:414.75pt;
+ height:276pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image005.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=553 height=368
+src="08_WechatOfficialAccountsDevelop.files/image005.png" v:shapes="图片_x0020_3"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>如下图，简单来说就是我们写一个接口</span><span
+lang=EN-US>(</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>使用</span><span
+lang=EN-US>get</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>方式</span><span
+lang=EN-US>)</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，该接口在图</span><span
+lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击提交的时候，微信会调用</span><span
+lang=EN-US>(get</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>方式</span><span
+lang=EN-US>)</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>。接口要求获取图</span><span
+lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>里面的四个参数，额外还有一个我们自定义的</span><span
+lang=EN-US style='mso-bidi-font-size:10.5pt;font-family:"Helvetica",sans-serif;
+color:#333333;background:white'>token</span><span style='mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:Helvetica;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Helvetica;mso-bidi-font-family:Helvetica;
+color:#333333;background:white'>，这个几个东西按照如图</span><span lang=EN-US
+style='mso-bidi-font-size:10.5pt;font-family:"Helvetica",sans-serif;color:#333333;
+background:white'>1</span><span style='mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-ascii-font-family:Helvetica;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Helvetica;mso-bidi-font-family:Helvetica;color:#333333;
+background:white'>的三个步骤走，然后得到结果与</span><span lang=EN-US style='mso-bidi-font-size:
+10.5pt;font-family:"Helvetica",sans-serif;color:#333333;background:white'>signature</span><span
+style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:Helvetica;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Helvetica;
+mso-bidi-font-family:Helvetica;color:#333333;background:white'>比较，结果一致则表示这个请求是微信发起的，然后我们的接口原样返回</span><span
+lang=EN-US style='mso-bidi-font-size:10.5pt;font-family:"Helvetica",sans-serif;
+color:#333333;background:white'>echostr</span><span style='mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:Helvetica;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Helvetica;mso-bidi-font-family:Helvetica;
+color:#333333;background:white'>即可，微信就会校验（图</span><span lang=EN-US
+style='mso-bidi-font-size:10.5pt;font-family:"Helvetica",sans-serif;color:#333333;
+background:white'>2</span><span style='mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-ascii-font-family:Helvetica;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Helvetica;mso-bidi-font-family:Helvetica;color:#333333;
+background:white'>的</span><span lang=EN-US style='mso-bidi-font-size:10.5pt;
+font-family:"Helvetica",sans-serif;color:#333333;background:white'>token</span><span
+style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:Helvetica;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Helvetica;
+mso-bidi-font-family:Helvetica;color:#333333;background:white'>要与接口自定义的</span><span
+lang=EN-US style='mso-bidi-font-size:10.5pt;font-family:"Helvetica",sans-serif;
+color:#333333;background:white'>token</span><span style='mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:Helvetica;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Helvetica;mso-bidi-font-family:Helvetica;
+color:#333333;background:white'>一致）成功就会让我们成为开发者。</span><span lang=EN-US
+style='mso-bidi-font-size:10.5pt;font-family:"Helvetica",sans-serif;color:#333333;
+background:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:Helvetica;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Helvetica;mso-bidi-font-family:Helvetica;color:#333333;
+background:white'>图</span><span lang=EN-US style='mso-bidi-font-size:10.5pt;
+font-family:"Helvetica",sans-serif;color:#333333;background:white'>1</span><span
+style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:Helvetica;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Helvetica;
+mso-bidi-font-family:Helvetica;color:#333333;background:white'>：</span><span
+lang=EN-US style='mso-bidi-font-size:10.5pt;font-family:"Helvetica",sans-serif;
+color:#333333;background:white'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_14" o:spid="_x0000_i1191" type="#_x0000_t75" style='width:561.75pt;
+ height:185.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image007.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=749 height=247
+src="08_WechatOfficialAccountsDevelop.files/image007.png" v:shapes="图片_x0020_14"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>图二：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_28" o:spid="_x0000_i1190" type="#_x0000_t75" style='width:508.5pt;
+ height:450.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image009.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=678 height=601
+src="08_WechatOfficialAccountsDevelop.files/image009.png" v:shapes="图片_x0020_28"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>代码</span></h2>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_13" o:spid="_x0000_i1189" type="#_x0000_t75" style='width:240.75pt;
+ height:248.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image011.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=321 height=331
+src="08_WechatOfficialAccountsDevelop.files/image011.png" v:shapes="图片_x0020_13"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_17" o:spid="_x0000_i1188" type="#_x0000_t75" style='width:551.25pt;
+ height:225pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image012.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=735 height=300
+src="08_WechatOfficialAccountsDevelop.files/image012.png" v:shapes="图片_x0020_17"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_16" o:spid="_x0000_i1187" type="#_x0000_t75" style='width:565.5pt;
+ height:366pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image014.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=754 height=488
+src="08_WechatOfficialAccountsDevelop.files/image014.png" v:shapes="图片_x0020_16"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_18" o:spid="_x0000_i1186" type="#_x0000_t75" style='width:564.75pt;
+ height:561pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image016.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=753 height=748
+src="08_WechatOfficialAccountsDevelop.files/image016.png" v:shapes="图片_x0020_18"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>启动</span><span
+lang=EN-US>web</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，然后本地看下，下图，说明接口通了，只是没有参数，报错而已</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_6" o:spid="_x0000_i1185" type="#_x0000_t75" style='width:415.5pt;
+ height:345pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image018.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=554 height=460
+src="08_WechatOfficialAccountsDevelop.files/image018.png" v:shapes="图片_x0020_6"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>由于微信屏蔽了</span><span
+lang=EN-US>ngrok</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，故我用了公司的外网服务器，配合</span><span
+lang=EN-US>Nginx</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>转发，就可以通过外网访问我本地的服务器了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Nginx</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_30" o:spid="_x0000_i1184" type="#_x0000_t75" style='width:413.25pt;
+ height:372pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image020.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=551 height=496
+src="08_WechatOfficialAccountsDevelop.files/image020.png" v:shapes="图片_x0020_30"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>通过域名访问，如下图，也是通的</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_32" o:spid="_x0000_i1183" type="#_x0000_t75" style='width:369.75pt;
+ height:297pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image022.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=493 height=396
+src="08_WechatOfficialAccountsDevelop.files/image022.png" v:shapes="图片_x0020_32"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>然后回到微信公众平台（要登录，并且管理员扫描确认的），填写外网的</span><span
+lang=EN-US>url</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，就是上面说的</span><span
+lang=EN-US>.do</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>接口、自定义的</span><span
+lang=EN-US>token</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>（与我们定义的接口的</span><span
+lang=EN-US>token</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>要一致）等。需要注意的是，必须要写好这个接口，再提交才能成为开发者，否则点击提交会有各种提示。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_31" o:spid="_x0000_i1182" type="#_x0000_t75" style='width:442.5pt;
+ height:390.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image024.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=590 height=521
+src="08_WechatOfficialAccountsDevelop.files/image024.png" v:shapes="图片_x0020_31"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击</span> <span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>提交。然后成功了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_54" o:spid="_x0000_i1181" type="#_x0000_t75" style='width:567pt;
+ height:268.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image026.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=756 height=358
+src="08_WechatOfficialAccountsDevelop.files/image026.png" v:shapes="图片_x0020_54"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>启用之后，自动回复、自定义菜单就会失效</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_10" o:spid="_x0000_i1180" type="#_x0000_t75" style='width:562.5pt;
+ height:200.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image028.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=750 height=267
+src="08_WechatOfficialAccountsDevelop.files/image028.png" v:shapes="图片_x0020_10"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>确定之后</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_11" o:spid="_x0000_i1179" type="#_x0000_t75" style='width:533.25pt;
+ height:170.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image030.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=711 height=227
+src="08_WechatOfficialAccountsDevelop.files/image030.png" v:shapes="图片_x0020_11"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_12" o:spid="_x0000_i1178" type="#_x0000_t75" style='width:563.25pt;
+ height:147pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image032.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=751 height=196
+src="08_WechatOfficialAccountsDevelop.files/image032.png" v:shapes="图片_x0020_12"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>尽管微信公众号的菜单还在，但是已经失效了，但是还有有其他方法配置的，再议。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、接收普通消息（文本消息）</span></h1>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>原理</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>比如图</span><span
+lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，当用户公众号输入界面发送“北京天气”，这条信息就会经过微信官方后台，然后再转发给我们的服务，转发给我们的就是</span><span
+lang=EN-US>xm</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的格式图</span><span
+lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，</span><span
+lang=EN-US>Content</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>就是“北京天气”这个内容，然后我们对用户的消息进行处理，然后就要返回数据给用户，同样要以</span><span
+lang=EN-US>xml</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的格式（只是</span><span
+lang=EN-US>ToUserName</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>与</span><span
+lang=EN-US>FromUserName</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>刚好相反了）返回去给微信官方后台，之后才会转发到用户端。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>图</span><span
+lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_2" o:spid="_x0000_i1177" type="#_x0000_t75" style='width:566.25pt;
+ height:315.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image034.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=755 height=421
+src="08_WechatOfficialAccountsDevelop.files/image034.png" v:shapes="图片_x0020_2"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>开发文档：当普通微信用户向公众账号发消息时，微信服务器将</span><span
+lang=EN-US style='color:red'>POST</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>消息的</span><span
+lang=EN-US>XML</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>数据包到<span
+style='color:red'>开发者填写的</span></span><span lang=EN-US style='color:red'>URL</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>上，就是请求到本示例的</span><span lang=EN-US>WeChatServlet</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>的</span><span lang=EN-US>doPost</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>方法上。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>图</span><span
+lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_20" o:spid="_x0000_i1176" type="#_x0000_t75" style='width:561.75pt;
+ height:351pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image036.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=749 height=468
+src="08_WechatOfficialAccountsDevelop.files/image036.png" v:shapes="图片_x0020_20"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>格式化一下</span><span
+lang=EN-US>xml</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，</span><span
+lang=EN-US>&lt; ![CDATA[…]]&gt;</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>这些东西不管，</span><span
+lang=EN-US>xml</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的转义而已，只要知道里面是</span><span
+lang=EN-US>ToUserName</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的值即可</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>图</span><span
+lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_21" o:spid="_x0000_i1175" type="#_x0000_t75" style='width:383.25pt;
+ height:117.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image038.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=511 height=157
+src="08_WechatOfficialAccountsDevelop.files/image038.png" v:shapes="图片_x0020_21"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>代码</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>接着上一个环境，现在只用</span><span
+lang=EN-US>post</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>请求</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_23" o:spid="_x0000_i1174" type="#_x0000_t75" style='width:276pt;
+ height:350.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image039.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=368 height=467
+src="08_WechatOfficialAccountsDevelop.files/image039.png" v:shapes="图片_x0020_23"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_24" o:spid="_x0000_i1173" type="#_x0000_t75" style='width:567pt;
+ height:654pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image040.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=756 height=872
+src="08_WechatOfficialAccountsDevelop.files/image040.png" v:shapes="图片_x0020_24"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_25" o:spid="_x0000_i1172" type="#_x0000_t75" style='width:567pt;
+ height:546.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image042.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=756 height=729
+src="08_WechatOfficialAccountsDevelop.files/image042.png" v:shapes="图片_x0020_25"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_26" o:spid="_x0000_i1171" type="#_x0000_t75" style='width:517.5pt;
+ height:813.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image044.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=690 height=1085
+src="08_WechatOfficialAccountsDevelop.files/image044.png" v:shapes="图片_x0020_26"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>测试</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>用户在公众号聊天界面输入：嗨，公众号小朋友</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>消息经过微信官方后台，再以</span><span
+lang=EN-US>xml</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的形式经过我们的后台，我们读取到数据处理之后，又以</span><span
+lang=EN-US>xml</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>形式返回给微信官方后台，微信官方后台再转发给用户，解析出我们给用返回的信息。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>下面是我们后台打印返回给微信官方后台的</span><span
+lang=EN-US>xml</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_5" o:spid="_x0000_i1170" type="#_x0000_t75" style='width:414pt;
+ height:162pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image045.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=552 height=216
+src="08_WechatOfficialAccountsDevelop.files/image045.png" v:shapes="图片_x0020_5"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>用户发送的消息和我们后台返回的消息</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_22" o:spid="_x0000_i1169" type="#_x0000_t75" style='width:312.75pt;
+ height:303.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image046.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=417 height=405
+src="08_WechatOfficialAccountsDevelop.files/image046.png" v:shapes="图片_x0020_22"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、接收事件推送</span></h1>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>接着上面的环境</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>开发文档看下</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_27" o:spid="_x0000_i1168" type="#_x0000_t75" style='width:567pt;
+ height:159.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image048.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=756 height=213
+src="08_WechatOfficialAccountsDevelop.files/image048.png" v:shapes="图片_x0020_27"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>这里只讲关注事件，还有关键词自动回复</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>（以前公司虽然也做过微信开发，但是经过这次从头到尾的开发，才对这些流程更加清晰）</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>关注</span><span
+lang=EN-US>/</span><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>取消关注事件</span></h2>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_29" o:spid="_x0000_i1167" type="#_x0000_t75" style='width:380.25pt;
+ height:111pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image050.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=507 height=148
+src="08_WechatOfficialAccountsDevelop.files/image050.png" v:shapes="图片_x0020_29"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>代码</span></h3>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_36" o:spid="_x0000_i1166" type="#_x0000_t75" style='width:566.25pt;
+ height:668.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image051.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=755 height=891
+src="08_WechatOfficialAccountsDevelop.files/image051.png" v:shapes="图片_x0020_36"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_37" o:spid="_x0000_i1165" type="#_x0000_t75" style='width:566.25pt;
+ height:546.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image053.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=755 height=729
+src="08_WechatOfficialAccountsDevelop.files/image053.png" v:shapes="图片_x0020_37"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>测试</span></h3>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_34" o:spid="_x0000_i1164" type="#_x0000_t75" style='width:243pt;
+ height:415.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image055.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=324 height=554
+src="08_WechatOfficialAccountsDevelop.files/image055.png" v:shapes="图片_x0020_34"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_33" o:spid="_x0000_i1163" type="#_x0000_t75" style='width:207pt;
+ height:313.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image056.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=276 height=418
+src="08_WechatOfficialAccountsDevelop.files/image056.png" v:shapes="图片_x0020_33"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_35" o:spid="_x0000_i1162" type="#_x0000_t75" style='width:444.75pt;
+ height:543pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image058.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=593 height=724
+src="08_WechatOfficialAccountsDevelop.files/image058.png" v:shapes="图片_x0020_35"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>4</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、百度应用引擎</span><span
+lang=EN-US>BAE</span></h1>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>把自己的应用部署到百度上去，可以直接外网访问了，但是收费的，但比你一直开着电脑耗的电费便宜（深圳地区）</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>5</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、申请测试账号</span></h1>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>个人订阅号的接口权限有限，比如素材管理接口都没有权限，如下图</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_38" o:spid="_x0000_i1161" type="#_x0000_t75" style='width:567pt;
+ height:240pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image060.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=756 height=320
+src="08_WechatOfficialAccountsDevelop.files/image060.png" v:shapes="图片_x0020_38"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>解决办法就是使用测试账号，选择</span>
+<span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>开发者工具</span> <span lang=EN-US>-- </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>公众平台测试账号</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_39" o:spid="_x0000_i1160" type="#_x0000_t75" style='width:567pt;
+ height:237pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image062.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=756 height=316
+src="08_WechatOfficialAccountsDevelop.files/image062.png" v:shapes="图片_x0020_39"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_40" o:spid="_x0000_i1159" type="#_x0000_t75" style='width:567pt;
+ height:336.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image064.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=756 height=449
+src="08_WechatOfficialAccountsDevelop.files/image064.png" v:shapes="图片_x0020_40"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>用手机微信扫描登录</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_41" o:spid="_x0000_i1158" type="#_x0000_t75" style='width:267pt;
+ height:277.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image065.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=356 height=370
+src="08_WechatOfficialAccountsDevelop.files/image065.png" v:shapes="图片_x0020_41"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>手机端确认</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_42" o:spid="_x0000_i1157" type="#_x0000_t75" style='width:288.75pt;
+ height:393pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image067.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=385 height=524
+src="08_WechatOfficialAccountsDevelop.files/image067.png" v:shapes="图片_x0020_42"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>就可以看到测试号的管理页面，需要注意的是，这是一个新的账号，故要重新验证接口配置，与前面的</span>
+<span lang=EN-US><a href="#_大概流程"><span lang=EN-US style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'><span
+lang=EN-US>接入指南</span></span></a> </span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>差不多，只需要</span><span
+lang=EN-US>URL</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、</span><span
+lang=EN-US>Token</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>即可，密钥不用。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_43" o:spid="_x0000_i1156" type="#_x0000_t75" style='width:522pt;
+ height:621pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image068.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=696 height=828
+src="08_WechatOfficialAccountsDevelop.files/image068.png" v:shapes="图片_x0020_43"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>测试号有很多高级接口，是可以使用的，下图随便截图了一下</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_44" o:spid="_x0000_i1155" type="#_x0000_t75" style='width:551.25pt;
+ height:210.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image070.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=735 height=281
+src="08_WechatOfficialAccountsDevelop.files/image070.png" v:shapes="图片_x0020_44"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>URL</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>那个接口要通哦，跑起前面的项目，提交接口配置信息，如图。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_71" o:spid="_x0000_i1154" type="#_x0000_t75" style='width:555pt;
+ height:138pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image071.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=740 height=184
+src="08_WechatOfficialAccountsDevelop.files/image071.png" v:shapes="图片_x0020_71"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>对比一下之前的，是一样的，只是现在用了测试号，下图是本节之前说的订阅号。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_77" o:spid="_x0000_i1153" type="#_x0000_t75" style='width:567pt;
+ height:157.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image073.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=210
+src="08_WechatOfficialAccountsDevelop.files/image073.png" v:shapes="图片_x0020_77"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>扫码关注一下（测试号管理界面）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_47" o:spid="_x0000_i1152" type="#_x0000_t75" style='width:545.25pt;
+ height:198.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image075.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=727 height=265
+src="08_WechatOfficialAccountsDevelop.files/image075.png" v:shapes="图片_x0020_47"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>手机端点击关注</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_48" o:spid="_x0000_i1151" type="#_x0000_t75" style='width:244.5pt;
+ height:234.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image076.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=326 height=313
+src="08_WechatOfficialAccountsDevelop.files/image076.png" v:shapes="图片_x0020_48"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>关注成功之后</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_49" o:spid="_x0000_i1150" type="#_x0000_t75" style='width:246.75pt;
+ height:220.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image077.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=329 height=294
+src="08_WechatOfficialAccountsDevelop.files/image077.png" v:shapes="图片_x0020_49"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>看下用户（测试号管理界面）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_50" o:spid="_x0000_i1149" type="#_x0000_t75" style='width:541.5pt;
+ height:167.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image078.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=722 height=223
+src="08_WechatOfficialAccountsDevelop.files/image078.png" v:shapes="图片_x0020_50"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>6</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、消息回复接口</span></h1>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>背景环境认识</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>多图文在公众号界面的显示</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_52" o:spid="_x0000_i1148" type="#_x0000_t75" style='width:326.25pt;
+ height:297.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image079.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=435 height=397
+src="08_WechatOfficialAccountsDevelop.files/image079.png" v:shapes="图片_x0020_52"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>单图文在公众号界面的显示</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_53" o:spid="_x0000_i1147" type="#_x0000_t75" style='width:325.5pt;
+ height:233.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image080.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=434 height=311
+src="08_WechatOfficialAccountsDevelop.files/image080.png" v:shapes="图片_x0020_53"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>开发文档</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>公众号开发文档，我们选择图文消息</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_51" o:spid="_x0000_i1146" type="#_x0000_t75" style='width:567pt;
+ height:315.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image081.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=421
+src="08_WechatOfficialAccountsDevelop.files/image081.png" v:shapes="图片_x0020_51"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>如下图，</span><span
+lang=EN-US>xml</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的格式就是我们要组装的图文消息格式</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_55" o:spid="_x0000_i1145" type="#_x0000_t75" style='width:567pt;
+ height:262.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image083.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=350
+src="08_WechatOfficialAccountsDevelop.files/image083.png" v:shapes="图片_x0020_55"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>格式化一下</span><span
+lang=EN-US>xml</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_56" o:spid="_x0000_i1144" type="#_x0000_t75" style='width:567pt;
+ height:306pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image085.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=408
+src="08_WechatOfficialAccountsDevelop.files/image085.png" v:shapes="图片_x0020_56"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>代码</span></h2>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_61" o:spid="_x0000_i1143" type="#_x0000_t75" style='width:270pt;
+ height:334.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image086.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=360 height=446
+src="08_WechatOfficialAccountsDevelop.files/image086.png" v:shapes="图片_x0020_61"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_62" o:spid="_x0000_i1142" type="#_x0000_t75" style='width:567pt;
+ height:535.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image087.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=714
+src="08_WechatOfficialAccountsDevelop.files/image087.png" v:shapes="图片_x0020_62"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_63" o:spid="_x0000_i1141" type="#_x0000_t75" style='width:507.75pt;
+ height:813.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image089.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=677 height=1085
+src="08_WechatOfficialAccountsDevelop.files/image089.png" v:shapes="图片_x0020_63"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>左边</span><span
+lang=EN-US>NewsMsg</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>对应着右边的</span><span
+lang=EN-US>xml</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的紫色框部分</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_64" o:spid="_x0000_i1140" type="#_x0000_t75" style='width:279.75pt;
+ height:193.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image091.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=373 height=258
+src="08_WechatOfficialAccountsDevelop.files/image091.png" v:shapes="图片_x0020_64"><![endif]><!--[if gte vml 1]><v:shape
+ id="图片_x0020_65" o:spid="_x0000_i1139" type="#_x0000_t75" style='width:284.25pt;
+ height:192pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image093.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=379 height=256
+src="08_WechatOfficialAccountsDevelop.files/image093.png" v:shapes="图片_x0020_65"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>左边</span><span
+lang=EN-US>News</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>对应着右边的</span><span
+lang=EN-US>xml</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的紫色框部分</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_66" o:spid="_x0000_i1138" type="#_x0000_t75" style='width:282pt;
+ height:2in;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image095.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=376 height=192
+src="08_WechatOfficialAccountsDevelop.files/image095.png" v:shapes="图片_x0020_66"><![endif]><!--[if gte vml 1]><v:shape
+ id="图片_x0020_67" o:spid="_x0000_i1137" type="#_x0000_t75" style='width:278.25pt;
+ height:183.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image097.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=371 height=245
+src="08_WechatOfficialAccountsDevelop.files/image097.png" v:shapes="图片_x0020_67"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>测试</span></h2>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>跑起项目，公众号界面回复</span><span
+lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，日志</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_57" o:spid="_x0000_i1136" type="#_x0000_t75" style='width:468pt;
+ height:310.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image099.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=624 height=414
+src="08_WechatOfficialAccountsDevelop.files/image099.png" v:shapes="图片_x0020_57"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>等待一会，图片加载可能会比较慢</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_58" o:spid="_x0000_i1135" type="#_x0000_t75" style='width:4in;
+ height:428.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image100.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=384 height=571
+src="08_WechatOfficialAccountsDevelop.files/image100.png" v:shapes="图片_x0020_58"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击</span> <span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>图文</span><span lang=EN-US>1</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>标题</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_59" o:spid="_x0000_i1134" type="#_x0000_t75" style='width:291.75pt;
+ height:249pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image101.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=389 height=332
+src="08_WechatOfficialAccountsDevelop.files/image101.png" v:shapes="图片_x0020_59"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击</span> <span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>图文</span><span lang=EN-US>2</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>标题</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_60" o:spid="_x0000_i1133" type="#_x0000_t75" style='width:289.5pt;
+ height:327.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image102.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=386 height=437
+src="08_WechatOfficialAccountsDevelop.files/image102.png" v:shapes="图片_x0020_60"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>7</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、素材管理接口</span></h1>
+
+<h2><span lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>）获取</span><span
+lang=EN-US>access_token</span></h2>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>文档</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>获取素材等一些在微信服务器上的资源（也可以是我们上传到微信服务器的），需要先获取</span><span
+lang=EN-US>access_token</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，通过这个</span><span
+lang=EN-US>token</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>来获取资源，注意，</span><span
+lang=EN-US>token</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>每天只能获取</span><span
+lang=EN-US>2000</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>次。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_68" o:spid="_x0000_i1132" type="#_x0000_t75" style='width:567pt;
+ height:418.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image103.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=558
+src="08_WechatOfficialAccountsDevelop.files/image103.png" v:shapes="图片_x0020_68"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>由于素材获取是高级接口，而订阅号没有权限，故使用测试号来开发</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_69" o:spid="_x0000_i1131" type="#_x0000_t75" style='width:396.75pt;
+ height:150.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image105.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=529 height=201
+src="08_WechatOfficialAccountsDevelop.files/image105.png" v:shapes="图片_x0020_69"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>代码</span></h3>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_72" o:spid="_x0000_i1130" type="#_x0000_t75" style='width:304.5pt;
+ height:666pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image106.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=406 height=888
+src="08_WechatOfficialAccountsDevelop.files/image106.png" v:shapes="图片_x0020_72"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_73" o:spid="_x0000_i1129" type="#_x0000_t75" style='width:528pt;
+ height:325.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image107.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=704 height=434
+src="08_WechatOfficialAccountsDevelop.files/image107.png" v:shapes="图片_x0020_73"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_74" o:spid="_x0000_i1128" type="#_x0000_t75" style='width:411.75pt;
+ height:391.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image108.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=522
+src="08_WechatOfficialAccountsDevelop.files/image108.png" v:shapes="图片_x0020_74"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>使用测试账号的</span><span
+lang=EN-US>APPID</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>和</span><span
+lang=EN-US>APPSECRET</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_87" o:spid="_x0000_i1127" type="#_x0000_t75" style='width:482.25pt;
+ height:242.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image109.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=643 height=323
+src="08_WechatOfficialAccountsDevelop.files/image109.png" v:shapes="图片_x0020_87"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_76" o:spid="_x0000_i1126" type="#_x0000_t75" style='width:511.5pt;
+ height:560.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image111.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=682 height=747
+src="08_WechatOfficialAccountsDevelop.files/image111.png" v:shapes="图片_x0020_76"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>测试</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>执行测试，可以看到获取到了</span><span
+lang=EN-US>token</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，还有过期时间</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_70" o:spid="_x0000_i1125" type="#_x0000_t75" style='width:566.25pt;
+ height:48.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image113.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=755 height=65
+src="08_WechatOfficialAccountsDevelop.files/image113.png" v:shapes="图片_x0020_70"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>）被动回复用户消息（图片消息）</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>接着上面的环境</span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>文档</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>新增临时素材</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_79" o:spid="_x0000_i1124" type="#_x0000_t75" style='width:567pt;
+ height:471pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image115.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=628
+src="08_WechatOfficialAccountsDevelop.files/image115.png" v:shapes="图片_x0020_79"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>获取到</span><span
+lang=EN-US>media_id</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>之后，就可以在消息里面使用，对应着</span><span
+lang=EN-US>MediaId</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，微信坑爹文档是不说这个事的。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_78" o:spid="_x0000_i1123" type="#_x0000_t75" style='width:567pt;
+ height:271.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image117.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=362
+src="08_WechatOfficialAccountsDevelop.files/image117.png" v:shapes="图片_x0020_78"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>回复图片消息的</span><span
+lang=EN-US>xml</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>格式</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_82" o:spid="_x0000_i1122" type="#_x0000_t75" style='width:391.5pt;
+ height:138pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image119.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=522 height=184
+src="08_WechatOfficialAccountsDevelop.files/image119.png" v:shapes="图片_x0020_82"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>代码</span></h3>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_86" o:spid="_x0000_i1121" type="#_x0000_t75" style='width:294.75pt;
+ height:650.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image120.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=393 height=867
+src="08_WechatOfficialAccountsDevelop.files/image120.png" v:shapes="图片_x0020_86"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_85" o:spid="_x0000_i1120" type="#_x0000_t75" style='width:566.25pt;
+ height:270.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image121.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=755 height=361
+src="08_WechatOfficialAccountsDevelop.files/image121.png" v:shapes="图片_x0020_85"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_89" o:spid="_x0000_i1119" type="#_x0000_t75" style='width:566.25pt;
+ height:457.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image123.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=755 height=610
+src="08_WechatOfficialAccountsDevelop.files/image123.png" v:shapes="图片_x0020_89"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_88" o:spid="_x0000_i1118" type="#_x0000_t75" style='width:567pt;
+ height:319.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image125.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=426
+src="08_WechatOfficialAccountsDevelop.files/image125.png" v:shapes="图片_x0020_88"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_90" o:spid="_x0000_i1117" type="#_x0000_t75" style='width:567pt;
+ height:584.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image127.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=779
+src="08_WechatOfficialAccountsDevelop.files/image127.png" v:shapes="图片_x0020_90"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_91" o:spid="_x0000_i1116" type="#_x0000_t75" style='width:567pt;
+ height:372pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image129.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=496
+src="08_WechatOfficialAccountsDevelop.files/image129.png" v:shapes="图片_x0020_91"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_92" o:spid="_x0000_i1115" type="#_x0000_t75" style='width:510.75pt;
+ height:182.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image131.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=681 height=243
+src="08_WechatOfficialAccountsDevelop.files/image131.png" v:shapes="图片_x0020_92"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_93" o:spid="_x0000_i1114" type="#_x0000_t75" style='width:511.5pt;
+ height:116.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image132.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=682 height=155
+src="08_WechatOfficialAccountsDevelop.files/image132.png" v:shapes="图片_x0020_93"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>测试</span></h3>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>由于我的</span><span
+lang=EN-US>token</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>过期了，故要重新获取，执行</span><span
+lang=EN-US>testGetToken()</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_94" o:spid="_x0000_i1113" type="#_x0000_t75" style='width:566.25pt;
+ height:154.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image134.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=755 height=206
+src="08_WechatOfficialAccountsDevelop.files/image134.png" v:shapes="图片_x0020_94"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>获取到</span><span
+lang=EN-US>token</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，复制出来</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_80" o:spid="_x0000_i1112" type="#_x0000_t75" style='width:567pt;
+ height:53.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image136.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=71
+src="08_WechatOfficialAccountsDevelop.files/image136.png" v:shapes="图片_x0020_80"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>复制到</span><span
+lang=EN-US>testUploadImage()</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>方法的</span><span
+lang=EN-US>accessToken</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，然后执行</span><span
+lang=EN-US>testUploadImage()</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，就会上传指定路径的文件</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_95" o:spid="_x0000_i1111" type="#_x0000_t75" style='width:567pt;
+ height:129pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image138.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=172
+src="08_WechatOfficialAccountsDevelop.files/image138.png" v:shapes="图片_x0020_95"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>获取到</span><span
+lang=EN-US>mediaId</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，根据此</span><span
+lang=EN-US>id</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>可以对应着刚上传的文件，这是微信服务器处理的，回复图片消息时，只要带该</span><span
+lang=EN-US>mediaId</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>即可获取到刚刚上传的图片文件。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_81" o:spid="_x0000_i1110" type="#_x0000_t75" style='width:567pt;
+ height:60.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image140.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=81
+src="08_WechatOfficialAccountsDevelop.files/image140.png" v:shapes="图片_x0020_81"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>然后跑起项目，图片消息配置在关键字回复这里</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_96" o:spid="_x0000_i1109" type="#_x0000_t75" style='width:530.25pt;
+ height:173.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image142.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=707 height=231
+src="08_WechatOfficialAccountsDevelop.files/image142.png" v:shapes="图片_x0020_96"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>回复</span><span
+lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，等待，比较慢，然后图片才会出来</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_83" o:spid="_x0000_i1108" type="#_x0000_t75" style='width:340.5pt;
+ height:364.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image143.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=454 height=486
+src="08_WechatOfficialAccountsDevelop.files/image143.png" v:shapes="图片_x0020_83"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>日志</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_84" o:spid="_x0000_i1107" type="#_x0000_t75" style='width:566.25pt;
+ height:130.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image144.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=755 height=174
+src="08_WechatOfficialAccountsDevelop.files/image144.png" v:shapes="图片_x0020_84"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>）被动回复用户消息（音乐消息）</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>接着上面的环境</span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>文档</span></h3>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_97" o:spid="_x0000_i1106" type="#_x0000_t75" style='width:162pt;
+ height:95.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image146.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=216 height=127
+src="08_WechatOfficialAccountsDevelop.files/image146.png" v:shapes="图片_x0020_97"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_98" o:spid="_x0000_i1105" type="#_x0000_t75" style='width:567pt;
+ height:251.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image147.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=335
+src="08_WechatOfficialAccountsDevelop.files/image147.png" v:shapes="图片_x0020_98"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>回复消息的</span><span
+lang=EN-US>xml</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>格式</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_99" o:spid="_x0000_i1104" type="#_x0000_t75" style='width:423.75pt;
+ height:193.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image149.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=565 height=258
+src="08_WechatOfficialAccountsDevelop.files/image149.png" v:shapes="图片_x0020_99"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>代码</span></h3>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_104" o:spid="_x0000_i1103" type="#_x0000_t75" style='width:567pt;
+ height:300pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image150.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=400
+src="08_WechatOfficialAccountsDevelop.files/image150.png" v:shapes="图片_x0020_104"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_105" o:spid="_x0000_i1102" type="#_x0000_t75" style='width:567pt;
+ height:599.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image152.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=799
+src="08_WechatOfficialAccountsDevelop.files/image152.png" v:shapes="图片_x0020_105"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_106" o:spid="_x0000_i1101" type="#_x0000_t75" style='width:567pt;
+ height:393pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image154.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=524
+src="08_WechatOfficialAccountsDevelop.files/image154.png" v:shapes="图片_x0020_106"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_107" o:spid="_x0000_i1100" type="#_x0000_t75" style='width:426.75pt;
+ height:183.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image156.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=569 height=245
+src="08_WechatOfficialAccountsDevelop.files/image156.png" v:shapes="图片_x0020_107"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_108" o:spid="_x0000_i1099" type="#_x0000_t75" style='width:516pt;
+ height:186.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image157.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=688 height=249
+src="08_WechatOfficialAccountsDevelop.files/image157.png" v:shapes="图片_x0020_108"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>测试</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>执行</span><span
+lang=EN-US>testUploadThumb()</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，我的</span><span
+lang=EN-US>token</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>没有过期，不用重新获取</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_109" o:spid="_x0000_i1098" type="#_x0000_t75" style='width:234pt;
+ height:97.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image158.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=312 height=130
+src="08_WechatOfficialAccountsDevelop.files/image158.png" v:shapes="图片_x0020_109"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>获取到</span><span
+lang=EN-US>ThumbMediaId</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，用于封装回复的音乐消息</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_100" o:spid="_x0000_i1097" type="#_x0000_t75" style='width:566.25pt;
+ height:57.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image159.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=755 height=77
+src="08_WechatOfficialAccountsDevelop.files/image159.png" v:shapes="图片_x0020_100"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>跑起服务，回复</span><span
+lang=EN-US>4</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，缩略图显示不对，不管了</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_102" o:spid="_x0000_i1096" type="#_x0000_t75" style='width:280.5pt;
+ height:180pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image161.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=374 height=240
+src="08_WechatOfficialAccountsDevelop.files/image161.png" v:shapes="图片_x0020_102"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>日志</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_101" o:spid="_x0000_i1095" type="#_x0000_t75" style='width:567pt;
+ height:162.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image162.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=217
+src="08_WechatOfficialAccountsDevelop.files/image162.png" v:shapes="图片_x0020_101"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击</span> <span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>音乐，进入如下界面，需要点击</span> <span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>播放，等待一下，就会播放</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_103" o:spid="_x0000_i1094" type="#_x0000_t75" style='width:242.25pt;
+ height:462.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image164.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=323 height=617
+src="08_WechatOfficialAccountsDevelop.files/image164.png" v:shapes="图片_x0020_103"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>8</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、自定义菜单接口</span></h1>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>复制上一个项目</span></p>
+
+<h2><span lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>）自定义菜单创建</span></h2>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>文档</span></h3>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_110" o:spid="_x0000_i1093" type="#_x0000_t75" style='width:567pt;
+ height:279pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image165.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=372
+src="08_WechatOfficialAccountsDevelop.files/image165.png" v:shapes="图片_x0020_110"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_114" o:spid="_x0000_i1092" type="#_x0000_t75" style='width:567pt;
+ height:279.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image167.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=373
+src="08_WechatOfficialAccountsDevelop.files/image167.png" v:shapes="图片_x0020_114"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>多角度看看我们的请求参数：</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>微信要求请求体原生的格式</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_115" o:spid="_x0000_i1091" type="#_x0000_t75" style='width:251.25pt;
+ height:324.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image169.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=335 height=433
+src="08_WechatOfficialAccountsDevelop.files/image169.png" v:shapes="图片_x0020_115"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>转成</span><span
+lang=EN-US>json</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>对象的格式</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_116" o:spid="_x0000_i1090" type="#_x0000_t75" style='width:285.75pt;
+ height:385.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image170.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=381 height=514
+src="08_WechatOfficialAccountsDevelop.files/image170.png" v:shapes="图片_x0020_116"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>收缩起来可以看到三个主菜单</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_117" o:spid="_x0000_i1089" type="#_x0000_t75" style='width:105pt;
+ height:101.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image171.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=140 height=135
+src="08_WechatOfficialAccountsDevelop.files/image171.png" v:shapes="图片_x0020_117"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>“其他菜单”这个主菜单里面有两个子菜单</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_118" o:spid="_x0000_i1088" type="#_x0000_t75" style='width:201.75pt;
+ height:112.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image172.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=269 height=150
+src="08_WechatOfficialAccountsDevelop.files/image172.png" v:shapes="图片_x0020_118"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>微信公众号界面的显示（提前看看）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_145" o:spid="_x0000_i1087" type="#_x0000_t75" style='width:283.5pt;
+ height:112.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image173.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=378 height=150
+src="08_WechatOfficialAccountsDevelop.files/image173.png" v:shapes="图片_x0020_145"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>代码</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>执行</span><span
+lang=EN-US>testMenuCreate()</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，执行成功会日志显示“创建菜单成功”</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_146" o:spid="_x0000_i1086" type="#_x0000_t75" style='width:566.25pt;
+ height:201.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image174.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=755 height=269
+src="08_WechatOfficialAccountsDevelop.files/image174.png" v:shapes="图片_x0020_146"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>不管怎么写</span><span
+lang=EN-US>model</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、组装菜单，但是最后的格式要微信要求，而多出来一些属性不会影响，红色就是多出来的，如图</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_119" o:spid="_x0000_i1085" type="#_x0000_t75" style='width:268.5pt;
+ height:423.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image176.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=358 height=565
+src="08_WechatOfficialAccountsDevelop.files/image176.png" v:shapes="图片_x0020_119"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>折叠看一下</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_120" o:spid="_x0000_i1084" type="#_x0000_t75" style='width:156pt;
+ height:201pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image177.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=208 height=268
+src="08_WechatOfficialAccountsDevelop.files/image177.png" v:shapes="图片_x0020_120"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_147" o:spid="_x0000_i1083" type="#_x0000_t75" style='width:567pt;
+ height:717.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image178.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=957
+src="08_WechatOfficialAccountsDevelop.files/image178.png" v:shapes="图片_x0020_147"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_148" o:spid="_x0000_i1082" type="#_x0000_t75" style='width:567pt;
+ height:552.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image180.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=737
+src="08_WechatOfficialAccountsDevelop.files/image180.png" v:shapes="图片_x0020_148"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>菜单按钮等</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_149" o:spid="_x0000_i1081" type="#_x0000_t75" style='width:367.5pt;
+ height:255pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image182.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=490 height=340
+src="08_WechatOfficialAccountsDevelop.files/image182.png" v:shapes="图片_x0020_149"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_150" o:spid="_x0000_i1080" type="#_x0000_t75" style='width:480pt;
+ height:440.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image183.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=640 height=587
+src="08_WechatOfficialAccountsDevelop.files/image183.png" v:shapes="图片_x0020_150"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_151" o:spid="_x0000_i1079" type="#_x0000_t75" style='width:423.75pt;
+ height:233.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image184.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=565 height=311
+src="08_WechatOfficialAccountsDevelop.files/image184.png" v:shapes="图片_x0020_151"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_152" o:spid="_x0000_i1078" type="#_x0000_t75" style='width:421.5pt;
+ height:188.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image186.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=562 height=251
+src="08_WechatOfficialAccountsDevelop.files/image186.png" v:shapes="图片_x0020_152"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>测试</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>前面，执行</span><span
+lang=EN-US>testMenuCreate()</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，如果成功，就可以在公众号上看到如下情况（可能需要取消关注，然后重新关注才会立马生效）：</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>看到三个主菜单，点击“菜单”，可以看到两个子菜单，如图</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_123" o:spid="_x0000_i1077" type="#_x0000_t75" style='width:288.75pt;
+ height:225.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image188.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=385 height=301
+src="08_WechatOfficialAccountsDevelop.files/image188.png" v:shapes="图片_x0020_123"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击“</span><span
+lang=EN-US>click</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>菜单”，因为我服务器没有跑起来，而且也没有做处理操作</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_122" o:spid="_x0000_i1076" type="#_x0000_t75" style='width:474pt;
+ height:63.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image189.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=632 height=85
+src="08_WechatOfficialAccountsDevelop.files/image189.png" v:shapes="图片_x0020_122"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击</span><span
+lang=EN-US> view</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>菜单</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_124" o:spid="_x0000_i1075" type="#_x0000_t75" style='width:351pt;
+ height:290.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image190.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=468 height=387
+src="08_WechatOfficialAccountsDevelop.files/image190.png" v:shapes="图片_x0020_124"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击“扫描事件”，会调用微信的扫描工具</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_125" o:spid="_x0000_i1074" type="#_x0000_t75" style='width:247.5pt;
+ height:431.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image191.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=330 height=575
+src="08_WechatOfficialAccountsDevelop.files/image191.png" v:shapes="图片_x0020_125"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击“地理位置”，会调用微信的地图，选择位置，可以点击“发送”</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_126" o:spid="_x0000_i1073" type="#_x0000_t75" style='width:293.25pt;
+ height:524.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image192.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=391 height=699
+src="08_WechatOfficialAccountsDevelop.files/image192.png" v:shapes="图片_x0020_126"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击发送就会在公众号界面，显示你选择的位置</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_127" o:spid="_x0000_i1072" type="#_x0000_t75" style='width:292.5pt;
+ height:171.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image193.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=390 height=229
+src="08_WechatOfficialAccountsDevelop.files/image193.png" v:shapes="图片_x0020_127"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>）自定义菜单事件</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>但是我们还可以在这些菜单点击、事件添加自己的逻辑。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>文档</span></h3>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_128" o:spid="_x0000_i1071" type="#_x0000_t75" style='width:153pt;
+ height:117pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image194.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=204 height=156
+src="08_WechatOfficialAccountsDevelop.files/image194.png" v:shapes="图片_x0020_128"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_129" o:spid="_x0000_i1070" type="#_x0000_t75" style='width:415.5pt;
+ height:348.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image195.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=554 height=465
+src="08_WechatOfficialAccountsDevelop.files/image195.png" v:shapes="图片_x0020_129"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_130" o:spid="_x0000_i1069" type="#_x0000_t75" style='width:499.5pt;
+ height:378pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image196.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=666 height=504
+src="08_WechatOfficialAccountsDevelop.files/image196.png" v:shapes="图片_x0020_130"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_131" o:spid="_x0000_i1068" type="#_x0000_t75" style='width:410.25pt;
+ height:433.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image197.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=547 height=578
+src="08_WechatOfficialAccountsDevelop.files/image197.png" v:shapes="图片_x0020_131"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_132" o:spid="_x0000_i1067" type="#_x0000_t75" style='width:435.75pt;
+ height:526.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image198.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=581 height=702
+src="08_WechatOfficialAccountsDevelop.files/image198.png" v:shapes="图片_x0020_132"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>代码</span></h3>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;mso-no-proof:
+yes'>添加</span><span lang=EN-US style='mso-no-proof:yes'>4</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin;mso-no-proof:yes'>个事件</span><span lang=EN-US style='mso-no-proof:
+yes'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_153" o:spid="_x0000_i1066" type="#_x0000_t75" style='width:567pt;
+ height:280.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image199.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=374
+src="08_WechatOfficialAccountsDevelop.files/image199.png" v:shapes="图片_x0020_153"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_154" o:spid="_x0000_i1065" type="#_x0000_t75" style='width:567pt;
+ height:633.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image201.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=845
+src="08_WechatOfficialAccountsDevelop.files/image201.png" v:shapes="图片_x0020_154"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>这个类添加的代码，放大截图</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_155" o:spid="_x0000_i1064" type="#_x0000_t75" style='width:567pt;
+ height:446.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image203.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=595
+src="08_WechatOfficialAccountsDevelop.files/image203.png" v:shapes="图片_x0020_155"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>测试</span></h3>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击“</span><span
+lang=EN-US>click</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>菜单”，我们的后台处理逻辑，用户可以接收到推送</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_138" o:spid="_x0000_i1063" type="#_x0000_t75" style='width:248.25pt;
+ height:72.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image205.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=331 height=97
+src="08_WechatOfficialAccountsDevelop.files/image205.png" v:shapes="图片_x0020_138"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>日志</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_134" o:spid="_x0000_i1062" type="#_x0000_t75" style='width:383.25pt;
+ height:105pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image206.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=511 height=140
+src="08_WechatOfficialAccountsDevelop.files/image206.png" v:shapes="图片_x0020_134"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击“</span><span
+lang=EN-US>view</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>菜单”，直接跳转</span><span
+lang=EN-US>url</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，用户无法接收到推送，但是我们的后台还是能处理逻辑的</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_139" o:spid="_x0000_i1061" type="#_x0000_t75" style='width:320.25pt;
+ height:127.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image207.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=427 height=170
+src="08_WechatOfficialAccountsDevelop.files/image207.png" v:shapes="图片_x0020_139"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_140" o:spid="_x0000_i1060" type="#_x0000_t75" style='width:291pt;
+ height:232.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image209.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=388 height=310
+src="08_WechatOfficialAccountsDevelop.files/image209.png" v:shapes="图片_x0020_140"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>日志</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_135" o:spid="_x0000_i1059" type="#_x0000_t75" style='width:405pt;
+ height:101.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image210.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=540 height=135
+src="08_WechatOfficialAccountsDevelop.files/image210.png" v:shapes="图片_x0020_135"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击“扫码事件”，会调用微信的扫描工具，必须要扫描到码，用户端有动静或者声音提示，才会进入到我们的后台处理逻辑（</span><span
+style='font-size:6.5pt;mso-bidi-font-size:11.0pt;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;color:red'>以前公司扫码区分不同地区的二维码就是在这里处理的，而且二维码还会携带参数，在这个事件可以获取到对应的参数，即可标志区分不同的地区扫码关注了，虽然最后关注都是同一个公众号，区分不同二维码、地区是后面的参数区分的</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>），用户无法接收到推送，因为微信要跳转二维码的链接。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_141" o:spid="_x0000_i1058" type="#_x0000_t75" style='width:335.25pt;
+ height:137.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image211.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=447 height=183
+src="08_WechatOfficialAccountsDevelop.files/image211.png" v:shapes="图片_x0020_141"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_136" o:spid="_x0000_i1057" type="#_x0000_t75" style='width:388.5pt;
+ height:105pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image213.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=518 height=140
+src="08_WechatOfficialAccountsDevelop.files/image213.png" v:shapes="图片_x0020_136"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击“地理位置”菜单，会调用微信的地图，而且必须点击地图右上角的“发送”才会进入我们后台处理逻辑，用户也无法接收推送，但是会发送地理位置给公众号。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_142" o:spid="_x0000_i1056" type="#_x0000_t75" style='width:366.75pt;
+ height:147.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image214.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=489 height=197
+src="08_WechatOfficialAccountsDevelop.files/image214.png" v:shapes="图片_x0020_142"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>需要点击“发送”</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_143" o:spid="_x0000_i1055" type="#_x0000_t75" style='width:198.75pt;
+ height:359.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image216.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=265 height=479
+src="08_WechatOfficialAccountsDevelop.files/image216.png" v:shapes="图片_x0020_143"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>发送地理位置</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_144" o:spid="_x0000_i1054" type="#_x0000_t75" style='width:200.25pt;
+ height:129.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image217.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=267 height=173
+src="08_WechatOfficialAccountsDevelop.files/image217.png" v:shapes="图片_x0020_144"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>日志</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_137" o:spid="_x0000_i1053" type="#_x0000_t75" style='width:387.75pt;
+ height:102.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image218.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=517 height=137
+src="08_WechatOfficialAccountsDevelop.files/image218.png" v:shapes="图片_x0020_137"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>）查询菜单</span></h2>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>文档</span></h3>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_157" o:spid="_x0000_i1052" type="#_x0000_t75" style='width:567pt;
+ height:112.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image219.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=150
+src="08_WechatOfficialAccountsDevelop.files/image219.png" v:shapes="图片_x0020_157"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>代码</span></h3>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_160" o:spid="_x0000_i1051" type="#_x0000_t75" style='width:567pt;
+ height:317.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image221.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=423
+src="08_WechatOfficialAccountsDevelop.files/image221.png" v:shapes="图片_x0020_160"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_111" o:spid="_x0000_i1050" type="#_x0000_t75" style='width:567pt;
+ height:151.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image223.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=202
+src="08_WechatOfficialAccountsDevelop.files/image223.png" v:shapes="图片_x0020_111"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_159" o:spid="_x0000_i1049" type="#_x0000_t75" style='width:567pt;
+ height:283.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image225.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=378
+src="08_WechatOfficialAccountsDevelop.files/image225.png" v:shapes="图片_x0020_159"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>测试</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>执行</span><span
+lang=EN-US>testMenuQuery()</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_163" o:spid="_x0000_i1048" type="#_x0000_t75" style='width:567pt;
+ height:317.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image221.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=423
+src="08_WechatOfficialAccountsDevelop.files/image226.png" v:shapes="图片_x0020_163"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_164" o:spid="_x0000_i1047" type="#_x0000_t75" style='width:549.75pt;
+ height:87pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image228.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=733 height=116
+src="08_WechatOfficialAccountsDevelop.files/image228.png" v:shapes="图片_x0020_164"><![endif]></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>复制出来，格式化一下，对比一下之前的，差不多的</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_158" o:spid="_x0000_i1046" type="#_x0000_t75" style='width:243.75pt;
+ height:423.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image229.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=325 height=565
+src="08_WechatOfficialAccountsDevelop.files/image229.png" v:shapes="图片_x0020_158"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;color:red'>但是不建议通过实体类这么添加，最好是拿到这个模板放到在线</span><span
+lang=EN-US style='color:red'>json</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;color:red'>格式化里进行修改，然后直接把修改好的作为请求体，发送</span><span
+lang=EN-US style='color:red'>post</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;color:red'>请求即可。</span><span
+lang=EN-US style='color:red'><o:p></o:p></span></p>
+
+<h2><span lang=EN-US>4</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>）删除菜单</span></h2>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>文档</span></h3>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_161" o:spid="_x0000_i1045" type="#_x0000_t75" style='width:567pt;
+ height:153pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image230.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=204
+src="08_WechatOfficialAccountsDevelop.files/image230.png" v:shapes="图片_x0020_161"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>代码</span></h3>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_166" o:spid="_x0000_i1044" type="#_x0000_t75" style='width:567pt;
+ height:412.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image232.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=550
+src="08_WechatOfficialAccountsDevelop.files/image232.png" v:shapes="图片_x0020_166"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>就两个地方</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_167" o:spid="_x0000_i1043" type="#_x0000_t75" style='width:567pt;
+ height:415.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image234.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=554
+src="08_WechatOfficialAccountsDevelop.files/image234.png" v:shapes="图片_x0020_167"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>测试</span></h3>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>执行</span><span
+lang=EN-US>testMenuDelete()</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_165" o:spid="_x0000_i1042" type="#_x0000_t75" style='width:237pt;
+ height:111.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image236.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=316 height=149
+src="08_WechatOfficialAccountsDevelop.files/image236.png" v:shapes="图片_x0020_165"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>再查下一下菜单，提示菜单不存在了，微信公众号界面多进入出来几次就会看不到菜单的存在</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_168" o:spid="_x0000_i1041" type="#_x0000_t75" style='width:486.75pt;
+ height:79.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image237.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=649 height=106
+src="08_WechatOfficialAccountsDevelop.files/image237.png" v:shapes="图片_x0020_168"><![endif]></span></p>
+
+<h2><span lang=EN-US>5</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>）修改菜单</span></h2>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>说一下推荐的做法吧：</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>通过查询菜单，获取到菜单的数据，放到在线</span><span
+lang=EN-US>json</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>格式化工具，进行编辑菜单，然后复制回来，先删除当前菜单，然后再以修改好的菜单，直接作为请求体，使用</span><span
+lang=EN-US>post</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>发送即可。可能需要取消关注，再重新关注菜单才会立马生效。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>9</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、百度翻译</span><span
+lang=EN-US>API</span></h1>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>费用要求</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_156" o:spid="_x0000_i1040" type="#_x0000_t75" style='width:553.5pt;
+ height:34.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image238.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=738 height=46
+src="08_WechatOfficialAccountsDevelop.files/image238.png" v:shapes="图片_x0020_156"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>）开发接入百度</span><span
+lang=EN-US>api</span></h2>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>开发文档</span></h3>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_169" o:spid="_x0000_i1039" type="#_x0000_t75" style='width:566.25pt;
+ height:375.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image239.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=755 height=501
+src="08_WechatOfficialAccountsDevelop.files/image239.png" v:shapes="图片_x0020_169"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_170" o:spid="_x0000_i1038" type="#_x0000_t75" style='width:567pt;
+ height:453.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image241.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=605
+src="08_WechatOfficialAccountsDevelop.files/image241.png" v:shapes="图片_x0020_170"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_171" o:spid="_x0000_i1037" type="#_x0000_t75" style='width:567pt;
+ height:598.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image243.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=798
+src="08_WechatOfficialAccountsDevelop.files/image243.png" v:shapes="图片_x0020_171"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_172" o:spid="_x0000_i1036" type="#_x0000_t75" style='width:567pt;
+ height:404.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image245.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=539
+src="08_WechatOfficialAccountsDevelop.files/image245.png" v:shapes="图片_x0020_172"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_173" o:spid="_x0000_i1035" type="#_x0000_t75" style='width:567pt;
+ height:255.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image247.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=341
+src="08_WechatOfficialAccountsDevelop.files/image247.png" v:shapes="图片_x0020_173"><![endif]></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>登录</span> <span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>管理后台</span></h3>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>登录百度翻译开放平台，获取</span><span
+lang=EN-US style='mso-bidi-font-size:10.5pt;font-family:"Tahoma",sans-serif;
+color:#9B9B99;background:white'>APP ID</span><span style='mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:Tahoma;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Tahoma;mso-bidi-font-family:Tahoma;color:#9B9B99;
+background:white'>和密钥</span><span style='mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-ascii-font-family:Tahoma;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Tahoma;mso-bidi-font-family:Tahoma;color:black;
+mso-color-alt:windowtext;background:white'>即可</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_174" o:spid="_x0000_i1034" type="#_x0000_t75" style='width:567pt;
+ height:528pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image249.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=704
+src="08_WechatOfficialAccountsDevelop.files/image249.png" v:shapes="图片_x0020_174"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>测试、代码</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>先输出翻译的全部结果，然后</span><span
+lang=EN-US>debug</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>看下</span><span
+lang=EN-US>JSONObject</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>转换之后的格式，为了获取单纯的译文</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_175" o:spid="_x0000_i1033" type="#_x0000_t75" style='width:567pt;
+ height:52.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image251.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=70
+src="08_WechatOfficialAccountsDevelop.files/image251.png" v:shapes="图片_x0020_175"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_176" o:spid="_x0000_i1032" type="#_x0000_t75" style='width:566.25pt;
+ height:153.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image253.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=755 height=205
+src="08_WechatOfficialAccountsDevelop.files/image253.png" v:shapes="图片_x0020_176"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>就一个类，执行</span><span
+lang=EN-US>mian</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>即可，输出结果我也放到注释去了</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_112" o:spid="_x0000_i1031" type="#_x0000_t75" style='width:567pt;
+ height:501pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image255.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=668
+src="08_WechatOfficialAccountsDevelop.files/image255.png" v:shapes="图片_x0020_112"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_181" o:spid="_x0000_i1030" type="#_x0000_t75" style='width:566.25pt;
+ height:547.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image257.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=755 height=730
+src="08_WechatOfficialAccountsDevelop.files/image257.png" v:shapes="图片_x0020_181"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_179" o:spid="_x0000_i1029" type="#_x0000_t75" style='width:566.25pt;
+ height:774.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image259.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=755 height=1033
+src="08_WechatOfficialAccountsDevelop.files/image259.png" v:shapes="图片_x0020_179"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_180" o:spid="_x0000_i1028" type="#_x0000_t75" style='width:567pt;
+ height:502.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image261.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=670
+src="08_WechatOfficialAccountsDevelop.files/image261.png" v:shapes="图片_x0020_180"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>）接入微信自动回复</span></h2>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>代码</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>就紫色部分</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_183" o:spid="_x0000_i1027" type="#_x0000_t75" style='width:567pt;
+ height:468pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image263.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=624
+src="08_WechatOfficialAccountsDevelop.files/image263.png" v:shapes="图片_x0020_183"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>测试</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>跑起项目，测试</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_182" o:spid="_x0000_i1026" type="#_x0000_t75" style='width:178.5pt;
+ height:326.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image265.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=238 height=435
+src="08_WechatOfficialAccountsDevelop.files/image265.png" v:shapes="图片_x0020_182"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>日志</span></h3>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_184" o:spid="_x0000_i1025" type="#_x0000_t75" style='width:297.75pt;
+ height:382.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="08_WechatOfficialAccountsDevelop.files/image267.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=397 height=510
+src="08_WechatOfficialAccountsDevelop.files/image267.png" v:shapes="图片_x0020_184"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>总结一下存在的问题</span><span
+lang=EN-US>:</span></p>
+
+<p class=MsoNormal><span lang=EN-US>https</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>要使用</span><span
+lang=EN-US>https</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的请求方式，我这里还是用了</span><span
+lang=EN-US>http</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>；</span></p>
+
+<p class=MsoNormal><span lang=EN-US>access_token</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>一般都存入数据库的，先从数据库获取，过期了再从微信获取；</span></p>
+
+<p class=MsoNormal><span lang=EN-US>xml</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>要支持</span><span
+lang=EN-US>&quot;&lt;&quot;</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>这些符号的解析</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>（写这个教程感觉很心累呀）</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

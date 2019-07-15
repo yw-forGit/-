@@ -19,17 +19,29 @@ Java导出Excel。工作中也许会需要将数据导出给到产品或者客�
 https://note.ywforwhat.com/Java/07_JavaOperateExcel.html
 
 
-后续。。。 <br>
-Java高并发编程 https://note.ywforwhat.com/Java/02_JavaHighConcurrencyProgramming.html
-<br><br>
-微信公众号开发 https://note.ywforwhat.com/Java/08_WechatOfficialAccountsDevelop.html
-<br><br>
-微信授权登录 https://note.ywforwhat.com/Java/09_WechatAuthorizeLogin.html
-<br><br>
+Java高并发编程。
+https://note.ywforwhat.com/Java/02_JavaHighConcurrencyProgramming.html
+<br>
+
+微信公众号开发
+https://note.ywforwhat.com/Java/08_WechatOfficialAccountsDevelop.html
+<br>
+
+微信授权登录(由于无法转成Html，故用了PDF格式)
+https://note.ywforwhat.com/Java/09_WechatAuthorizeLogin.pdf
+<br>
+
+消息队列ActiveMQ
 https://note.ywforwhat.com/Java/10_JMStoActiveMQ.html
-<br><br>
+<br>
+
+消息队列RabbitMq
 https://note.ywforwhat.com/Java/11_RabbitMq.html
-<br><br>
+<br>
+
+
+后续。。。 <br>
+
 https://note.ywforwhat.com/Java/12_SpringBoot.html
 <br><br>
 SpringBoot微信点餐系统 https://note.ywforwhat.com/Java/13_SpringBootWechatOrderSystem.html
