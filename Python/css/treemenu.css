@@ -1,0 +1,88 @@
+/* For treemenu.js */
+.treemenu li {
+	list-style: none;
+}
+
+.treemenu .toggler {
+	cursor: pointer;
+}
+
+.treemenu .toggler:before {
+	display: inline-block;
+	margin-right: 1pt;
+}
+
+li.tree-empty>.toggler {
+	color: #aaa;
+}
+
+li.tree-empty>.toggler:before {
+	content: "\2212";
+}
+
+li.tree-closed>.toggler:before {
+	content: "+";
+}
+
+li.tree-opened>.toggler:before {
+	content: "\2212";
+}zfi
+
+* {
+	list-style: none;
+	border: none;
+}
+
+body {
+	font-family: Arial;
+}
+
+.tree {
+	color: #46CFB0;
+	/* 100是自适应 */
+	width: 100%;
+}
+
+.tree li, .tree li>a, .tree li>span {
+	padding: 1pt;
+	border-radius: 4px;
+}
+
+.tree li a {
+	color: #46CFB0;
+	text-decoration: none;
+	line-height: 15pt;
+	border-radius: 2px;
+}
+
+.tree li a:hover {
+	background-color: #34BC9D;
+	color: #fff;
+}
+
+.active {
+	background-color: #34495E;
+	color: white;
+}
+
+.active a {
+	color: #fff;
+}
+
+.tree li a.active:hover {
+	background-color: #34BC9D;
+}
+
+.divcss5-right {
+	width: 540px;
+	height: 120px;
+	float: right
+}
+
+/* div不随页面一起滚动 */
+#noScroll {
+	position: fixed;
+	/* 绝对定位 */
+	top: 0px;
+	right: 2%;
+}
