@@ -1,0 +1,1203 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="01_SVN.files/filelist.xml">
+<link rel=Edit-Time-Data href="01_SVN.files/editdata.mso">
+<link rel=themeData href="01_SVN.files/themedata.thmx">
+<link rel=colorSchemeMapping href="01_SVN.files/colorschememapping.xml">
+
+<link href="./css/treemenu.css" rel="stylesheet" type="text/css">
+<!-- GitHub Pages只认./js/xxx这种相对定位，不认js/xxx这种 -->
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script src="./js/test.js"></script>
+<script src="./js/treemenu.js"></script>
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<div id="noScroll" class="divcss5-right">
+	<ul id="menuId" class="tree">
+	</ul>
+	<div style="font-size: 10px; color: #161FB0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ （Ctrl+滚动鼠标可缩放页面）</div>
+</div> 
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:11.0pt'>SVN</span></b><b
+style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt;mso-bidi-font-size:
+11.0pt;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>版本管理搭建</span></b><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:11.0pt'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal align=right style='text-align:right'><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>参考：百度</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>制作日期：</span><span lang=EN-US>2019-02-15 - 2019-02-15</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>制作人：小桅</span><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;mso-fareast-font-family:宋体'>[yw_forgit@163.com]</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>也是成功搭建过，但是后来改为用</span><span
+lang=EN-US>Git</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，故</span><span
+lang=EN-US>SVN</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>就没有一步步操作记录下来，本教程，很粗糙。</span>
+</p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、</span><span
+lang=EN-US>CentOS</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>安装</span><span
+lang=EN-US>SVN</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>以及配置</span></h1>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=755 valign=top style='width:566.4pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:green;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>// </span><span
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>安装</span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>svn<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>yum install subversion<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:green;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>// </span><span
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>进入</span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>home</span><span
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>目录</span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>cd </span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>/</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>home<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:green;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>// </span><span
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>创建版本库，</span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>svn</span><span
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>的数据以及配置就会在</span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>/home/svnProject/</span><span
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>这个目录，</span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>svnadmin create svnProject <o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><b><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>[</span></b><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>root@localhost
+  home</span><b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>]</span></b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'># cd svnProject</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>/</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><b><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>[</span></b><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>root@localhost
+  svnProject</span><b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>]</span></b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'># ll<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>total </span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>8</span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:green;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>// </span><span
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>权限配置等放</span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>conf<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>drwxr</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>-</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>xr</span><b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>-</span></b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>x</span><b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>.</span></b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>2</span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'> root root<span style='mso-spacerun:yes'> 
+  </span></span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>54</span><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> Jan </span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>25</span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'> </span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>01</span><b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>:</span></b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>37</span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'> conf<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:green;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>// </span><span
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>版本控制文件等放</span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>db<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>drwxr</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>-</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>sr</span><b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>-</span></b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>x</span><b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>.</span></b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>6</span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'> root root </span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>253</span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'> Jan </span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>25</span><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> </span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>01</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>:</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>52</span><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> db<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><b><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>-</span></b><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>r</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>--</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>r</span><b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>--</span></b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>r</span><b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>--.</span></b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>1</span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'> root root<span style='mso-spacerun:yes'>  
+  </span></span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>2</span><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> Jan </span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>25</span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'> </span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>01</span><b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>:</span></b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>37</span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'> format<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>drwxr</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>-</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>xr</span><b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>-</span></b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>x</span><b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>.</span></b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>2</span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'> root root </span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>231</span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'> Jan </span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>25</span><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> </span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>01</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>:</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>37</span><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> hooks<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>drwxr</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>-</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>xr</span><b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>-</span></b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>x</span><b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>.</span></b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>2</span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'> root root<span style='mso-spacerun:yes'> 
+  </span></span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>41</span><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> Jan </span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>25</span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'> </span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>01</span><b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>:</span></b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>37</span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'> locks<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><b><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>-</span></b><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>rw</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>-</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>r</span><b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>--</span></b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>r</span><b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>--.</span></b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>1</span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'> root root </span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>229</span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'> Jan </span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>25</span><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> </span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>01</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>:</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>37</span><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> README</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>.</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>txt<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><b><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>[</span></b><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>root@localhost
+  svnProject</span><b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>]</span></b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'># cd conf</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>/</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><b><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>[</span></b><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>root@localhost
+  conf</span><b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>]</span></b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'># ll<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>total </span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>12</span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:green;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>// </span><span
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>权限控制文件</span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><b><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>-</span></b><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>rw</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>-</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>r</span><b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>--</span></b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>r</span><b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>--.</span></b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>1</span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'> root root </span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>2236</span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'> Jan </span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>25</span><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> </span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>01</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>:</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>51</span><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> authz<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:green;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>// </span><span
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>账号密码文件</span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><b><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>-</span></b><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>rw</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>-</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>r</span><b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>--</span></b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>r</span><b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>--.</span></b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>1</span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'> root root </span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>1432</span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'> Jan </span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>25</span><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> </span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>01</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>:</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>51</span><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> passwd<o:p></o:p></span></p>
+  <p class=MsoNormal><b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>-</span></b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>rw</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>-</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>r</span><b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>--</span></b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>r</span><b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>--.</span></b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>1</span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'> root root </span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>3082</span><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'> Jan </span><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>25</span><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> </span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>01</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>:</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#FF8000;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>40</span><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> svnserve</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>.</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>conf</span><span lang=EN-US style='font-size:
+  11.0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US>authz</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>文件</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>带</span><span
+lang=EN-US>#</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>都是注释，只是提供一种模板而已，只要看红色的就行，表示根目录下，</span><span
+lang=EN-US>test</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>用户可读可写。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="图片_x0020_1" o:spid="_x0000_i1033" type="#_x0000_t75"
+ style='width:356.25pt;height:234pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="01_SVN.files/image001.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=475 height=312
+src="01_SVN.files/image001.png" v:shapes="图片_x0020_1"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US>passwd</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>文件</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>同样看红色部分，表示用户</span><span
+lang=EN-US>test</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的密码是</span><span
+lang=EN-US>123</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_2" o:spid="_x0000_i1032" type="#_x0000_t75" style='width:268.5pt;
+ height:125.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="01_SVN.files/image003.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=358 height=167
+src="01_SVN.files/image003.png" v:shapes="图片_x0020_2"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US>svnserve.conf</span><span style='font-family:宋体;
+mso-ascii-font-family:"Calibri Light";mso-ascii-theme-font:major-latin;
+mso-fareast-theme-font:major-fareast;mso-hansi-font-family:"Calibri Light";
+mso-hansi-theme-font:major-latin'>文件</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>默认红色部分是被注释的，要打开。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_3" o:spid="_x0000_i1031" type="#_x0000_t75" style='width:352.5pt;
+ height:321.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="01_SVN.files/image004.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=470 height=429
+src="01_SVN.files/image004.png" v:shapes="图片_x0020_3"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=755 valign=top style='width:566.4pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:green;background:white;mso-highlight:white;
+  mso-font-kerning:0pt'>// </span><span style='mso-bidi-font-size:12.0pt;
+  font-family:宋体;mso-ascii-font-family:"Courier New";mso-fareast-theme-font:
+  minor-fareast;mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>匿名用户可读，您也可以设置</span><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>anon-access
+  =</span><span style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>没有，允许匿名用户访问。设置为无，可以使日志日期正常显示</span><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:black;background:white;mso-highlight:white;
+  mso-font-kerning:0pt'>anon</span><b><span lang=EN-US style='mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>-</span></b><span lang=EN-US style='mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>access </span><b><span lang=EN-US
+  style='mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>=</span></b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> read<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:green;background:white;mso-highlight:white;
+  mso-font-kerning:0pt'>// </span><span style='mso-bidi-font-size:12.0pt;
+  font-family:宋体;mso-ascii-font-family:"Courier New";mso-fareast-theme-font:
+  minor-fareast;mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>授权用户可写</span><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:black;background:white;mso-highlight:white;
+  mso-font-kerning:0pt'>auth</span><b><span lang=EN-US style='mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>-</span></b><span lang=EN-US style='mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>access </span><b><span lang=EN-US
+  style='mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>=</span></b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> write<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:green;background:white;mso-highlight:white;
+  mso-font-kerning:0pt'>// </span><span style='mso-bidi-font-size:12.0pt;
+  font-family:宋体;mso-ascii-font-family:"Courier New";mso-fareast-theme-font:
+  minor-fareast;mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>使用哪个文件作为账号文件</span><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:black;background:white;mso-highlight:white;
+  mso-font-kerning:0pt'>password</span><b><span lang=EN-US style='mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>-</span></b><span lang=EN-US style='mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>db </span><b><span lang=EN-US style='mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>=</span></b><span lang=EN-US style='mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'> passwd<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:green;background:white;mso-highlight:white;
+  mso-font-kerning:0pt'>// </span><span style='mso-bidi-font-size:12.0pt;
+  font-family:宋体;mso-ascii-font-family:"Courier New";mso-fareast-theme-font:
+  minor-fareast;mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>使用哪个文件作为权限文件</span><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:black;background:white;mso-highlight:white;
+  mso-font-kerning:0pt'>authz</span><b><span lang=EN-US style='mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>-</span></b><span lang=EN-US style='mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>db </span><b><span lang=EN-US style='mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>=</span></b><span lang=EN-US style='mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'> authz<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:green;background:white;mso-highlight:white;
+  mso-font-kerning:0pt'>// </span><span style='mso-bidi-font-size:12.0pt;
+  font-family:宋体;mso-ascii-font-family:"Courier New";mso-fareast-theme-font:
+  minor-fareast;mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>认证空间名，版本库所在目录，我这里注释掉，试了也是可以的，可能这样目录就不行我创建的</span><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>svnProject</span><span
+  style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:"Courier New";
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:"Courier New";
+  mso-bidi-font-family:"Courier New";color:green;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>了吗？</span><span lang=EN-US style='mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:green;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal><span lang=EN-US style='mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:black;background:white;mso-highlight:white;
+  mso-font-kerning:0pt'>realm </span><b><span lang=EN-US style='mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>=</span></b><span lang=EN-US style='mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'> My First Repository</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、启动版本库</span></h1>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";color:green;background:white;mso-highlight:
+white;mso-font-kerning:0pt'>// </span><span style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:宋体;mso-ascii-font-family:"Courier New";mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>启动</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>svn</span><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+"Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:"Courier New";
+mso-bidi-font-family:"Courier New";color:green;background:white;mso-highlight:
+white;mso-font-kerning:0pt'>版本库</span><span lang=EN-US style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New";color:green;background:
+white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+white;mso-font-kerning:0pt'>svnserve </span><b><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>-</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>d </span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>-</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>r </span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>/</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>home</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>/</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>svnProject</span><span
+lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:11.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>这个就是</span><span
+lang=EN-US>svn</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>根目录了</span> <span
+lang=EN-US>svn://192.168.0.21/ </span></p>
+
+<h1><span lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、防火墙</span></h1>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";color:green;background:white;mso-highlight:
+white;mso-font-kerning:0pt'>// </span><span style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:宋体;mso-ascii-font-family:"Courier New";mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>如果发现不能访问，可能是防火墙的问题，</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>svn</span><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+"Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:"Courier New";
+mso-bidi-font-family:"Courier New";color:green;background:white;mso-highlight:
+white;mso-font-kerning:0pt'>默认使用</span><span lang=EN-US style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New";color:green;background:
+white;mso-highlight:white;mso-font-kerning:0pt'>3690</span><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+"Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:"Courier New";
+mso-bidi-font-family:"Courier New";color:green;background:white;mso-highlight:
+white;mso-font-kerning:0pt'>端口</span><span lang=EN-US style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New";color:green;background:
+white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";color:green;background:white;mso-highlight:
+white;mso-font-kerning:0pt'>// centos7 </span><span style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:"Courier New";
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:"Courier New";
+mso-bidi-font-family:"Courier New";color:green;background:white;mso-highlight:
+white;mso-font-kerning:0pt'>永久开放</span><span lang=EN-US style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New";color:green;background:
+white;mso-highlight:white;mso-font-kerning:0pt'>3690<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+white;mso-font-kerning:0pt'>firewall</span><b><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>-</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>cmd </span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>--</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>zone</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>=</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>public</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>--</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>add</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>-</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>port</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>=</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>3690</span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>/</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>tcp </span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>--</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>permanent<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";color:green;background:white;mso-highlight:
+white;mso-font-kerning:0pt'>// </span><span style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:宋体;mso-ascii-font-family:"Courier New";mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>重新</span><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>load</span><span
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+"Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:"Courier New";
+mso-bidi-font-family:"Courier New";color:green;background:white;mso-highlight:
+white;mso-font-kerning:0pt'>一下</span><span lang=EN-US style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New";color:green;background:
+white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+white;mso-font-kerning:0pt'>firewall</span><b><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>-</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>cmd </span><b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>--</span></b><span
+lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>reload</span><span
+lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:11.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>4</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、</span><span
+lang=EN-US>eclipse</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>提交代码</span></h1>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>右键</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_4" o:spid="_x0000_i1030" type="#_x0000_t75" alt="https://images2015.cnblogs.com/blog/1074523/201703/1074523-20170331171450649-58020564.png"
+ style='width:374.25pt;height:365.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="01_SVN.files/image006.png" o:title="1074523-20170331171450649-58020564"/>
+</v:shape><![endif]--><![if !vml]><img width=499 height=487
+src="01_SVN.files/image007.png"
+alt="https://images2015.cnblogs.com/blog/1074523/201703/1074523-20170331171450649-58020564.png"
+v:shapes="图片_x0020_4"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_5" o:spid="_x0000_i1029" type="#_x0000_t75" alt="https://images2015.cnblogs.com/blog/1074523/201703/1074523-20170331172438508-1737921360.png"
+ style='width:216.75pt;height:177pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="01_SVN.files/image008.png" o:title="1074523-20170331172438508-1737921360"/>
+</v:shape><![endif]--><![if !vml]><img width=289 height=236
+src="01_SVN.files/image009.png"
+alt="https://images2015.cnblogs.com/blog/1074523/201703/1074523-20170331172438508-1737921360.png"
+v:shapes="图片_x0020_5"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>图是网上，新建也好，已有也好，看需要</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_6" o:spid="_x0000_i1028" type="#_x0000_t75" alt="https://images2015.cnblogs.com/blog/1074523/201703/1074523-20170331172701149-238067209.png"
+ style='width:289.5pt;height:257.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="01_SVN.files/image010.png" o:title="1074523-20170331172701149-238067209"/>
+</v:shape><![endif]--><![if !vml]><img width=386 height=343
+src="01_SVN.files/image011.png"
+alt="https://images2015.cnblogs.com/blog/1074523/201703/1074523-20170331172701149-238067209.png"
+v:shapes="图片_x0020_6"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>URL</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>填写</span>
+<span lang=EN-US>svn://192.168.0.21/ </span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，项目的目录这里可以不用加，如果项目还有分层的话，可以加分层的目录，项目名称，后面有。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_7" o:spid="_x0000_i1027" type="#_x0000_t75" alt="https://images2015.cnblogs.com/blog/1074523/201703/1074523-20170331174321820-1814610478.png"
+ style='width:217.5pt;height:201.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="01_SVN.files/image012.png" o:title="1074523-20170331174321820-1814610478"/>
+</v:shape><![endif]--><![if !vml]><img width=290 height=269
+src="01_SVN.files/image013.png"
+alt="https://images2015.cnblogs.com/blog/1074523/201703/1074523-20170331174321820-1814610478.png"
+v:shapes="图片_x0020_7"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>项目名称就是目录名称，上面说</span><span
+lang=EN-US>URL</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>不用加项目名称的原因</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_8" o:spid="_x0000_i1026" type="#_x0000_t75" alt="https://images2015.cnblogs.com/blog/1074523/201703/1074523-20170331174354695-1670160834.png"
+ style='width:270.75pt;height:250.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="01_SVN.files/image014.png" o:title="1074523-20170331174354695-1670160834"/>
+</v:shape><![endif]--><![if !vml]><img width=361 height=334
+src="01_SVN.files/image015.png"
+alt="https://images2015.cnblogs.com/blog/1074523/201703/1074523-20170331174354695-1670160834.png"
+v:shapes="图片_x0020_8"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>完成</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_9" o:spid="_x0000_i1025" type="#_x0000_t75" alt="https://images2015.cnblogs.com/blog/1074523/201703/1074523-20170331173921805-1279203661.png"
+ style='width:255.75pt;height:237pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="01_SVN.files/image016.png" o:title="1074523-20170331173921805-1279203661"/>
+</v:shape><![endif]--><![if !vml]><img width=341 height=316
+src="01_SVN.files/image017.png"
+alt="https://images2015.cnblogs.com/blog/1074523/201703/1074523-20170331173921805-1279203661.png"
+v:shapes="图片_x0020_9"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>第一次用</span><span
+lang=EN-US>svn</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>会有弹框输入用户名、密码，输入就好了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

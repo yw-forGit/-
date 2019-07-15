@@ -1,0 +1,1067 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="07_CentOS7InstallMySQL.files/filelist.xml">
+<link rel=Edit-Time-Data href="07_CentOS7InstallMySQL.files/editdata.mso">
+<link rel=themeData href="07_CentOS7InstallMySQL.files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="07_CentOS7InstallMySQL.files/colorschememapping.xml">
+
+<link href="./css/treemenu.css" rel="stylesheet" type="text/css">
+<!-- GitHub Pages只认./js/xxx这种相对定位，不认js/xxx这种 -->
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script src="./js/test.js"></script>
+<script src="./js/treemenu.js"></script>
+</head>
+
+<body lang=ZH-CN link="#0563C1" vlink="#954F72" style='tab-interval:21.0pt;
+text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<div id="noScroll" class="divcss5-right">
+	<ul id="menuId" class="tree">
+	</ul>
+	<div style="font-size: 10px; color: #161FB0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ （Ctrl+滚动鼠标可缩放页面）</div>
+</div> 
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='font-size:22.0pt;line-height:125%;font-family:
+宋体'>CentOS7</span></b><b style='mso-bidi-font-weight:normal'><span
+style='font-size:22.0pt;line-height:125%;font-family:宋体'>安装<span lang=EN-US>MySQL5.7<o:p></o:p></span></span></b></p>
+
+<p class=MsoNormal align=right style='text-align:right'><span style='font-size:
+12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>参考：</span><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:宋体'>MySQL</span><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>官网</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>制作日期：</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'>2019-04-10 - 2019-04-10<o:p></o:p></span></p>
+
+<p class=MsoNormal align=right style='text-align:right'><span style='font-size:
+12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>制作人：小桅</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'>[yw_forgit@163.com]<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、找</span><span
+lang=EN-US>yum</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>源下载链接</span></h1>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'>CentOS7</span><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>直接</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'>yum</span><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>安装，会安装</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>mariadb</span><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>，这是</span><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:宋体'>mysql</span><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>的一个分支。</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="图片_x0020_2" o:spid="_x0000_i1050" type="#_x0000_t75"
+ style='width:566.25pt;height:209.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image001.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=755 height=279
+src="07_CentOS7InstallMySQL.files/image001.png" v:shapes="图片_x0020_2"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>进入官网之后，点击</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>Download</span><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>，进入下图，找到社区办的</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'>MySQL<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_5" o:spid="_x0000_i1049" type="#_x0000_t75" style='width:521.25pt;
+ height:420.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image003.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=695 height=561
+src="07_CentOS7InstallMySQL.files/image003.png" v:shapes="图片_x0020_5"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>找到</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>yum</span><span style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>源</span><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_4" o:spid="_x0000_i1048" type="#_x0000_t75" style='width:567pt;
+ height:321.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image005.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=756 height=429
+src="07_CentOS7InstallMySQL.files/image005.png" v:shapes="图片_x0020_4"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>找到</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>centos7</span><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>的</span><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:宋体'>yum</span><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>的</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'>rpm</span><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，点击下载（这个</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>yum</span><span style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>包含多个版本，最新版是</span><span lang=EN-US style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:宋体'>8.0</span><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>的）</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_10" o:spid="_x0000_i1047" type="#_x0000_t75" style='width:567pt;
+ height:411.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image007.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=756 height=549
+src="07_CentOS7InstallMySQL.files/image007.png" v:shapes="图片_x0020_10"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>最后这个链接就是我们要的，不确定是不是，可以点击下载试试</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_1" o:spid="_x0000_i1046" type="#_x0000_t75" style='width:567pt;
+ height:406.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image009.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=756 height=542
+src="07_CentOS7InstallMySQL.files/image009.png" v:shapes="图片_x0020_1"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>复制的链接</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><a
+href="https://dev.mysql.com/get/mysql80-community-release-el7-2.noarch.rpm"><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'>https://dev.mysql.com/get/mysql80-community-release-el7-2.noarch.rpm</span></a></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'> <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、安装</span><span
+lang=EN-US>yum</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>源</span></h1>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>下载</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>yum</span><span style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>源的</span><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'>rpm</span><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>包</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_6" o:spid="_x0000_i1045" type="#_x0000_t75" style='width:566.25pt;
+ height:93.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image011.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=755 height=125
+src="07_CentOS7InstallMySQL.files/image011.png" v:shapes="图片_x0020_6"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>可以看到下载当前目录了</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_7" o:spid="_x0000_i1044" type="#_x0000_t75" style='width:476.25pt;
+ height:61.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image013.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=635 height=82
+src="07_CentOS7InstallMySQL.files/image013.png" v:shapes="图片_x0020_7"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>安装</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>yum</span><span style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>的</span><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'>rpm<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_8" o:spid="_x0000_i1043" type="#_x0000_t75" style='width:567pt;
+ height:297pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image014.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=396
+src="07_CentOS7InstallMySQL.files/image014.png" v:shapes="图片_x0020_8"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、修改默认的安装版本</span></h1>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>然后就能查看一下</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>yum<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_9" o:spid="_x0000_i1042" type="#_x0000_t75" style='width:456.75pt;
+ height:452.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image016.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=609 height=603
+src="07_CentOS7InstallMySQL.files/image016.png" v:shapes="图片_x0020_9"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>但是这里我安装</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>5.7</span><span style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>版的，故要做一些修改，可以直接把</span><span lang=EN-US style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:宋体'>8.0</span><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>的</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'>enable</span><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>设置为</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>0</span><span style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>，把</span><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'>5.7</span><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>的</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'>enable</span><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>设置为</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>1</span><span style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>，这样子使用</span><span lang=EN-US style='font-size:9.5pt;line-height:
+125%;font-family:Consolas;color:black;background:#F8F8F8'>yum install
+mysql-community-server</span><span lang=EN-US style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:宋体'> </span><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>安装就默认安装</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'>5.7</span><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>了，否则会安装</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>8.0</span><span style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>。</span><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>除了上面的方法，官方还提供了另外的命令操作</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=755 valign=top style='width:566.4pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:green;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>// </span><span
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>不启用</span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>8.0</span><span
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>版本的</span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal style='line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>yum</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>-</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>config</span><b><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>-</span></b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>manager </span><b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>--</span></b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>disable mysql80</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>-</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>community<o:p></o:p></span></p>
+  <p class=MsoNormal style='line-height:normal;mso-pagination:none;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:11.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:green;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>// </span><span
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>启用</span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>5.7</span><span
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>版本的</span><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal style='line-height:normal'><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>yum</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>-</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>config</span><b><span lang=EN-US
+  style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>-</span></b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:black;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>manager </span><b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>--</span></b><span lang=EN-US style='font-size:
+  11.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>enable mysql57</span><b><span
+  lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt;font-family:
+  "Courier New";color:navy;background:white;mso-highlight:white;mso-font-kerning:
+  0pt'>-</span></b><span lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>community</span><span lang=EN-US
+  style='font-size:12.0pt;mso-bidi-font-size:11.0pt;mso-fareast-font-family:
+  宋体'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>操作这两条命令</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_12" o:spid="_x0000_i1041" type="#_x0000_t75" style='width:446.25pt;
+ height:330pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image017.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=595 height=440
+src="07_CentOS7InstallMySQL.files/image017.png" v:shapes="图片_x0020_12"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_13" o:spid="_x0000_i1040" type="#_x0000_t75" style='width:425.25pt;
+ height:307.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image018.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=567 height=410
+src="07_CentOS7InstallMySQL.files/image018.png" v:shapes="图片_x0020_13"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>再</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>cat</span><span style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>一下，可以看到</span><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'>5.7</span><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>是</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'>enable=1</span><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>了</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_14" o:spid="_x0000_i1039" type="#_x0000_t75" style='width:510.75pt;
+ height:384.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image019.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=681 height=513
+src="07_CentOS7InstallMySQL.files/image019.png" v:shapes="图片_x0020_14"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>也可以使用如下命令，看看启用了哪个版本</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_16" o:spid="_x0000_i1038" type="#_x0000_t75" style='width:445.5pt;
+ height:62.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image020.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=594 height=83
+src="07_CentOS7InstallMySQL.files/image020.png" v:shapes="图片_x0020_16"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>4</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、安装</span><span
+lang=EN-US>5.7</span></h1>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>安装</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;line-height:125%;
+font-family:Consolas;color:black;background:#F8F8F8'>yum install
+mysql-community-server</span><span lang=EN-US style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>5</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、启动</span><span
+lang=EN-US>MySQL</span></h1>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>有个</span><span
+lang=EN-US>EL7</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的概念，</span><span
+lang=EN-US>EL</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>是</span><span
+lang=EN-US>Red Hat <span style='color:red'>E</span>nterprise <span
+style='color:red'>L</span>inux</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的缩写，</span><span
+lang=EN-US>EL7</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>就是</span><span
+lang=EN-US>Red Hat7</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>版本、</span><span
+lang=EN-US>CentOS7</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>版本。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>对于</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>EL7</span><span style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>平台，官方推荐首选用如下命令启动</span><span lang=EN-US style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;line-height:125%;
+font-family:Consolas;color:black;background:#F8F8F8'>systemctl start mysqld</span><span
+class=token><span lang=EN-US style='font-size:9.5pt;line-height:125%;
+font-family:Consolas;color:#999999;background:#F8F8F8'>.</span></span><span
+lang=EN-US style='font-size:9.5pt;line-height:125%;font-family:Consolas;
+color:black;background:#F8F8F8'>service</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>查看状态命令（首选）</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;line-height:125%;
+font-family:Consolas;color:black;background:#F8F8F8'>systemctl status mysqld</span><span
+class=token><span lang=EN-US style='font-size:9.5pt;line-height:125%;
+font-family:Consolas;color:#999999;background:#F8F8F8'>.</span></span><span
+lang=EN-US style='font-size:9.5pt;line-height:125%;font-family:Consolas;
+color:black;background:#F8F8F8'>service</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_17" o:spid="_x0000_i1037" type="#_x0000_t75" style='width:567pt;
+ height:141pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image021.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=756 height=188
+src="07_CentOS7InstallMySQL.files/image021.png" v:shapes="图片_x0020_17"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>6</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、设置</span><span
+lang=EN-US>root</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>密码</span></h1>
+
+<p class=MsoNormal><span lang=EN-US>5.7</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>版本开始，默认会给我们一个</span><span
+lang=EN-US>root</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>账户的临时密码，通过</span><span
+lang=EN-US>mysqld.log</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>可以查看到。注意，</span><span
+lang=EN-US>xshell</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的显示可能不能肉眼区分零或者大写字母</span><span
+lang=EN-US>O</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，复制到其他文本查看即可。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_18" o:spid="_x0000_i1036" type="#_x0000_t75" style='width:555.75pt;
+ height:28.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image023.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=741 height=38
+src="07_CentOS7InstallMySQL.files/image023.png" v:shapes="图片_x0020_18"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>使用</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>root</span><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>账户登录</span><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:宋体'>mysql</span><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>，密码就是那个临时密码。登录成功会进入</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>MySQL</span><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>的交互</span><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:宋体'>shell</span><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>。</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_19" o:spid="_x0000_i1035" type="#_x0000_t75" style='width:437.25pt;
+ height:176.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image024.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=583 height=235
+src="07_CentOS7InstallMySQL.files/image024.png" v:shapes="图片_x0020_19"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>更改</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>root</span><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>的密码（准确来说是本地访问数据库的</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'>root</span><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>里面，即</span><span
+class=token><span lang=EN-US style='font-size:9.5pt;line-height:125%;
+font-family:Consolas;color:#669900;background:#F8F8F8'>root'</span></span><span
+lang=EN-US style='font-size:9.5pt;line-height:125%;font-family:Consolas;
+color:black;background:#F8F8F8'>@</span><span class=token><span lang=EN-US
+style='font-size:9.5pt;line-height:125%;font-family:Consolas;color:#669900;
+background:#F8F8F8'>'localhost</span></span><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>），注意，</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'>MySQL</span><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>默认使用</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>validate_password </span><span style='font-size:
+12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>插件，密码至少一个大写字母、一个小写字母、一个数字、一个特殊字符，并且总长度至少为</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>8</span><span style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>个字符。</span><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=755 valign=top style='width:566.4pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='line-height:normal'><span class=token><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:#0077AA;
+  background:#F8F8F8'>ALTER</span></span><span lang=EN-US style='font-size:
+  9.5pt;font-family:Consolas;color:black;background:#F8F8F8'> </span><span
+  class=token><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+  color:#0077AA;background:#F8F8F8'>USER</span></span><span lang=EN-US
+  style='font-size:9.5pt;font-family:Consolas;color:black;background:#F8F8F8'> </span><span
+  class=token><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+  color:#669900;background:#F8F8F8'>'root'</span></span><span lang=EN-US
+  style='font-size:9.5pt;font-family:Consolas;color:black;background:#F8F8F8'>@</span><span
+  class=token><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+  color:#669900;background:#F8F8F8'>'localhost'</span></span><span lang=EN-US
+  style='font-size:9.5pt;font-family:Consolas;color:black;background:#F8F8F8'> </span><span
+  class=token><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+  color:#0077AA;background:#F8F8F8'>IDENTIFIED</span></span><span lang=EN-US
+  style='font-size:9.5pt;font-family:Consolas;color:black;background:#F8F8F8'> </span><span
+  class=token><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+  color:#0077AA;background:#F8F8F8'>BY</span></span><span lang=EN-US
+  style='font-size:9.5pt;font-family:Consolas;color:black;background:#F8F8F8'> </span><span
+  class=token><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+  color:#669900;background:#F8F8F8'>'xxxxxx'</span></span><span class=token><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:#999999;
+  background:#F8F8F8'>;</span></span><span lang=EN-US style='font-size:12.0pt;
+  mso-bidi-font-size:11.0pt;mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US style='color:white;mso-color-alt:windowtext;
+mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="图片_x0020_20" o:spid="_x0000_i1034"
+ type="#_x0000_t75" style='width:474pt;height:67.5pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image025.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=632 height=90
+src="07_CentOS7InstallMySQL.files/image025.png" v:shapes="图片_x0020_20"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>修改完了，可以试下重新登录。</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_21" o:spid="_x0000_i1033" type="#_x0000_t75" style='width:420.75pt;
+ height:180.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image026.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=561 height=241
+src="07_CentOS7InstallMySQL.files/image026.png" v:shapes="图片_x0020_21"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>7</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、数据库授权</span></h1>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>如果没有进行授权，那么只能是</span><span
+lang=EN-US>mysql</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>所在的本机访问</span><span
+lang=EN-US>mysql</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，而我的</span><span
+lang=EN-US>mysql</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>在</span><span
+lang=EN-US>centos7</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的物理机上，我的</span><span
+lang=EN-US>win10</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>要访问就无法访问了，故要授权。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'>root</span><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>用户本地登录之后，可以看到有个</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>user</span><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>表</span><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_22" o:spid="_x0000_i1032" type="#_x0000_t75" style='width:358.5pt;
+ height:443.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image027.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=478 height=591
+src="07_CentOS7InstallMySQL.files/image027.png" v:shapes="图片_x0020_22"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>操作数据库，进行授权。由于是开发用于测试，所以我这都设置为</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>%</span><span style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>，即所有</span><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'>ip</span><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>都可以访问。</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_23" o:spid="_x0000_i1031" type="#_x0000_t75" style='width:359.25pt;
+ height:283.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image029.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=479 height=378
+src="07_CentOS7InstallMySQL.files/image029.png" v:shapes="图片_x0020_23"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>最后要清理一下缓存。</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_28" o:spid="_x0000_i1030" type="#_x0000_t75" style='width:202.5pt;
+ height:38.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image030.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=270 height=51
+src="07_CentOS7InstallMySQL.files/image030.png" v:shapes="图片_x0020_28"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>8</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、开放</span><span
+lang=EN-US>3306</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>端口</span></h1>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>查看已开放的端口列表</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_24" o:spid="_x0000_i1029" type="#_x0000_t75" style='width:328.5pt;
+ height:27pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image031.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=438 height=36
+src="07_CentOS7InstallMySQL.files/image031.png" v:shapes="图片_x0020_24"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>永久开放</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>3306</span><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>端口</span><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_25" o:spid="_x0000_i1028" type="#_x0000_t75" style='width:429.75pt;
+ height:26.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image032.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=573 height=35
+src="07_CentOS7InstallMySQL.files/image032.png" v:shapes="图片_x0020_25"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>重新载入防火墙配置</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_26" o:spid="_x0000_i1027" type="#_x0000_t75" style='width:252pt;
+ height:29.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image033.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=336 height=39
+src="07_CentOS7InstallMySQL.files/image033.png" v:shapes="图片_x0020_26"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>再查看。</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_27" o:spid="_x0000_i1026" type="#_x0000_t75" style='width:325.5pt;
+ height:33pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image034.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=434 height=44
+src="07_CentOS7InstallMySQL.files/image034.png" v:shapes="图片_x0020_27"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;
+line-height:125%;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>然后就可以在我的</span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'>win10</span><span style='font-size:12.0pt;
+mso-bidi-font-size:11.0pt;line-height:125%;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>上访问</span><span lang=EN-US style='font-size:
+12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:宋体'>mysql</span><span
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin'>了。</span><span lang=EN-US
+style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;mso-fareast-font-family:
+宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_29" o:spid="_x0000_i1025" type="#_x0000_t75" style='width:141pt;
+ height:77.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="07_CentOS7InstallMySQL.files/image035.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=188 height=103
+src="07_CentOS7InstallMySQL.files/image035.png" v:shapes="图片_x0020_29"><![endif]></span><span
+lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:125%;
+mso-fareast-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;line-height:125%;mso-fareast-font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
