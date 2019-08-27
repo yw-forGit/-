@@ -1,0 +1,2405 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="16_JVMOptimization.files/filelist.xml">
+<link rel=Edit-Time-Data href="16_JVMOptimization.files/editdata.mso">
+<link rel=themeData href="16_JVMOptimization.files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="16_JVMOptimization.files/colorschememapping.xml">
+
+<link href="./css/treemenu.css" rel="stylesheet" type="text/css">
+<!-- GitHub Pages只认./js/xxx这种相对定位，不认js/xxx这种 -->
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script src="./js/test.js"></script>
+<script src="./js/treemenu.js"></script>
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<div id="noScroll" class="divcss5-right">
+	<ul id="menuId" class="tree">
+	</ul>
+	<div style="font-size: 10px; color: #161FB0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ （Ctrl+滚动鼠标可缩放页面）</div>
+</div> 
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><span lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:11.0pt'>Java</span></b><b
+style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt;mso-bidi-font-size:
+11.0pt;font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>虚拟机调优</span></b><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='font-size:14.0pt;mso-bidi-font-size:11.0pt'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal align=right style='text-align:right'><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>参考：马士兵</span><span
+lang=EN-US>Java</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>虚拟机调优</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>制作日期：</span><span lang=EN-US>2018-12-05 - 2018-12-11</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>制作人：小邹</span><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;mso-fareast-font-family:宋体'>[yw_forgit@163.com]</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、</span><span
+lang=EN-US>Java</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>内存结构</span></h1>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="图片_x0020_1" o:spid="_x0000_i1057" type="#_x0000_t75"
+ style='width:438pt;height:283.5pt;visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image001.png" o:title="jvm_mm2"/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>分析一下，发现我们只能优化堆内存</span>
+</p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_3"
+ o:spid="_x0000_i1056" type="#_x0000_t75" style='width:448.5pt;height:306.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image002.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、堆内存的构成</span></h1>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>java1.8</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>堆内存，</span><span
+lang=EN-US>new</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>一个对象的过程。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_4"
+ o:spid="_x0000_i1055" type="#_x0000_t75" style='width:567pt;height:402.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image003.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US>GC</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>如何确定垃圾</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>正向可达：从</span><span
+lang=EN-US>roots</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>对象</span><span
+lang=EN-US>(</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>可以简单的认为是</span><span
+lang=EN-US>main</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>方法里面的对象</span><span
+lang=EN-US>)</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>计算可以到达的对象。（注意，不是引用计数的方式来确定垃圾，否则会有循环引用的问题无法回收垃圾。）</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、垃圾收集算法</span></h1>
+
+<h2><span lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>）</span><span
+lang=EN-US>Mark-Sweep </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>标记清除</span></h2>
+
+<p class=MsoNormal style='text-indent:10.5pt;mso-char-indent-count:1.0'><span
+lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_6" o:spid="_x0000_i1054"
+ type="#_x0000_t75" style='width:302.25pt;height:191.25pt;visibility:visible;
+ mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image004.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>黑色部分就是垃圾，然后被标记，清除之后，黑色部分就是绿色的了，变成了可使用的内存，但是由于有些对象存活着，故灰色部分把绿色部分碎片化，会导致如果</span><span
+lang=EN-US>new</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>一个大的对象出来，会有不够连续的内存存放该对象。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>缺点：碎片化</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>）</span><span
+lang=EN-US>Copying </span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>复制</span></h2>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_7"
+ o:spid="_x0000_i1053" type="#_x0000_t75" style='width:351.75pt;height:211.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image005.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>把内存分成两部分，然后当需要回收垃圾时，就会从上半部分将灰色的（存活对象）复制到没有利用的下半部分，然后把上半部分全部擦除，擦除连续的内存是很快的，然后就只剩第三行有对象了，其他都是可以利用的，当</span><span
+lang=EN-US>new</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>新的对象时，从第四行开始存放，这样就保证内存是连续的，下次回收时，又从下半部分复制到上半部分，如此循环，但是很明显，内存要对半分来利用。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>缺点：内存浪费。堆内存的那两个</span><span
+lang=EN-US>survivor</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的复制就是用这种算法来实现的。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>）</span><span
+lang=EN-US>Mark-Compact</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>标记压缩</span></h2>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_8"
+ o:spid="_x0000_i1052" type="#_x0000_t75" style='width:382.5pt;height:243pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image006.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>分析</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_2"
+ o:spid="_x0000_i1051" type="#_x0000_t75" style='width:368.25pt;height:232.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image007.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>上面的箭头是我辅助画的，具体是怎么压缩出连续空间的，这里我也没有去研究，反正最后是压缩成后面是一块连续的可使用的空间。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>缺点：效率比</span><span
+lang=EN-US>Copying</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>略低。老年代利用该算法，因为老年代的对象被回收的概率很小，标记压缩的效率就不慢了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>4</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、</span><span
+lang=EN-US>JVM</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>采用分代算法</span></h1>
+
+<h2><span lang=EN-US>new</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>（新生代）</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>存活对象少</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>使用</span><span
+lang=EN-US>Copying</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，占用的内存空间也不大，效率也高</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US>old</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>（老年代）</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>垃圾少</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>一般使用</span><span
+lang=EN-US>Mark-Compact</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>5</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、</span><span
+lang=EN-US>JVM</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>参数</span></h1>
+
+<p class=MsoNormal><span lang=EN-US>- </span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>标准参数，所有</span><span
+lang=EN-US>jvm</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>都应该支持</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-X </span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>非标，每个</span><span
+lang=EN-US>jvm</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>实现都不同</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX </span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>不稳定参数，下一个版本可能会取消</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>标准参数，比如</span><span
+lang=EN-US>-version</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，敲</span><span
+lang=EN-US>java -version</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_5"
+ o:spid="_x0000_i1050" type="#_x0000_t75" style='width:335.25pt;height:71.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image008.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>6</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、</span><span
+lang=EN-US>JVM</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>中的垃圾收集器</span></h1>
+
+<p class=MsoNormal><span lang=EN-US>Serial Collector</span></p>
+
+<p class=MsoNormal style='text-indent:10.5pt;mso-char-indent-count:1.0'><span
+lang=EN-US>-XX:+UseSerialGC</span></p>
+
+<p class=MsoNormal style='text-indent:10.5pt;mso-char-indent-count:1.0'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>单线程</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Parallel Collector</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>  </span></span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>并发量大，不过每次垃圾收集，</span><span lang=EN-US>JVM</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>会停</span></p>
+
+<p class=MsoNormal><span lang=EN-US>CMS Collector </span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>  </span></span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>停顿时间短</span></p>
+
+<p class=MsoNormal><span lang=EN-US>G1</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>  </span></span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>不仅停顿短，同时并发大，这是时间短、并发大之间做的平衡，目前可能是最好的了，不分场景的话。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>7</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、</span><span
+lang=EN-US>Java</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>对象的分配</span></h1>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>栈上分配</span></h2>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>  </span></span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>线程私有小对象</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>  </span></span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>无逃逸，即逃逸分析是栈内存被回收时，该对象还不是垃圾，就要逃逸出栈，否则会被回收。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>  </span></span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>支持标量替换</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>  </span></span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>无需调整，即</span><span lang=EN-US>JVM</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>自动处理，无法优化</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>线程本地分配</span><span
+lang=EN-US>TLAB</span><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>（</span><span
+lang=EN-US>Thread Local Allacation Buffer</span><span style='font-family:宋体;
+mso-ascii-font-family:"Calibri Light";mso-ascii-theme-font:major-latin;
+mso-fareast-theme-font:major-fareast;mso-hansi-font-family:"Calibri Light";
+mso-hansi-theme-font:major-latin'>）</span></h2>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>  </span></span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>占用</span><span lang=EN-US>eden</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，默认</span><span
+lang=EN-US>1%</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>  </span></span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>多线程的时候不用竞争</span><span lang=EN-US>eden</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>就可以申请空间，提高效率</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>  </span></span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>小对象</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>  </span></span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>无需调整，但可以指定大小</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US>eden</span></h2>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>老年代</span></h2>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-spacerun:yes'>  </span></span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>大对象</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>对象分配分析图</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_9"
+ o:spid="_x0000_i1049" type="#_x0000_t75" style='width:308.25pt;height:328.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image009.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>例子</span></h2>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>代码：</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=755 valign=top style='width:566.4pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>/**<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-spacerun:yes'> </span>* VM
+  arguments</span><span style='font-size:8.0pt;mso-bidi-font-size:12.0pt;
+  font-family:宋体;mso-ascii-font-family:"Courier New";mso-fareast-theme-font:
+  minor-fareast;mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>：</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>-XX:-DoEscapeAnalysis
+  -XX:-EliminateAllocations -XX:-UseTLAB -XX:+PrintGC</span><span
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>或者</span><span lang=EN-US
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>-XX:+PrintGCDetails<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-spacerun:yes'> </span>* </span><span
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>以上参数分别代表：关闭逃逸分析、关闭标量替换、关闭使用线程本地内存、开启打印</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>GC</span><span
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>信息或者打印</span><span lang=EN-US
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>GC</span><span
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>详细信息。</span><span lang=EN-US
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-spacerun:yes'> </span>* </span><span
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>其中</span><span lang=EN-US
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>-DoEscapeAnalysis</span><span
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>表示关闭逃逸分析，</span><span lang=EN-US
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>+DoEscapeAnalysis</span><span
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>表示开启逃逸分析，故</span><span lang=EN-US
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>+-</span><span
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>是开启与关闭的意思，其他同理。</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-spacerun:yes'> </span>* <b>@author</b>
+  WIN<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-spacerun:yes'> </span>*<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-spacerun:yes'> </span>*/</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#8000FF;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>public</span><span lang=EN-US style='font-size:
+  8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>class</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> T01 </span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>{</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>    </span></span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>class</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> User </span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>{</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>        </span></span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>int</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> id</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>;</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>        </span>String
+  name</span><b><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>;</span></b><span lang=EN-US style='font-size:
+  8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>        </span><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>        </span>User</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>(</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>int</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> id</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>,</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>
+  String name</span><b><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>)</span></b><span lang=EN-US style='font-size:
+  8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>{</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:3'>            </span></span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue;background:white;mso-highlight:white;mso-font-kerning:0pt'>super</span></b><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>();</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:3'>            </span></span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue;background:white;mso-highlight:white;mso-font-kerning:0pt'>this</span></b><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>.</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>id </span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>=</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> id</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>;</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:3'>            </span></span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue;background:white;mso-highlight:white;mso-font-kerning:0pt'>this</span></b><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>.</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>name </span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>=</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> name</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>;</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>        </span></span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>}</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>    </span></span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>}</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>    </span><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>    </span></span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>void</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> alloc</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>(</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>int</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> i</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>)</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>{</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>        </span></span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue;background:white;mso-highlight:white;mso-font-kerning:0pt'>new</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> User</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>(</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>i</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>,</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:gray;background:white;mso-highlight:white;mso-font-kerning:0pt'>&quot;name&quot;</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>+</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> i</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>);</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>    </span></span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>}</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>    </span><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>    </span></span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>public</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>static</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>void</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> main</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>(</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>String</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>[]</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> args</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>)</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>{</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>        </span>T01
+  t </span><b><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:navy;background:white;mso-highlight:white;
+  mso-font-kerning:0pt'>=</span></b><span lang=EN-US style='font-size:8.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span lang=EN-US
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue;background:white;mso-highlight:white;mso-font-kerning:0pt'>new</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> T01</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>();</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>        </span></span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>long</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> s1 </span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>=</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>
+  System</span><b><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>.</span></b><span lang=EN-US style='font-size:
+  8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>currentTimeMillis</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>();</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>        </span></span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue;background:white;mso-highlight:white;mso-font-kerning:0pt'>for</span></b><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>(</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>int</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> i</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>=</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>0</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>;</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> i</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>&lt;</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>10000000</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>;</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> i</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>++)</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>{</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:3'>            </span></span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>// </span><span
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>不断地创建</span><span lang=EN-US
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>User</span><span
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>对象</span><span lang=EN-US
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:3'>            </span>t</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>.</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>alloc</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>(</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>i</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>);</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>        </span></span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>}</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>        </span></span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>long</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> s2 </span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>=</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>
+  System</span><b><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>.</span></b><span lang=EN-US style='font-size:
+  8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>currentTimeMillis</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>();</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>        </span></span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>// </span><span
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>创建完对象的所需要的时间</span><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>        </span>System</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>.</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>out</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>.</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>println</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>(</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:gray;background:white;mso-highlight:white;mso-font-kerning:0pt'>&quot;</span><span
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:gray;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>用时</span><span lang=EN-US
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:gray;background:white;mso-highlight:white;mso-font-kerning:0pt'>=
+  &quot;</span><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:black;background:white;mso-highlight:white;
+  mso-font-kerning:0pt'> </span><b><span lang=EN-US style='font-size:8.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>+</span></b><span lang=EN-US
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>(</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>s2 </span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>-</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> s1</span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>));</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>    </span></span><b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>}</span></b><span
+  lang=EN-US style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><b><span lang=EN-US style='font-size:8.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:navy;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>}</span></b><span lang=EN-US
+  style='font-size:8.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>）</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>关闭逃逸分析、关闭标量替换、关闭使用线程本地内存、开启打印</span><span
+lang=EN-US>GC</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>信息</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_10"
+ o:spid="_x0000_i1048" type="#_x0000_t75" style='width:378.75pt;height:429pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image010.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_11"
+ o:spid="_x0000_i1047" type="#_x0000_t75" style='width:377.25pt;height:107.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image011.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>）</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>使用</span><span
+lang=EN-US>TLAB</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_12"
+ o:spid="_x0000_i1046" type="#_x0000_t75" style='width:376.5pt;height:53.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image012.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>不用加锁，快很多</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_13"
+ o:spid="_x0000_i1045" type="#_x0000_t75" style='width:332.25pt;height:124.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image013.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>）</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>开启逃逸分析、标量替换、使用线程本地内存，这是最快的</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_14"
+ o:spid="_x0000_i1044" type="#_x0000_t75" style='width:384.75pt;height:64.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image014.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_15"
+ o:spid="_x0000_i1043" type="#_x0000_t75" style='width:357pt;height:112.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image015.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span lang=EN-US>4</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>）</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>如果</span><span
+lang=EN-US>VM arguments</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>为空，则最快，故默认都是开启逃逸分析、标量替换、使用</span><span
+lang=EN-US>TLAB</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，其中打印日志会耗点时间。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_16"
+ o:spid="_x0000_i1042" type="#_x0000_t75" style='width:385.5pt;height:72.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image016.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span lang=EN-US>5</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>）</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>打印</span><span
+lang=EN-US>GC</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>详细信息</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_18"
+ o:spid="_x0000_i1041" type="#_x0000_t75" style='width:303.75pt;height:47.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image017.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_17"
+ o:spid="_x0000_i1040" type="#_x0000_t75" style='width:567pt;height:166.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image018.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US>PSYoungGen</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>：</span><span
+lang=EN-US>PS</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>表示垃圾收集的算法或者垃圾收集器，而</span><span
+lang=EN-US>YoungGen</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>表示新生代。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>ParOldGen</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>：</span><span
+lang=EN-US>OldGen</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>是老年代。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>Metaspace</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>：是永久区或者叫方法区。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>使用线程本地</span><span
+lang=EN-US>TLAB</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，</span><span
+lang=EN-US>eden</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>使用率</span><span
+lang=EN-US>35%</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>反而大了，说明</span><span
+lang=EN-US>TLAB</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>是在</span><span
+lang=EN-US>eden</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，上图就是不用</span><span
+lang=EN-US>TLAB</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的，占用</span><span
+lang=EN-US>32%</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_19"
+ o:spid="_x0000_i1039" type="#_x0000_t75" style='width:566.25pt;height:158.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image019.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>8</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、用</span><span
+lang=EN-US>VisualVM</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>观察虚拟机堆信息</span></h1>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>代码</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=755 valign=top style='width:566.4pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><b><span lang=EN-US style='font-size:5.5pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>import</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> java</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>.</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>util</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>.</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>ArrayList</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>;</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><b><span lang=EN-US style='font-size:5.5pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'>import</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> java</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>.</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>util</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>.</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>List</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>;</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>/**<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-spacerun:yes'> </span>* </span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>内存溢出：</span><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-spacerun:yes'> </span>* VM
+  arguments</span><span style='font-size:5.5pt;mso-bidi-font-size:12.0pt;
+  font-family:宋体;mso-ascii-font-family:"Courier New";mso-fareast-theme-font:
+  minor-fareast;mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>：</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>-XX:+HeapDumpOnOutOfMemoryError
+  -XX:HeapDumpPath=E:\Download\jvm.dump -XX:+PrintGCDetails -Xms10M -Xmx10M<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-spacerun:yes'> </span>*
+  -XX:+HeapDumpOnOutOfMemoryError</span><span style='font-size:5.5pt;
+  mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:"Courier New";
+  mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:"Courier New";
+  mso-bidi-font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>意思是一旦发生内存溢出，则给我把堆的信息</span><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>dump</span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>出来，放到</span><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>-XX:HeapDumpPath</span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>指定的文件。</span><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>-Xms</span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>表示一开始就占用这么多内存，而</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>-Xmx</span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>表示内存最大可以占用多少，</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-spacerun:yes'> </span>* </span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>一般这两个值一样或者接近，否则在内存快要占满</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>Xms</span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>这么大的时候，会进行</span><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>GC</span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>回收，如果</span><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>GC</span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>之后内存还是不够就会继续申请内存，如此循环，直到申请的内存达到</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>Xmx</span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>这么大，在这里每次</span><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>GC</span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>回收和申请扩大内存都是</span><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-spacerun:yes'> </span>* </span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>消耗性能的，故如果两个值一样或者接近的话，一开始运行就开辟最大内存空间</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>Xmx</span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>就可以减少</span><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>GC</span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>回收、不申请开辟内存，就达到调优的目的。</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-spacerun:yes'> </span>* jvm.dump</span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>这内存文件就可以用</span><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>VisualVM</span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>查看。</span><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-spacerun:yes'> </span>*/</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#8000FF;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>public</span><span lang=EN-US style='font-size:
+  5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>class</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> T03 </span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>{</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>       </span><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>       </span></span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>public</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>static</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>void</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> main</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>(</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>String</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>[]</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> args</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>)</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>{</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>              </span>List</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>&lt;</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>Object</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>&gt;</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> lists
+  </span><b><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:navy;background:white;mso-highlight:white;
+  mso-font-kerning:0pt'>=</span></b><span lang=EN-US style='font-size:5.5pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue;background:white;mso-highlight:white;mso-font-kerning:0pt'>new</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>
+  ArrayList</span><b><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>&lt;&gt;();</span></b><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>              </span></span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue;background:white;mso-highlight:white;mso-font-kerning:0pt'>for</span></b><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>(</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>int</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> i</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>=</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>0</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>;</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> i</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>&lt;</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>100000000</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>;</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> i</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>++)</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>{</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:3'>                     </span>lists</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>.</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>add</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>(</span></b><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue;background:white;mso-highlight:white;mso-font-kerning:0pt'>new</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>byte</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>[</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>1024</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>*</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>1024</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>]);</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>              </span></span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>}</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>       </span></span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>}</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal><b><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>}</span></b><span lang=EN-US style='font-size:
+  5.5pt;mso-bidi-font-size:11.0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>运行</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_20"
+ o:spid="_x0000_i1038" type="#_x0000_t75" style='width:567pt;height:120pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image020.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>VisualVM</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>就是</span><span
+lang=EN-US>JDK</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>自带的，在</span><span
+lang=EN-US>bin</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>下的可视化工具，可以看堆信息，即</span><span
+lang=EN-US>dump</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>文件。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_21"
+ o:spid="_x0000_i1037" type="#_x0000_t75" style='width:441.75pt;height:108.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image021.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>load</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>文件</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_22"
+ o:spid="_x0000_i1036" type="#_x0000_t75" style='width:316.5pt;height:268.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image022.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>按大小排序下，发现</span><span
+lang=EN-US>byte</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>字节数组最大，然后就可以通过找代码，看看哪里</span><span
+lang=EN-US>new</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>了这么多</span><span
+lang=EN-US>byte</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>字节数组，就能定位问题了。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_23"
+ o:spid="_x0000_i1035" type="#_x0000_t75" style='width:343.5pt;height:225pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image023.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>9</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、线程栈内存大小调整（即</span><span
+lang=EN-US>TLAB</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>）</span></h1>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>代码</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=755 valign=top style='width:566.4pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>/**<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-spacerun:yes'> </span>* </span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>线程栈大小</span><span style='font-size:
+  5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:teal;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'> <span lang=EN-US><o:p></o:p></span></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-spacerun:yes'> </span>* VM
+  arguments</span><span style='font-size:5.5pt;mso-bidi-font-size:12.0pt;
+  font-family:宋体;mso-ascii-font-family:"Courier New";mso-fareast-theme-font:
+  minor-fareast;mso-hansi-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>：</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>-Xss128k</span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>或者</span><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'>-Xss512k<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-spacerun:yes'> </span>* -Xss</span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:teal;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>这个值调的比较小，线程的并发数量就可以特别多（因为每个线程都要申请属于自己的一块内存）；如果调得比较大，并发量就小，但是线程递归调用就可以比较深，要有通过监控进行调。</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:teal;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:teal;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-spacerun:yes'> </span>*/</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:#8000FF;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>public</span><span lang=EN-US style='font-size:
+  5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>class</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> T04 </span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>{</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>       </span></span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>static</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>int</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> count
+  </span><b><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:navy;background:white;mso-highlight:white;
+  mso-font-kerning:0pt'>=</span></b><span lang=EN-US style='font-size:5.5pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> </span><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#FF8000;background:white;mso-highlight:white;mso-font-kerning:0pt'>0</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>;</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>       </span><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>       </span></span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>static</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>void</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> r</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>()</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>{</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>              </span>count
+  </span><b><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:navy;background:white;mso-highlight:white;
+  mso-font-kerning:0pt'>++;</span></b><span lang=EN-US style='font-size:5.5pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>              </span></span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>// </span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>递归调用，每调用一次都会起一个栈针，栈针本身也是占内存的</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>              </span>r</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>();</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>       </span></span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>}</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>       </span><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>       </span></span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>public</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>static</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:#8000FF;background:white;mso-highlight:white;mso-font-kerning:0pt'>void</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> main</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>(</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>String</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>[]</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> args</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>)</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>{</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>              </span></span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue;background:white;mso-highlight:white;mso-font-kerning:0pt'>try</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>{</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:3'>                     </span>r</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>();</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>              </span></span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>}</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue;background:white;mso-highlight:white;mso-font-kerning:0pt'>catch</span></b><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>(</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>Throwable
+  t</span><b><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:navy;background:white;mso-highlight:white;
+  mso-font-kerning:0pt'>)</span></b><span lang=EN-US style='font-size:5.5pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:black;background:
+  white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>{</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:3'>                     </span>System</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>.</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>out</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>.</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>println</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>(</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:gray;background:white;mso-highlight:white;mso-font-kerning:0pt'>&quot;</span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:gray;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>递归次数：</span><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:gray;background:white;mso-highlight:white;mso-font-kerning:0pt'>&quot;</span><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> </span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>+</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'> count</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>);</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:3'>                     </span>t</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>.</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'>printStackTrace</span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>();</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><span
+  style='mso-spacerun:yes'>  </span></span><span lang=EN-US style='font-size:
+  5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:green;
+  background:white;mso-highlight:white;mso-font-kerning:0pt'>// </span><span
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+  "Courier New";mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+  "Courier New";mso-bidi-font-family:"Courier New";color:green;background:white;
+  mso-highlight:white;mso-font-kerning:0pt'>抛异常</span><span lang=EN-US
+  style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green;background:white;mso-highlight:white;mso-font-kerning:0pt'>StackOverFlow<o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:2'>              </span></span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>}</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal align=left style='text-align:left;mso-layout-grid-align:
+  none;text-autospace:none'><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:black;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'><span style='mso-tab-count:1'>       </span></span><b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:navy;background:white;mso-highlight:white;mso-font-kerning:0pt'>}</span></b><span
+  lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:black;background:white;mso-highlight:white;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  <p class=MsoNormal><b><span lang=EN-US style='font-size:5.5pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New";color:navy;background:white;mso-highlight:
+  white;mso-font-kerning:0pt'>}</span></b><span lang=EN-US style='font-size:
+  5.5pt;mso-bidi-font-size:11.0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>数值小，递归深度浅，但并发高</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_25"
+ o:spid="_x0000_i1034" type="#_x0000_t75" style='width:124.5pt;height:57pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image024.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_29"
+ o:spid="_x0000_i1033" type="#_x0000_t75" style='width:419.25pt;height:145.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image025.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>数值大，递归深度大，但并发低</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_28"
+ o:spid="_x0000_i1032" type="#_x0000_t75" style='width:2in;height:64.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image026.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_27"
+ o:spid="_x0000_i1031" type="#_x0000_t75" style='width:384.75pt;height:132pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image027.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>10</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、常用参数设置</span></h1>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>堆设置</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>-Xms= </span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>初始堆大小</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-Xmx= </span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>最大堆大小</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-Xss </span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>线程栈大小</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX:NewSize= </span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>设置新生代大小</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX:NewSizeRatio= </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>设置新生代、老年代的比值，如</span><span lang=EN-US>=3</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>，表示新生代</span><span lang=EN-US>:</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>老年代</span><span
+lang=EN-US>=1:3</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，新生代占整个新生代、老年代的和的</span><span
+lang=EN-US>1/4</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX:SurvivorRatio= </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>新生代中</span><span lang=EN-US>eden</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>区和两个</span><span
+lang=EN-US>Survivor</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>区的比值，如</span><span
+lang=EN-US>=3</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，表示</span><span
+lang=EN-US>eden:</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>一个</span><span
+lang=EN-US>Survior:</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>另一个</span><span
+lang=EN-US>Survivor=3:1:1</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX:MaxPermSize= </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>设置永久区大小</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>收集器设置</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>-XX:+UseSerialGC </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>设置串行收集器</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX:+useParallelGC </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>设置并行收集器</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX:+UseConcMarkSweepGC </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>设置并发收集器</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>垃圾回收统计信息</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>-XX:+PrintGC</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX:+PrintGCDetails</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-Xloggc:filename</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>11</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、典型</span><span
+lang=EN-US>Tomcat</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>优化配置</span></h1>
+
+<p class=MsoNormal><span lang=EN-US>set JAVA_OPTS = -Xms4g -Xmx4g -Xss512
+-XX:+AggressiveOpts -XX:+UseBiasedLocking -XX:PermSize=64M -XX:MaxPermSize=300M
+-XX:+DisableExplicitGC </span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>-Xms -Xmx </span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的设定，假如一个</span><span
+lang=EN-US>64G</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>运行内存的机子，只跑一个</span><span
+lang=EN-US>JVM</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>程序，则</span><span
+lang=EN-US>-Xms -Xmx 63G</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>左右，然后启动，如果不能启动就慢慢减。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX:+AggressiveOpts </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>所有优化都用上。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX:+UseBiasedLocking </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>线程访问锁的时候的优化，是操作系统级的优化。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX:PermSize=64M </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>永久区，据说</span><span lang=EN-US>java1.8</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>取消了</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX:MaxPermSize=300M </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>永久区的最大值，</span><span lang=EN-US>eclipse</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>有时候起不来就是这个太小了，因为类太多。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX:+DisableExplicitGC </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>禁止显式调用</span><span lang=EN-US>GC</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>（即</span><span
+lang=EN-US>System.gc()</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>），一般都要配，防止有些调用，搅乱你的调优。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX:+UseConcMarkSweepGC </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>使用</span><span lang=EN-US>CMS</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>缩短响应时间，并发收集，低停顿。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX:+UseParNewGC </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>并行收集新生代的垃圾</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX:+CMSParallelRemarkEnable </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>在使用</span><span lang=EN-US>UseCMSCompactAtFullCollection </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>使用并行收集器时，开启对老年代的压缩，使碎片减少。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX:LargePageSizeInBytes=128m </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>内存分页大小对性能的提升，操作系统底层的知识。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-XX:+UseFastAccessorMethods get/set</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>方法转成本地代码，本地代码执行速率快。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>-Djava.awt.headless=true </span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>修复</span><span lang=EN-US>Linux</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>下的</span><span
+lang=EN-US>Tomcat</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>处理图表时可能会产生的一个</span><span
+lang=EN-US>bug</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，不知道新版的有没有修复。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>12</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、调优</span><span
+lang=EN-US>Tomcat</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>并进行评测</span></h1>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>没有优化前，一个全新的</span><span
+lang=EN-US>Tomcat</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>启动时间为</span><span
+lang=EN-US>901</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_41"
+ o:spid="_x0000_i1030" type="#_x0000_t75" style='width:456.75pt;height:85.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image028.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>就压测首页好了</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_34"
+ o:spid="_x0000_i1029" type="#_x0000_t75" style='width:385.5pt;height:202.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image029.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>去</span><span
+lang=EN-US>Tomcat</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的</span><span
+lang=EN-US>bin</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>目录，找到</span><span
+lang=EN-US>catalina.bat</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，设置调优参数</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_37"
+ o:spid="_x0000_i1028" type="#_x0000_t75" style='width:523.5pt;height:134.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image030.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>如下图</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_39"
+ o:spid="_x0000_i1027" type="#_x0000_t75" style='width:394.5pt;height:276pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image031.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US>set JAVA_OPTS = -Xms32g -Xmx32g -Xss512
+-XX:+AggressiveOpts -XX:+UseBiasedLocking -XX:PermSize=64M -XX:MaxPermSize=300M
+-XX:+DisableExplicitGC </span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>然后重新启动，发现</span><span
+lang=EN-US>Tomcat</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>启动时间也快了一些</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_40"
+ o:spid="_x0000_i1026" type="#_x0000_t75" style='width:484.5pt;height:138pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image032.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>然后用另一个</span><span
+lang=EN-US>Linux</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>机子用</span><span
+lang=EN-US>ab</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>来压测，左边是没有优化的，右边是优化过的，并发</span><span
+lang=EN-US>1000</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>个请求，总请求</span><span
+lang=EN-US>2000</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>个，还有能对比到区别的。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_43"
+ o:spid="_x0000_i1025" type="#_x0000_t75" style='width:567pt;height:382.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="16_JVMOptimization.files/image033.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>当然这里的优化只是按照原教程的，具体优化还要看实际情况的监控来决定。更加详情移至</span>
+<span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>周志明《深入理解</span><span lang=EN-US>Java</span><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>虚拟机》。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

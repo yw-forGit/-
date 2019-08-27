@@ -1,0 +1,899 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="09_WechatAuthorizeLogin.files/filelist.xml">
+<link rel=Edit-Time-Data href="09_WechatAuthorizeLogin.files/editdata.mso">
+<link rel=themeData href="09_WechatAuthorizeLogin.files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="09_WechatAuthorizeLogin.files/colorschememapping.xml">
+
+<link href="./css/treemenu.css" rel="stylesheet" type="text/css">
+<!-- GitHub Pages只认./js/xxx这种相对定位，不认js/xxx这种 -->
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script src="./js/test.js"></script>
+<script src="./js/treemenu.js"></script>
+</head>
+
+<body lang=ZH-CN link="#0563C1" vlink="#954F72" style='tab-interval:21.0pt;
+text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<div id="noScroll" class="divcss5-right">
+	<ul id="menuId" class="tree">
+	</ul>
+	<div style="font-size: 10px; color: #161FB0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ （Ctrl+滚动鼠标可缩放页面）</div>
+</div> 
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:14.0pt;mso-bidi-font-size:11.0pt;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>微信授权登录</span></b><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:14.0pt;
+mso-bidi-font-size:11.0pt'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>参考：慕课网</span><span lang=EN-US> - </span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>微信授权登录</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>制作日期：</span><span lang=EN-US>2018-7-18 - 2018-07-19</span></p>
+
+<p class=MsoNormal align=right style='text-align:right;word-break:break-all'><span
+style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:
+minor-latin'>制作人：小邹</span><span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:
+11.0pt;mso-fareast-font-family:宋体'>[yw_forgit@163.com]</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、登录方式</span></h1>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>微信公众平台（微信公众号）</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>微信开放平台</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>两种登录方式：</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>1</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>）没有自己的账号体系，直接拉取微信用户信息来进行网站登录</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>下面只实现这一种</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>2</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>）有自己的账号体系，授权成功后需要绑定自己的账号</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>这种与第一种一样，只是最后加上账号绑定而已</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、基于微信公众号授权登录</span></h1>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>新建新项目，</span><span
+lang=EN-US>web2.5</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>改部署到根目录，不改也可以</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="图片_x0020_1" o:spid="_x0000_i1082" type="#_x0000_t75"
+ style='width:414.75pt;height:350.25pt;visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image001.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>授权回调页面域名</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>填写授权之后回调页面的域名（即回调的接口在该域名下）</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>测试号的填写：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_2"
+ o:spid="_x0000_i1081" type="#_x0000_t75" style='width:414.75pt;height:249pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image002.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>订阅号等的填写，了解一下即可</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_3"
+ o:spid="_x0000_i1080" type="#_x0000_t75" style='width:509.25pt;height:345pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image003.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>点击“修改”，弹框</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_34"
+ o:spid="_x0000_i1079" type="#_x0000_t75" style='width:442.5pt;height:340.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image004.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>文档</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>选中菜单</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_21"
+ o:spid="_x0000_i1078" type="#_x0000_t75" style='width:176.25pt;height:70.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image005.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_22"
+ o:spid="_x0000_i1077" type="#_x0000_t75" style='width:415.5pt;height:123pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image006.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_23"
+ o:spid="_x0000_i1076" type="#_x0000_t75" style='width:549.75pt;height:511.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image007.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_24"
+ o:spid="_x0000_i1075" type="#_x0000_t75" style='width:529.5pt;height:312.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image008.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_26"
+ o:spid="_x0000_i1074" type="#_x0000_t75" style='width:521.25pt;height:465.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image009.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_27"
+ o:spid="_x0000_i1073" type="#_x0000_t75" style='width:561pt;height:430.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image010.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-bidi-font-size:10.5pt;
+font-family:"Helvetica",sans-serif;color:red;background:white'>unionid</span><span
+style='mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:Helvetica;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Helvetica;
+mso-bidi-font-family:Helvetica;color:red;background:white'>是判断是否是同一个用户的关键标志，但必须绑定微信开放平台，不管是公众号、移动应用、网站应用等</span><span
+lang=EN-US style='mso-bidi-font-size:10.5pt;font-family:"Helvetica",sans-serif;
+color:red;background:white'>unionid</span><span style='mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:Helvetica;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Helvetica;mso-bidi-font-family:Helvetica;color:red;
+background:white'>都是一样的。</span><span lang=EN-US style='color:red'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_28"
+ o:spid="_x0000_i1072" type="#_x0000_t75" style='width:559.5pt;height:559.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image011.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>这个没用到</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_29"
+ o:spid="_x0000_i1071" type="#_x0000_t75" style='width:498.75pt;height:276pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image012.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>代码</span></h2>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_11"
+ o:spid="_x0000_i1070" type="#_x0000_t75" style='width:273pt;height:408pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image013.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>web.xml</span><span style='font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>默认</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_12"
+ o:spid="_x0000_i1069" type="#_x0000_t75" style='width:564.75pt;height:129.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image014.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>引导用户进入授权页面，直接重定向到指定的</span><span
+lang=EN-US>url</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>即可</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_13"
+ o:spid="_x0000_i1068" type="#_x0000_t75" style='width:562.5pt;height:256.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image015.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>用户同意授权（或者静默授权）回调的接口</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_14"
+ o:spid="_x0000_i1067" type="#_x0000_t75" style='width:555.75pt;height:340.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image016.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>WechatUtil.java</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>共有</span><span
+lang=EN-US>4</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>个步骤，但是我们只做</span><span
+lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>步</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_35"
+ o:spid="_x0000_i1066" type="#_x0000_t75" style='width:567pt;height:282pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image017.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_16"
+ o:spid="_x0000_i1065" type="#_x0000_t75" style='width:565.5pt;height:398.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image018.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US>get</span><span style='font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>请求工具</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_17"
+ o:spid="_x0000_i1064" type="#_x0000_t75" style='width:522.75pt;height:378pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image019.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>准备引导进入授权的页面</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_18"
+ o:spid="_x0000_i1063" type="#_x0000_t75" style='width:561pt;height:169.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image020.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>授权成功，转发的页面</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_19"
+ o:spid="_x0000_i1062" type="#_x0000_t75" style='width:563.25pt;height:154.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image021.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style='font-family:宋体;mso-ascii-font-family:"Calibri Light";
+mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>测试</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>电脑端测试</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_5"
+ o:spid="_x0000_i1061" type="#_x0000_t75" style='width:262.5pt;height:81.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image022.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>提示要用微信打开</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_6"
+ o:spid="_x0000_i1060" type="#_x0000_t75" style='width:377.25pt;height:3in;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image023.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>手机端打开，然后点击“微信授权登录”</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_8"
+ o:spid="_x0000_i1059" type="#_x0000_t75" style='width:292.5pt;height:123.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image024.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>因为我已经关注了，故会静默授权，无需我确认，日志可以看到三步都走过了</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_7"
+ o:spid="_x0000_i1058" type="#_x0000_t75" style='width:556.5pt;height:75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image025.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>然后页面跳转，显示用户信息</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_9"
+ o:spid="_x0000_i1057" type="#_x0000_t75" style='width:329.25pt;height:140.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image026.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>测试号、订阅号都无法测试弹框授权（未关注才会有弹框授权）的情况，如图，需要使用认证的服务号</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_10"
+ o:spid="_x0000_i1056" type="#_x0000_t75" style='width:246pt;height:292.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image027.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>3</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、基于微信开放平台实现授权登录</span></h1>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>开发门槛比较高，必须是企业，个人无法开通开放平台。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>步骤一样，只是链接可能会有点不一样（就引导授权的链接不一样）</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US>1</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>）网站应用</span></h2>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>创建网站应用</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>登录微信开放平台，创建网站应用</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_32"
+ o:spid="_x0000_i1055" type="#_x0000_t75" style='width:415.5pt;height:136.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image028.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>填写信息，这需要企业的信息，我是用了公司已有的网站应用进行测试</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_33"
+ o:spid="_x0000_i1054" type="#_x0000_t75" style='width:498.75pt;height:574.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image029.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>这个就是创建好的，点击</span>
+<span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>查看</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_30"
+ o:spid="_x0000_i1053" type="#_x0000_t75" style='width:552pt;height:133.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image030.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>获取查看</span><span
+lang=EN-US>AppID</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>和</span><span
+lang=EN-US>AppSecret</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>（官方不保存）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_54"
+ o:spid="_x0000_i1052" type="#_x0000_t75" style='width:546.75pt;height:114pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image031.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>往下拉，修改授权回调域，即授权成功之后，回调的接口必须在该域名下，才能回调成功。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_62"
+ o:spid="_x0000_i1051" type="#_x0000_t75" style='width:548.25pt;height:66.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image032.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>文档</span></h3>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_46"
+ o:spid="_x0000_i1050" type="#_x0000_t75" style='width:540.75pt;height:276pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image033.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_47"
+ o:spid="_x0000_i1049" type="#_x0000_t75" style='width:492pt;height:249pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image034.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_48"
+ o:spid="_x0000_i1048" type="#_x0000_t75" style='width:526.5pt;height:417pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image035.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_49"
+ o:spid="_x0000_i1047" type="#_x0000_t75" style='width:534pt;height:712.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image036.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>第三步：获取用户信息</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_50"
+ o:spid="_x0000_i1046" type="#_x0000_t75" style='width:189pt;height:141pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image037.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_51"
+ o:spid="_x0000_i1045" type="#_x0000_t75" style='width:500.25pt;height:283.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image038.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_52"
+ o:spid="_x0000_i1044" type="#_x0000_t75" style='width:541.5pt;height:735.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image039.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>代码</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>复制上一节的项目</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>注意名称都是带有</span><span
+lang=EN-US>Pc</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>的哦，不要与上一节的代码搞混了，我就搞混过，报错</span><span
+lang=EN-US>40029</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_53"
+ o:spid="_x0000_i1043" type="#_x0000_t75" style='width:252pt;height:459.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image040.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_55"
+ o:spid="_x0000_i1042" type="#_x0000_t75" style='width:511.5pt;height:230.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image041.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_63"
+ o:spid="_x0000_i1041" type="#_x0000_t75" style='width:566.25pt;height:330.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image042.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_57"
+ o:spid="_x0000_i1040" type="#_x0000_t75" style='width:567pt;height:350.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image043.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_58"
+ o:spid="_x0000_i1039" type="#_x0000_t75" style='width:510pt;height:181.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image044.png" o:title=""/>
+</v:shape></span></p>
+
+<h3><span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>测试</span></h3>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>电脑浏览器访问，点击</span>
+<span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>“微信开放平台授权登录”</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_38"
+ o:spid="_x0000_i1038" type="#_x0000_t75" style='width:240pt;height:94.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image045.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>然后进入到微信授权页面</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_64"
+ o:spid="_x0000_i1037" type="#_x0000_t75" style='width:428.25pt;height:268.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image046.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>使用手机微信扫描上面的二维码，会弹出下面的界面，让用户授权</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_59"
+ o:spid="_x0000_i1036" type="#_x0000_t75" style='width:294pt;height:396.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image047.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>授权成功，浏览器页面提示扫码成功</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_65"
+ o:spid="_x0000_i1035" type="#_x0000_t75" style='width:294.75pt;height:322.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image048.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>然后我们的后台就会获取用户信息，信息如下</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_39"
+ o:spid="_x0000_i1034" type="#_x0000_t75" style='width:481.5pt;height:99pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image049.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>后台日志打印三步骤。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_40"
+ o:spid="_x0000_i1033" type="#_x0000_t75" style='width:517.5pt;height:54.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image050.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>分析一下用户信息，记住</span><span
+lang=EN-US>unionid</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_42"
+ o:spid="_x0000_i1032" type="#_x0000_t75" style='width:447.75pt;height:312pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image051.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US>2</span><span style='font-family:宋体;mso-ascii-font-family:
+"Calibri Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:major-fareast;
+mso-hansi-font-family:"Calibri Light";mso-hansi-theme-font:major-latin'>）公众账号</span></h2>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>登录微信开放平台，然后绑定公众号</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_44"
+ o:spid="_x0000_i1031" type="#_x0000_t75" style='width:561.75pt;height:174.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image052.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>回顾一下获取用户信息的接口，必须绑定公众号到开放平台，才会</span><span
+lang=EN-US>unionid</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>字段返回</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_25"
+ o:spid="_x0000_i1030" type="#_x0000_t75" style='width:558.75pt;height:215.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image053.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_31"
+ o:spid="_x0000_i1029" type="#_x0000_t75" style='width:556.5pt;height:186pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image054.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>进行微信公众平台授权开发，上面已经做过了，这里就不重复了，然后对比一下微信公众号获取的</span><span
+lang=EN-US>unionid</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>与开放平台的</span><span
+lang=EN-US>unionid</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，会发现是一致的，但是各自的</span><span
+lang=EN-US>openId</span><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>都是不一样的。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>（其他我这里偷懒了，因为我用了公司的公众号，而且公司本来就保存了</span><span
+lang=EN-US>unionid</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>，而我之前也关注了，所以直接去数据库查一下对比就好了，省事点。）</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_43"
+ o:spid="_x0000_i1028" type="#_x0000_t75" style='width:324pt;height:27.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image055.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_60"
+ o:spid="_x0000_i1027" type="#_x0000_t75" style='width:342pt;height:26.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image056.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_61"
+ o:spid="_x0000_i1026" type="#_x0000_t75" style='width:168pt;height:31.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image057.png" o:title=""/>
+</v:shape></span></p>
+
+<h1><span lang=EN-US>4</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>、微信公众号与微信开放平台关联整合</span></h1>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>只要是同一个微信开放平台帐号下的公众号（一个或者多个），用户的</span><span
+lang=EN-US>UnionID</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>是唯一的。换句话说，</span>
+<span style='font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin'>同一用户，对同一个微信开放平台帐号下的不同应用（移动应用、网站应用、公众账号、小程序、第三方平台等），</span><span
+lang=EN-US>UnionID</span><span style='font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>是相同的。</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin'>目前微信开放平台所支持的应用：</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-no-proof:yes'><v:shape id="图片_x0020_20"
+ o:spid="_x0000_i1025" type="#_x0000_t75" style='width:381.75pt;height:50.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <img src="09_WechatAuthorizeLogin.files/image058.png" o:title=""/>
+</v:shape></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
