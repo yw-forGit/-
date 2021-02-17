@@ -100,6 +100,9 @@ GitLab私有仓库，通过Git管理代码
 <a style="font-size:24px;" href="https://yw-forgit.github.io/Note/Other/07_CentOS7InstallMySQL.html">CentOS7安装MySQL </a> 
 <br><br>
 
+<a style="font-size:24px;" href="https://yw-forgit.github.io/Note/Other/CSS3快速入门.html">CSS3快速入门 </a> 
+<br><br>
+
 后续。。。 <br><br>
 https://yw-forgit.github.io/Note/Other/05_Nginx.html
 
